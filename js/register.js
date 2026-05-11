@@ -1,29 +1,30 @@
-console.log("Register.js loaded");
+// register.js
+document
+  .getElementById("registerForm")
+  .addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-document.getElementById("registerForm")
-    .addEventListener("submit", async (e) => {
-        //hier schreiben wir, was beim submit passiert
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-        e.preventDefault(); //verhindert, dass die Seite neu geladen wird
-        console.log("Form submitted");
+    try {
+      const response = await fetch("api/register.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+      const result = await response.json();
 
-        const email = document.getElementById("email").value.trim();
-
-        const password = document.getElementById("password").value.trim();
-
-        console.log(email + " " + password);
-
-        try {
-            const response = await fetch("api/register.php", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password }),
-            });
-
-            const result = await response.json();
-            console.log(result);
-        } catch (error) {
-            console.error("Error:", error);
-            alert("Error:", error);
-        }
-    });
+      if (result.status === "success") {
+        alert("Registration successful! You can now log in.");
+        window.location.href = "login.html";
+      } else {
+        alert(result.message || "Registration failed.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong!");
+    }
+  });
