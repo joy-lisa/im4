@@ -6,21 +6,39 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Register</h1>
+    <h1>Monster-Scanner</h1>
+    <p>Süsse Träume garantiert!🌟</p>
 
     <form id="registerForm">
+      <div>
+        <label>Dein Name</label>
+        <input type="text" id="name" required />
+      </div>
+
+      <div>
+        <label>Name deines Kindes</label>
+        <input type="text" id="childName" required />
+      </div>
+
       <div>
         <label>Email</label>
         <input type="email" id="email" required />
       </div>
+
       <div>
-        <label>Password</label>
+        <label>Passwort</label>
         <input type="password" id="password" required />
       </div>
-      <button type="submit">Register</button>
+
+      <div>
+        <label>Passwort wiederholen</label>
+        <input type="password" id="confirmPassword" required />
+      </div>
+
+      <button type="submit"> 🩷 Monster-Schutz aktivieren!</button>
     </form>
 
-    <p>Already have an account? <a href="login.html">Login here</a>.</p>
+    <p>Schon dabei? <a href="login.html">Anmelden 🌟</a>.</p>
 
     <script src="js/register.js"></script>
   </body>
