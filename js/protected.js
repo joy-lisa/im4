@@ -4,7 +4,7 @@ async function checkAuth() {
       credentials: "include",
     });
 
-    if (response.status === 401) {
+    if (response.status === 401) { //wenn nicht eingeloggt, dann weiterleiten
       window.location.href = "/login.html";
       return false;
     }
