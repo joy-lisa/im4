@@ -1,6 +1,6 @@
 ## im4 - Monster Scanner
 
---> bei der Chat Gpt-Anfrage bezüglich der Datenbank: erwähnen, dass wir es mit PDO machen
+➡️ bei der Chat Gpt-Anfrage bezüglich der Datenbank: erwähnen, dass wir es mit PDO machen
 
 Das ist unser Figma: 
 https://www.figma.com/design/6s5t7Cb0NK4FvaAhdiKhcd/IM-4-%E2%80%93-App-Konzeption?node-id=1402-201&t=XFWmMQKEByA0oNdQ-1
