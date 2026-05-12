@@ -16,7 +16,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
 
     if (result.status === "success") {
       alert("Login successful!");  // später löschen, nur zum debuggen
-      window.location.href = "home.html";
+      window.location.href = "index.html";
     } else {
       alert(result.message || "Login failed.");
     }
