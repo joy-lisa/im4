@@ -1,11 +1,12 @@
-## im4 - Monster Scanner
+# im4 - Monster Scanner
 
 ➡️ bei der Chat Gpt-Anfrage bezüglich der Datenbank: erwähnen, dass wir es mit PDO machen
 
 Das ist unser Figma: 
+
 https://www.figma.com/design/6s5t7Cb0NK4FvaAhdiKhcd/IM-4-%E2%80%93-App-Konzeption?node-id=1402-201&t=XFWmMQKEByA0oNdQ-1
 
-# 🔑👤 Authentifizierung für Monster-Scanner
+## 🔑👤 Authentifizierung für Monster-Scanner
 
 Hier passiert die Anmeldung auf unsere App. 
 
@@ -15,16 +16,18 @@ Wir haben uns bewusst gegen eine präzise Zeitbegrenzung entschieden, weil in un
 
 Seiten, die man nur eingeloggt besuchen kann sind die index.hmtl- und das konto.html-Seite. Ausgeloggt kann man die Startseite (start.html), sowie die Login- (login.html) und Registrierungseite (register.html) besuchen.
 
-# 🏁 Unsere Website
+## 🏁 Unsere Website
 
-Du kannst den Monster-Scanner unter der folgendem Link:
+Du kannst den Monster-Scanner unter dem folgenden Link aufrufen:
 
-[https://im4.lisa-joy.ch]
+https://im4.lisa-joy.ch
 
-# 🗄️ Datenbank
+## 🗄️ Datenbank
 
 - wir haben die Datenbank auf Hostpoint gemacht.
-- Hier findest du die Datenbankplanung:https://github.com/joy-lisa/im4/blob/e23317e88c35619695ed21b4ff20466ba2c2c5fb/Datenbank-Planung.pdf
+- Hier findest du die Datenbankplanung:
+  
+https://github.com/joy-lisa/im4/blob/e23317e88c35619695ed21b4ff20466ba2c2c5fb/Datenbank-Planung.pdf
 
 
 ### 4. FTP Connect
