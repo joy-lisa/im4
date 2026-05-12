@@ -14,13 +14,9 @@ require_once("../system/config.php");
 
 ###################################### Empfangen der JSON-Daten
 
-$inputJSON = file_get_contents('php://input'); // JSON-Daten aus dem Body der Anfrage
-$input = json_decode($inputJSON, true); 
+$wert = $_POST["distance"];
 
-
-###################################### receiving a post request from a HTML form, later from ESP
-
-$wert = $input["wert"];         // Hol den Wert an der Stelle "wert" aus dem JS-Objekt (ehemals JSON-String)
+// Hol den Wert an der Stelle "wert" aus dem JS-Objekt (ehemals JSON-String)
 # insert new user into db
 $sql = "INSERT INTO sensordata (wert) VALUES (?)";
 $stmt = $pdo->prepare($sql);
