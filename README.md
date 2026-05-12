@@ -1,52 +1,31 @@
-# im4
-app für eltern
+## im4 - Monster Scanner
 
-bei der chat gpt anfrage bezüglich der datenbank: erwähnen, dass wir es mit PDO machen
+--> bei der Chat Gpt-Anfrage bezüglich der Datenbank: erwähnen, dass wir es mit PDO machen
 
-das ist unser figma: https://www.figma.com/design/6s5t7Cb0NK4FvaAhdiKhcd/IM-4-%E2%80%93-App-Konzeption?node-id=1402-201&t=XFWmMQKEByA0oNdQ-1
+Das ist unser Figma: 
+https://www.figma.com/design/6s5t7Cb0NK4FvaAhdiKhcd/IM-4-%E2%80%93-App-Konzeption?node-id=1402-201&t=XFWmMQKEByA0oNdQ-1
 
-hier geht es zur datenbank-planung:
-https://github.com/joy-lisa/im4/blob/e23317e88c35619695ed21b4ff20466ba2c2c5fb/Datenbank-Planung.pdf
+# 🔑👤 Authentifizierung für Monster-Scanner
 
-# 🔑👤 Authentifizierung Minimal (Boilerplate)
+Hier passiert die Anmeldung auf unsere App. 
 
-![Static Badge](https://img.shields.io/badge/Sprache-PHP-%23f7df1e)
-![Static Badge](https://img.shields.io/badge/Kurs-MMP_IM4-blue)
-![Last Changed](https://img.shields.io/endpoint?url=https://badges.crazy-internet.ch/im4_example.php)
+Standardmässig bleibt die Session aktiv, solange der Browser offen ist und endet mit dem Schliessen des Browsers. Wenn die Session ca. 24 Minuten inaktiv ist endet die Session und der User wird ausgeloggt.
 
-> 🎨 Dieses Boilerplate kann entweder in einem Code-Along Schritt für Schritt gemeinsam erarbeitet werden oder fixfertig auf einem Webserver installiert werden.
+Wir haben uns bewusst gegen eine präzise Zeitbegrenzung entschieden, weil in unserem Fall die Zeitspanne passend ist und das auch zu einer guten User Experience führt
 
-Dieses Repository beinhaltet ein vollständiges, minimales Authenzifizierungs-System basierend auf PHP als Backend und HTML/CSS/JS als Frontend.
+Seiten, die man nur eingeloggt besuchen kann sind die index.hmtl- und das konto.html-Seite. Ausgeloggt kann man die Startseite (start.html), sowie die Login- (login.html) und Registrierungseite (register.html) besuchen.
 
-Es ermöglicht Benutzern das `Registrieren`, `Anmelden`, `Abmelden` und den Zugriff auf eine `geschützte Seite` nach erfolgreicher Authentifizierung.
+# 🏁 Unsere Website
 
-Eine einfache Erklärung des Login-Ablaufs mit Sessions und Cookies findest du in [`sessions.md`](sessions.md).
+Du kannst den Monster-Scanner unter der folgendem Link:
 
-# 🏁 Live - Version
+[https://im4.lisa-joy.ch]
 
-Du kannst Homely unter folgendem Link testen:
+# 🗄️ Datenbank
 
-[https://im4.crazy-internet.ch/](https://im4.crazy-internet.ch/)
+- wir haben die Datenbank auf Hostpoint gemacht.
+- Hier findest du die Datenbankplanung:https://github.com/joy-lisa/im4/blob/e23317e88c35619695ed21b4ff20466ba2c2c5fb/Datenbank-Planung.pdf
 
-## ⚙️ Installation
-
-Um dieses Boilerplate auf dem eigenen Web-Server zu installieren, führe folgende Schritte aus:
-
-### 1. Download
-
-- [Klone das Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) über GitHub oder [downloade das Repository als ZIP Datei](https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives) auf deinen eigenen Computer.
-
-### 2. Datenbank
-
-- Erstelle eine neue Datenbank bei deinem Hoster (z.B. [Infomaniak](https://www.infomaniak.com/de/support/faq/1981/mysqlmariadb-benutzer-und-datenbanken-verwalten)).
-
-- Importiere die Datei `system/database.sql` in die neue Datenbank, um die `users` Tabelle zu erstellen.
-
-### 3. Code
-
-- Benenne die Datei `system/config.php.blank` in `system/config.php` um.
-
-- Passe die Datenbankverbindungsdaten in der Datei `system/config.php` an.
 
 ### 4. FTP Connect
 
