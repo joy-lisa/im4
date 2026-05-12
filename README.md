@@ -1,4 +1,4 @@
-# im4 - Monster Scanner
+# im4 - Monster-Scanner 🌙
 
 ➡️ bei der Chat Gpt-Anfrage bezüglich der Datenbank: erwähnen, dass wir es mit PDO machen
 
@@ -29,8 +29,28 @@ https://im4.lisa-joy.ch
   
 https://github.com/joy-lisa/im4/blob/e23317e88c35619695ed21b4ff20466ba2c2c5fb/Datenbank-Planung.pdf
 
+## 🎨 Design
 
-### 4. FTP Connect
+Wir haben bei der Erstellung des Design versucht eine Mischung einem schlichten Design, sowie etwas kindlichen Elementen zu machen. Das heisst so, dass es für die Eltern, sowie für die Kinder ansprechend designt ist.
+
+Anhand des AB-Testings haben wir herausgefunden, dass dies bei den Eltern mit kleinen Kindern sehr gut ankommt, da es sich ja dabei um ein App handelt, welches für das Sicherheitsgefühl der Kinder sorgt.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----
+
+### FTP Connect
 
 - Erstelle eine neue FTP Verbindung mit dem SFTP Plugin gemäss [Anleitung im MMP 101](https://github.com/Interaktive-Medien/101-MMP/blob/main/resources/sftp.md).
 
