@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home</title>
   <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <main>
   <section>
-    <div class="logo">👾</div>
+    <img src="resources/img/Logo_Monster-Scanner.svg" alt="Monster-Scanner Logo">
     <h1>Monster-Scanner</h1>
     <p>Willkommen zurück!</p>
   </section>
@@ -21,7 +22,7 @@
   <section class="grid">
     <article class="card">
       <div class="card-title">📈 Trend</div>
-      <div>-23%</div>
+      <div>wie berechnen wir das?</div>
     </article>
 
     <article class="card">
@@ -31,12 +32,12 @@
 
     <article class="card">
       <div class="card-title">🌙 Nachtaktivität</div>
-      <div>📊</div>
+      <canvas id="monsterChart"></canvas>
     </article>
   </section>
 </main>
 
+    <script src="js/chart.js"></script>
     <script src="js/auth.js"></script>
-    <script src="js/register.js"></script>
 </body>
 </html>

@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Check user in DB
-    $stmt = $pdo->prepare("SELECT id, password FROM users WHERE email = :email");
+    $stmt = $pdo->prepare("SELECT id, password, haushalt_id FROM users WHERE email = :email");
     $stmt->execute([':email' => $email]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -30,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //where the magic happens
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['email']   = $email;
+        $_SESSION['haushalt_id']   = $user['haushalt_id'];
 
         echo json_encode(["status" => "success"]);
     } else {

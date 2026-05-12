@@ -12,3 +12,4 @@ async function requireAuth() {
 }
 
 requireAuth(); // Redirects if not authenticated
+console.log("User is authenticated");
