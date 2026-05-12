@@ -4,6 +4,7 @@ sender.js
 Hier Werten die Formulardaten aus sender.html extrahiert, als JSON string formattiert und per HTTP POST Request an load.php geschickt.
 Später werden die HTTP Nachrichten nicht mehr von einer Website geschickt, sondern von einem ESP
 ******************************************************/
+console.log("hallo test sender.js")
 
 const form = document.getElementById("dataForm");
 
@@ -26,7 +27,7 @@ form.addEventListener("submit", async (event) => {
 
   // HTTP POST Request an load.php schicken
   try {
-    const response = await fetch("api/load.php", {
+    const response = await fetch("https://im4.lisa-joy.ch/api/load.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
