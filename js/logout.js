@@ -12,8 +12,8 @@ document.getElementById("logoutBtn").addEventListener("click", async (e) => {
     const result = await response.json();
 
     if (result.status === "success") {
-      // Redirect to login page after successful logout
-      window.location.href = "login.html";
+      // Redirect to start page after successful logout
+      window.location.href = "index.html";
     } else {
       console.error("Logout failed");
       alert("Logout failed. Please try again.");
