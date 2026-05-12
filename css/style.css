@@ -1,35 +1,22 @@
-/* style.css */
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-  max-width: 600px;
-  line-height: 1.5;
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+  --bg: #8EC5FF;
+  --pink: #C2126D;
+  --blue: #3A39BD;
+  --lavender: #AA9AD7;
+  --cream: #E2D7D2;
+  --white: #ffffff;
+  --text: #222;
+  --shadow: 0 8px 20px rgba(0,0,0,.12);
+  --radius: 18px;
 }
 
-h1 {
-  margin-bottom: 1em;
-}
+*{ box-sizing: border-box; }
 
-form > div {
-  margin-bottom: 1em;
-}
-
-label {
-  display: inline-block;
-  width: 80px;
-}
-
-input[type="email"],
-input[type="password"] {
-  width: 200px;
-  padding: 4px;
-}
-
-button {
-  padding: 8px 16px;
-  cursor: pointer;
-}
-
-p {
-  margin-top: 1em;
+body{
+  margin: 0;
+  font-family: "Libre Franklin", sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
