@@ -4,16 +4,27 @@ document
   .addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const name = document.getElementById("name").value.trim();
+    const childname = document.getElementById("childname").value.trim();
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
+    // 1. Das Bestätigungsfeld auslesen (ID muss mit deinem HTML übereinstimmen)
+    const passwordConfirm = document.getElementById("passwordConfirm").value.trim();
+    // const emoji = document.getElementById("emoji").value.trim();
+
+    // 2. Überprüfung: Stimmen die Passwörter überein?
+    if (password !== passwordConfirm) {
+      alert("Die Passwörter stimmen nicht überein!");
+      return; // Bricht die Funktion hier ab, fetch wird nicht ausgeführt
+    }
 
     try {
-      const response = await fetch("api/register.php", {
+      const response = await fetch("./api/register.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, password, name, childname /*, emoji */ }),
       });
       const result = await response.json();
 

@@ -1,22 +1,101 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root{
-  --bg: #8EC5FF;
-  --pink: #C2126D;
-  --blue: #3A39BD;
-  --lavender: #AA9AD7;
-  --cream: #E2D7D2;
-  --white: #ffffff;
-  --text: #222;
-  --shadow: 0 8px 20px rgba(0,0,0,.12);
-  --radius: 18px;
+:root {
+  --wasabi: #E9F056;     /* Aus Palettes Pinterest couleurs 2026.jpg */
+  --orange: #FF5C34;     /* Aus Palettes Pinterest couleurs 2026.jpg */
+  --blue: #D7EFFF;       /* Aus Palettes Pinterest couleurs 2026.jpg */
+  --cassis: #351E28;     /* Aus Palettes Pinterest couleurs 2026.jpg */
+  --salbei: #AEB8A0;     /* Entspricht Vert Sauge aus Palettes Pinterest couleurs 2026.jpg */
+
+/* Zusätzliche UI Farben basierend auf dem Screenshot */
+  --bg-button-secondary: rgba(255, 255, 255, 0.3);
+  --text-white: #FFFFFF;
 }
 
-*{ box-sizing: border-box; }
-
-body{
+/* --- Layout & Hintergrund --- */
+body {
+  background-color: var(--salbei);
   margin: 0;
-  font-family: "Libre Franklin", sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+/* Der neue Container sorgt für die schmale, zentrierte Ausrichtung */
+.welcome-container {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Die hero-section gruppiert das Icon und die Überschrift */
+.hero-section {
+  margin-bottom: 50px;
+}
+
+/* Das gelbe Kreis-Icon aus dem Screenshot */
+.monster-icon {
+  width: 150px;
+  height: 150px;
+  background-color: var(--wasabi);
+  border-radius: 50%;
+  margin: 0 auto 20px; /* Zentriert den Kreis */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: white;
+  font-size: 2.8rem;
+  margin: 0;
+}
+
+/* Die Button-Gruppe */
+.auth-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Abstand zwischen den Buttons */
+}
+
+.auth-buttons a {
+  text-decoration: none;
+}
+
+button {
+  width: 100%;
+  padding: 18px;
+  border-radius: 15px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Registrieren-Button */
+.btn-main {
+  background-color: white;
+  color: var(--cassis);
+}
+
+/* Anmelden-Button mit Glass-Effekt */
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+/* Interaktionseffekte */
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+button:active {
+  transform: translateY(0);
 }
