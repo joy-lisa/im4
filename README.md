@@ -18,7 +18,7 @@ Seiten, die man nur eingeloggt besuchen kann sind die index.hmtl- und das konto.
 
 ## 🏁 Unsere Website
 
-Du kannst den Monster-Scanner unter dem folgenden Link aufrufen:
+Der Monster-Scanner kann unter dem folgenden Link aufgerufen werden:
 
 https://im4.lisa-joy.ch
 
