@@ -16,17 +16,153 @@
 body {
   background-color: var(--salbei);
   margin: 0;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: sans-serif;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
 }
+
+main {
+  background-color: var(--salbei);
+  width: 100%;
+  /* max-width: 410px;
+  min-height: 840px; */
+  padding: 24px 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+ /* --- oberer Headerbereich --- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: #FFFFFF; */
+  padding: 12px;
+  /* border-radius: 0 0 16px 16px; */
+  margin: -24px -30px 10px -30px; /* Zieht den Header exakt an den oberen Rand der App */
+}
+
+.header img {
+  width: 50px;
+  height: 50px;
+  background-color: #FCE7F3; /* Sanfter pinker Kreis wie im Mockup */
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.header div {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 12px;
+}
+
+.header h1 {
+  color: var(--cassis);
+  font-size: 18px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.header p {
+  margin: 4px 0 0 0;
+}
+
+.header a {
+  margin-left: auto;
+  text-decoration: none;
+  color:inherit
+}
+
+/* Der runde User-Button im Header */
+.header a button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #F3E8FF;
+  color: var(--purple-text);
+  border: none;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.main_konto {
+  background-color: var(--salbei);
+  width: 100%;
+  /* max-width: 410px;
+  min-height: 840px; */
+  padding: 24px 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main_konto .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 12px;
+  border-radius: 0 0 24px 24px;
+  margin: -24px -30px 20px -30px;
+}
+
+/* --- Grid & Die Karten (Cards) --- */
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+article {
+  background-color: white;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
+
+.card {
+  background-color: white;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 1rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+/* Zurück-Button oben links */
+/* #back_btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 150px;
+  height: 150px;
+  font-size: 60px;
+} */
 
 /* Der neue Container sorgt für die schmale, zentrierte Ausrichtung */
 .welcome-container {
   width: 100%;
-  max-width: 400px;
+  max-width: 410px;
   text-align: center;
   padding: 20px;
 }
@@ -67,6 +203,7 @@ h1 {
 }
 
 button {
+  background-color: var(--wasabi);
   width: 100%;
   padding: 18px;
   border-radius: 15px;
