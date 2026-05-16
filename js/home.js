@@ -82,24 +82,33 @@ async function loadUserData() {
 
         if (result.status === "success") {
             const user = result.data;
-          
-        // 1. Allgemeine User-Daten anzeigen
-            if(document.getElementById("userName")) {
-                document.getElementById("userName").textContent = user.name;
-            }
-            if(document.getElementById("userEmail")) {
+
+        // Namen im Lese-Modus anzeigen
+        document.getElementById("displayUserName").textContent = user.name;
+        document.getElementById("displayChildName").textContent = user.childname;
+
+        //Namen bereits in die Input-Felder des Bearbeitungs-Modus setzen
+        document.getElementById("editUserName").value = user.name;
+        document.getElementById("editChildName").value = user.childname;
+
+        // Email anzeigen
+            if (document.getElementById("userEmail")) {
                 document.getElementById("userEmail").textContent = user.email;
             }
 
-            // 2. Haushalts-Logik prüfen
-            // WICHTIG: Prüfe im PHP-Skript, ob du 'haushalt_ID' oder 'haushalt_id' zurückgibst!
-            if (user.haushalt_ID !== null && user.haushalt_ID !== undefined) {
-                document.getElementById("hName").textContent = user.haushalt_name;
-                document.getElementById("hCode").textContent = user.join_code;
+
+        // 2. Haushalts-Logik prüfen
+        const haushaltID = user.haushalt_ID || user.haushalt_id;
+        
+        if (user.haushalt_ID !== null && user.haushalt_ID !== undefined) {
+            //User hat einen Haushalt, Code und Name anzeigen
+            document.getElementById("hName").textContent = user.haushalt_name;
+            document.getElementById("hCode").textContent = user.join_code;
 
                 document.getElementById("householdInfo").style.display = "block";
                 document.getElementById("noHousehold").style.display = "none";
             } else {
+                //User hat keinen Haushalt, Erstellen und Beitreten anzeigen
                 document.getElementById("householdInfo").style.display = "none";
                 document.getElementById("noHousehold").style.display = "block";
             }
@@ -111,5 +120,57 @@ async function loadUserData() {
     }
 }
 
-// Jetzt mit dem richtigen Namen aufrufen!
+        // Wenn Seite fertig gelade ist, Daten holen
 document.addEventListener("DOMContentLoaded", loadUserData);
+
+// Profil bearbeiten
+
+// Ansicht wechseln zu: Bearbeiten
+document.getElementById("btnEditProfile").addEventListener("click", () => {
+    document.getElementById("profileViewMode").style.display = "none";
+    document.getElementById("profileEditMode").style.display = "block";
+});
+
+// Ansicht wechseln zu: Anzeigen (Abbrechen)
+document.getElementById("btnCancelEdit").addEventListener("click", () => {
+    document.getElementById("profileEditMode").style.display = "none";
+    document.getElementById("profileViewMode").style.display = "block";
+});
+
+// Profiländerungen an PHP senden
+document.getElementById("btnSaveProfile").addEventListener("click", async () => {
+    const updatedName = document.getElementById("editUserName").value.trim();
+    const updatedChildName = document.getElementById("editChildName").value.trim();
+
+    if (!updatedName) {
+        alert("Der Benutzername darf nicht leer sein!");
+        return;
+    }
+
+    try {
+        const response = await fetch("api/update_profile.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                name: updatedName,
+                childname: updatedChildName
+            }),
+        });
+
+        const result = await response.json();
+
+        if (result.status === "success") {
+            alert("Profil erfolgreich aktualisiert!");
+            window.location.reload(); // Seite neu laden, um Daten frisch anzuzeigen
+        } else {
+            alert("Fehler beim Speichern: " + result.message);
+        }
+    } catch (error) {
+        console.error("Netzwerkfehler:", error);
+        alert("Verbindung zum Server fehlgeschlagen.");
+    }
+
+});
+

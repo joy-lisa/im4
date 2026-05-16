@@ -15,17 +15,57 @@
     <h1>Konto und Einstellungen</h1>
     <p>Dein Profil verwalten</p>
 
-    <section class="haushalt">
-        <h1>Haushalt</h1>
-            <div id="householdInfo">
-                <label>Dein Name</label>
-                <p>Dein Name <span id="uName"></span></p>
+    <section class="profil-einstellungen">
+        <h1>Mein Profil</h1>
+
+        <!-- Lese-Modus-->
+        <div id="profileViewMode">
+            <p><strong>Dein Name:</strong> <span id="displayUserName">Lädt...</span></p>
+            <p><strong>Name deines Kindes:</strong> <span id="displayChildName">Lädt...</span></p>
+            <button id="btnEditProfile">Profil bearbeiten</button>
+        </div>
+
+        <!-- Bearbeitungs-Modus -->
+        <div id="profileEditMode" style="display: none;">
+            <div>
+                <label for="editUserName">Dein Name</label>
+                <input type="text" id="editUserName" />
             </div>
+            <br>
+            <div>
+                <label for="editChildName">Name deines Kindes</label>
+                <input type="text" id="editChildName" />
+            </div>
+            <br>
+
+            <button id="btnSaveProfile">Änderungen speichern</button>
+            <button id="btnCancelEdit">Änderungen abbrechen</button>
+        </div>
+    </section>
+
+    <section class="haushalt-section">
+        <!-- Box für Leute OHNE Haushalt -->
+
+        <div id="noHousehold" style="display: none;">
+            <p>Du bist noch in keinem Haushalt.</p>
 
             <div>
-                <label>Name deines Kindes</label>
-                <input type="text" id="childName" />
+                <input type="text" id="householdName" placeholder="Name für neuen Haushalt" />
+                <button id="btnCreate">Haushalt erstellen</button>
             </div>
+
+            <br>
+            <!-- Box für Leute MIT Haushalt -->
+            <div>
+                <input type="text" id="joinCode" placeholder="Beitritts-Code eingeben" />
+                <button id="btnJoin">Haushalt beitreten</button>
+            </div>
+        </div>
+
+        <div id="householdInfo" style="display:none;">
+            <h1>Dein Haushalt: <span id="hName"></span></h1>
+            <p>Teile diesen Code mit anderen: <span id="hCode"></span></p>
+        </div>
 
     </section>
 
@@ -37,49 +77,23 @@
 
     <section class="email">
         <h1>Email-Adresse</h1>
-        <p id="userEmail">Hier steht deine Email-Adresse. (wahrscheinlich in .js)</p>
+        <p id="userEmail">Lädt...</p>
     </section>
 
-    <!-- Box für Leute OHNE Haushalt -->
-     <div id="noHousehold" style="display: none;">
-    <p>Du bist noch in keinem Haushalt.</p>
 
-    <div>
-        <input type="text" id="householdName" placeholder="Name für neuen Haushalt" />
-        <button id="btnCreate">Haushalt erstellen</button>
-    </div>
-    
-    <br>
-    <div>
-        <input type="text" id="joinCode" placeholder="Beitritts-Code eingeben" />
-        <button id="btnJoin">Haushalt beitreten</button>
-    </div>
-</div>
 
-    <!-- Box für Leute MIT Haushalt -->
-    <div id="householdInfo" style="display:none;">
-        <h1>Dein Haushalt: <span id="hName"></span></h1>
-        <p>Teile diesen Code mit anderen: <strong id="hCode"></strong></p>
-    </div>
-
-    <section>
+    <section class="sicherheit">
         <h1>Passwort</h1>
         <button>Passwort ändern</button>
-    </section>
-
-    <section>
-
-        <button type="save"> Änderungen speichern</button>
-
         <button>Konto löschen</button>
-
     </section>
 
-    <section>
+
+    <section class="logout">
         <button id="logoutBtn">Logout</button>
     </section>
 
-   <script src="js/home.js"></script>
+    <script src="js/home.js"></script>
     <script src="js/logout.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/register.js"></script>
