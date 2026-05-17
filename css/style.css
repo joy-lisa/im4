@@ -41,9 +41,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* background-color: #FFFFFF; */
   padding: 12px;
-  /* border-radius: 0 0 16px 16px; */
   margin: -24px -30px 10px -30px; /* Zieht den Header exakt an den oberen Rand der App */
 }
 
@@ -332,4 +330,13 @@ button:active {
 .register-hint a {
   color: var(--wasabi);
   font-weight: bold;
+}
+
+
+/* --- Spezifische Styles für die Kontoseite --- */
+
+#deleteAccountBtn {
+  color: red;
+  margin-top: 20px;
+  font-size: 1.8rem;
 }
