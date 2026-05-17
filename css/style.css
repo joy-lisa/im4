@@ -162,23 +162,32 @@ article {
 /* Der neue Container sorgt für die schmale, zentrierte Ausrichtung */
 .welcome-container {
   width: 100%;
-  max-width: 410px;
+  max-width: 800px;
   text-align: center;
-  padding: 20px;
+  padding: 24px;
+  box-sizing: border-box;
 }
 
 /* Die hero-section gruppiert das Icon und die Überschrift */
 .hero-section {
-  margin-bottom: 50px;
+  margin-bottom: 58px;
 }
 
+.hero-section h1 {
+  color: var(--text-white);
+  margin: 0;
+  text-align: center;
+  display: block;
+  width: 100%;
+  font-size: 5rem; 
+}
 /* Das gelbe Kreis-Icon aus dem Screenshot */
 .monster-icon {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   background-color: var(--wasabi);
   border-radius: 50%;
-  margin: 0 auto 20px; /* Zentriert den Kreis */
+  margin: 0 auto 24px; /* Zentriert den Kreis */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -187,7 +196,7 @@ article {
 
 h1 {
   color: white;
-  font-size: 2.8rem;
+  font-size: 4.5rem;
   margin: 0;
 }
 
@@ -195,20 +204,24 @@ h1 {
 .auth-buttons {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Abstand zwischen den Buttons */
+  gap: 18px; /* Abstand zwischen den Buttons */
+  align-items: center;
 }
 
 .auth-buttons a {
   text-decoration: none;
+  width: 100%;
+  max-width: 400px;
+  display: block;
 }
 
 button {
   background-color: var(--wasabi);
   width: 100%;
-  padding: 18px;
-  border-radius: 15px;
+  padding: 21px;
+  border-radius: 18px;
   border: none;
-  font-size: 1.1rem;
+  font-size: 2.5rem;
   font-weight: bold;
   cursor: pointer;
 }
