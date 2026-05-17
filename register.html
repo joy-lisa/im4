@@ -7,39 +7,41 @@
   </head>
   <body>
 
-    <a href="index.html">
-      <button id="back_btn">⬅️</button>
+    <a href="index.html" id="back_btn_container">
+      <button id="back_btn">⬅️ Zurück</button>
     </a>
+
+    <div class="welcome-container">
 
     <div class="monster-icon">
                 <img src="resources/img/Logo_Monster-Scanner.svg" alt="Monster Icon"> 
             </div>
 
     <h1>Monster-Scanner</h1>
-    <p>Süsse Träume garantiert!🌟</p>
+    <h2>Süsse Träume garantiert!🌟</h2>
 
-    <form id="registerForm">
-      <div>
+    <form id="registerForm" class="card">
+      <div class="field">
         <label>Dein Name</label>
         <input type="text" id="name" required />
       </div>
 
-      <div>
+      <div class="field">
         <label>Name deines Kindes</label>
         <input type="text" id="childname" required />
       </div>
 
-      <div>
+      <div class="field">
         <label>Email</label>
         <input type="email" id="email" required />
       </div>
 
-      <div>
+      <div class="field">
         <label>Passwort</label>
         <input type="password" id="password" required />
       </div>
 
-      <div>
+      <div class="field">
         <label>Passwort wiederholen</label>
         <input type="password" id="passwordConfirm" required />
       </div>
@@ -47,7 +49,9 @@
       <button type="submit"> 🩷 Monster-Schutz aktivieren!</button>
     </form>
 
-    <p>Schon dabei? <a href="login.html">Anmelden 🌟</a>.</p>
+    <p class="register-hint">Schon dabei? <a href="login.html">Anmelden</a></p>
+
+    </div>
 
     <script src="js/register.js"></script>
   </body>
