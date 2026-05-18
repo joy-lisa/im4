@@ -99,7 +99,7 @@ main {
   width: 100%;
   /* max-width: 410px;
   min-height: 840px; */
-  padding: 24px 30px;
+  padding: 0 30px 24px 30px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -107,13 +107,23 @@ main {
 }
 
 .main_konto .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 12px;
-  border-radius: 0 0 24px 24px;
-  margin: -24px -30px 20px -30px;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  margin: 0 0 30px 0;
 }
+
+.main_konto .header h1 {
+  font-size: 2.5rem; /* Macht die Überschrift schön gross und präsent */
+  margin: 0;
+  line-height: 1.1 ;
+}
+
+.main_konto .header p {
+  font-size: 1.3rem; /* Macht den Untertitel passend grösser */
+}
+
 
 /* --- Grid & Die Karten (Cards) --- */
 .grid {
@@ -147,15 +157,6 @@ article {
 }
 
 
-/* Zurück-Button oben links */
-/* #back_btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  width: 150px;
-  height: 150px;
-  font-size: 60px;
-} */
 
 /* Der neue Container sorgt für die schmale, zentrierte Ausrichtung */
 .welcome-container {
@@ -339,4 +340,5 @@ button:active {
   color: red;
   margin-top: 20px;
   font-size: 1.8rem;
+  display: block;
 }
