@@ -43,8 +43,8 @@ body {
 }
 
 #back_btn {
-  padding: 10px 16px;
-  font-size: 1rem;
+  padding: 16px 24px;
+  font-size: 1.8rem;
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
@@ -159,25 +159,9 @@ form {
   font-size: 1.2rem;
 }
 
-.field input {
-  width: 100%;
-  height: 90px;
-  /* Moderne, touch-freundliche Höhe */
-  padding: 0 16px;
-  border: 2px solid transparent;
-  border-radius: 14px;
-  font-size: 1.8rem;
-  font-family: inherit;
-  background-color: var(--input-bg, #e1e7dd);
-  /* Nutzt eure UI-Farbe */
-  color: var(--cassis);
-  outline: none;
-  transition: border-color 0.2s ease;
-}
 
-.field input:focus {
-  border-color: var(--wasabi);
-}
+
+
 
 .btn {
   width: 100%;
@@ -207,7 +191,7 @@ form {
 
 .register-hint {
   margin-top: 24px;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: var(--cassis);
 }
 
@@ -215,6 +199,30 @@ form {
   color: var(--text-white);
   font-weight: bold;
   text-decoration: none;
+}
+
+/* Inputs: Alle Text-, Email- und Passwortfelder in Formularen bekommen die gleiche mobile Höhe */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+.field input {
+  width: 100%;
+  height: 80px;
+  /* Deine perfekt definierte mobile Höhe */
+  padding: 0 16px;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  font-size: 2rem;
+  font-family: inherit;
+  background-color: var(--input-bg, #e1e7dd);
+  color: var(--cassis);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+form input:focus,
+.field input:focus {
+  border-color: var(--wasabi);
 }
 
 
@@ -225,20 +233,32 @@ form {
 
 /* Konto- und Home-Seite */
 
-main,
-.main_konto {
+main {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  padding: 40px 24px;
+  padding: 20px 24px;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
+
+.main_konto {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0;
+  padding: 24px 50px 40px 50px;
+}
+
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
   gap: 16px;
 }
 
@@ -257,17 +277,33 @@ main,
   justify-content: center;
 }
 
-main h1,
-.main_konto h1 {
-  font-size: 1.8rem;
+main h1 {
+  font-size: 1rem;
   font-weight: 800;
   color: var(--cassis);
   line-height: 1.2;
 }
 
-main p,
+main p {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+
+.main_konto h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--cassis);
+  line-height: 1.2;
+}
+
+.main p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
 .main_konto p {
-  font-size: 1rem;
+  font-size: 1.5rem;
   opacity: 0.8;
 }
 
@@ -308,7 +344,7 @@ main p,
 }
 
 .card h2 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 16px;
   color: var(--cassis);
@@ -327,22 +363,9 @@ main p,
   margin-top: 12px;
 }
 
-.card input[type="text"] {
-  width: 100%;
-  height: 48px;
-  padding: 0 12px;
-  border: 2px solid transparent;
-  border-radius: 12px;
-  background-color: var(--input-bg, #e1e7dd);
-  font-family: inherit;
-  font-size: 1rem;
-  color: var(--cassis);
-  outline: none;
-}
 
-.card input[type="text"]:focus {
-  border-color: var(--wasabi);
-}
+
+
 
 .monster {
   display: flex;
@@ -384,9 +407,27 @@ main p,
   text-align: center;
   display: block;
   margin-top: 16px;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
 }
 
 #deleteAccountBtn:hover {
   text-decoration: underline;
+}
+
+.account-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 24px 0;
+}
+
+.account-page #back_btn_container {
+  position: static;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 24px;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 16px;
 }
