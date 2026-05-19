@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Login</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <a href="index.html" id="back_btn_container">
-      <button id="back_btn">⬅️ Zurück</button>
-    </a>
 
-    <div class="welcome-container">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <a href="index.html" id="back_btn_container">
+    <button id="back_btn">⬅️ Zurück</button>
+  </a>
+
+  <div class="welcome-container">
 
     <div class="monster-icon">
-                <img src="resources/img/Logo_Monster-Scanner.svg" alt="Monster Icon"> 
-            </div>
-   
+      <img src="resources/img/monster_wasabi.svg" alt="Monster Icon">
+    </div>
+
     <h1>Monster-Scanner</h1>
     <h2>Süsse Träume garantiert!🌟</h2>
 
     <form id="loginForm" class="card">
-  <div class="field">
-    <label for="email">Mama's oder Papa's E-Mail</label>
-    <input type="email" id="email" required />
-  </div>
+      <div class="field">
+        <label for="email">Mama's oder Papa's E-Mail</label>
+        <input type="email" id="email" required />
+      </div>
 
-  <div class="field">
-    <label for="password">Passwort</label>
-    <input type="password" id="password" required />
-  </div>
+      <div class="field">
+        <label for="password">Passwort</label>
+        <input type="password" id="password" required />
+      </div>
 
-  <button type="submit" class="btn-primary">🌟 Los geht's!</button>
-</form>
+      <button type="submit" class="btn">🌟 Los geht's!</button>
+    </form>
 
     <p class="register-hint">Neu hier? <a href="register.html">Konto erstellen</a></p>
 
-    </div>
+  </div>
 
-    <script src="js/login.js"></script>
-  </body>
+  <script src="js/login.js"></script>
+</body>
+
 </html>

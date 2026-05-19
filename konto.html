@@ -7,108 +7,106 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body>
+<body class="account-page">
 
-     
+    <a href="home.html" id="back_btn_container">
+        <button id="back_btn"> ⬅️ Zurück </button>
+    </a>
 
     <main class="main_konto">
-        
+
         <header class="header">
 
-            <a href="home.html" id="back_btn_container">
-            <button id="back_btn"> ⬅️ Zurück </button>
-        </a>
 
-           <div>
+            <div>
                 <h1>Konto und Einstellungen</h1>
                 <p>Dein Profil verwalten</p>
             </div>
         </header>
 
-    <section class="grid">
-   <h1>Mein Profil</h1>
+        <section class="grid">
 
-    <article class="profil-einstellungen">
-        <h2>Deine Familie</h2>
+            <article class="card profil-einstellungen">
+                <h2>Deine Familie</h2>
 
-        <!-- Lese-Modus-->
-        <div id="profileViewMode">
-            <p><strong>Dein Name:</strong> <span id="displayUserName">Lädt...</span></p>
-            <p><strong>Name deines Kindes:</strong> <span id="displayChildName">Lädt...</span></p>
-            <button id="btnEditProfile">Profil bearbeiten</button>
-        </div>
+                <!-- Lese-Modus-->
+                <div id="profileViewMode">
+                    <p><strong>Dein Name:</strong> <span id="displayUserName">Lädt...</span></p>
+                    <p><strong>Name deines Kindes:</strong> <span id="displayChildName">Lädt...</span></p>
+                    <button id="btnEditProfile" class="btn">Profil bearbeiten</button>
+                </div>
 
-        <!-- Bearbeitungs-Modus -->
-        <div id="profileEditMode" style="display: none;">
-            <div>
-                <label for="editUserName">Dein Name</label>
-                <input type="text" id="editUserName" />
-            </div>
-            <br>
-            <div>
-                <label for="editChildName">Name deines Kindes</label>
-                <input type="text" id="editChildName" />
-            </div>
-            <br>
+                <!-- Bearbeitungs-Modus -->
+                <div id="profileEditMode" style="display: none;">
+                    <div>
+                        <label for="editUserName">Dein Name</label>
+                        <input type="text" id="editUserName" />
+                    </div>
+                    <br>
+                    <div>
+                        <label for="editChildName">Name deines Kindes</label>
+                        <input type="text" id="editChildName" />
+                    </div>
+                    <br>
 
-            <button id="btnSaveProfile">Änderungen speichern</button>
-            <button id="btnCancelEdit">Änderungen abbrechen</button>
-        </div>
-    </article>
+                    <button id="btnSaveProfile" class="btn">Änderungen speichern</button>
+                    <button id="btnCancelEdit" class="btn btn-sub">Änderungen abbrechen</button>
+                </div>
+            </article>
 
-    <article class="haushalt-section">
-        <!-- Box für Leute OHNE Haushalt -->
+            <article class="card haushalt-section">
+                <!-- Box für Leute OHNE Haushalt -->
 
-        <div id="noHousehold" style="display: none;">
-            <p>Du bist noch in keinem Haushalt.</p>
+                <div id="noHousehold" style="display: none;">
+                    <p>Du bist noch in keinem Haushalt.</p>
 
-            <div>
-                <input type="text" id="householdName" placeholder="Name für neuen Haushalt" />
-                <button id="btnCreate">Haushalt erstellen</button>
-            </div>
+                    <div>
+                        <input type="text" id="householdName" placeholder="Name für neuen Haushalt" />
+                        <button id="btnCreate" class="btn">Haushalt erstellen</button>
+                    </div>
 
-            <br>
-            <!-- Box für Leute MIT Haushalt -->
-            <div>
-                <input type="text" id="joinCode" placeholder="Beitritts-Code eingeben" />
-                <button id="btnJoin">Haushalt beitreten</button>
-            </div>
-        </div>
+                    <br>
+                    <!-- Box für Leute MIT Haushalt -->
+                    <div>
+                        <input type="text" id="joinCode" placeholder="Beitritts-Code eingeben" />
+                        <button id="btnJoin" class="btn">Haushalt beitreten</button>
+                    </div>
+                </div>
 
-        <div id="householdInfo" style="display:none;">
-            <h2>Willkommen bei <br> <span id="hName"></span></h2>
-            <p>Teile diesen Code, um deine Familie einzuladen: <span id="hCode"></span></p>
-        </div>
+                <div id="householdInfo" style="display:none;">
+                    <h2>Willkommen bei Familie<br> <span id="hName"></span></h2>
+                    <p>Teile diesen Code, um deine Familie einzuladen: <span id="hCode"></span></p>
+                </div>
 
-    </article>
+            </article>
 
-    <article class="dein-monster">
-        <h2>Dein Monster</h2>
-        <div class="monster">
-            <div class="monster-avatar"></div>
-            <button type="button">Monster ändern</button>
-        </div>
-        <p class="hint-text">Hier kannst du dein Monster auswählen.</p>
-    </article>
+            <article class="card dein-monster">
+                <h2>Dein Monster</h2>
+                <div class="monster">
+                    <div class="monster-avatar"></div>
+                    <button type="button" class="btn btn-sub">Monster ändern</button>
+                </div>
+                <p class="hint-text">Hier kannst du dein Monster auswählen.</p>
+            </article>
 
-    <article class="email">
-        <h2>Deine Email-Adresse</h2>
-        <p id="userEmail">Lädt...</p>
-    </article>
+            <article class="card email">
+                <h2>Deine Email-Adresse</h2>
+                <p id="userEmail">Lädt...</p>
+            </article>
 
-    <article class="sicherheit">
-        <h2>Passwort</h2>
-        <button class="btn-sub">Passwort ändern</button>
-    </article>
+            <article class="card sicherheit">
+                <h2>Passwort</h2>
+                <button class="btn-sub btn">Passwort ändern</button>
+            </article>
 
-    </section>
+        </section>
 
 
-    <section class="logout">
-        <button id="logoutBtn">Logout</button>
-    </section>
+        <section class="logout">
+            <button id="logoutBtn" class="btn btn-danger">Logout</button>
+        </section>
 
-    <a href="#" id="deleteAccountBtn" >Konto löschen</a>
+        <a href="#" id="deleteAccountBtn">Konto löschen</a>
     </main>
 
     <script src="js/home.js"></script>

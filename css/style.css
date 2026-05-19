@@ -1,344 +1,392 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root {
-  --wasabi: #E9F056;     /* Aus Palettes Pinterest couleurs 2026.jpg */
-  --orange: #FF5C34;     /* Aus Palettes Pinterest couleurs 2026.jpg */
-  --blue: #D7EFFF;       /* Aus Palettes Pinterest couleurs 2026.jpg */
-  --cassis: #351E28;     /* Aus Palettes Pinterest couleurs 2026.jpg */
-  --salbei: #AEB8A0;     /* Entspricht Vert Sauge aus Palettes Pinterest couleurs 2026.jpg */
 
-/* Zusätzliche UI Farben basierend auf dem Screenshot */
+html {
+  font-size: 18px;
+  /* Standard ist 16px. 18px macht die gesamte App dezent grösser */
+}
+
+
+:root {
+  --wasabi: #E9F056;
+  --orange: #FF5C34;
+  --blue: #D7EFFF;
+  --cassis: #351E28;
+  --salbei: #AEB8A0;
+
+  /*zusätzliche Farben*/
   --bg-button-secondary: rgba(255, 255, 255, 0.3);
   --text-white: #FFFFFF;
 }
 
-/* --- Layout & Hintergrund --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
 body {
   background-color: var(--salbei);
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  min-height: 100vh;
   font-family: 'Inter', sans-serif;
-}
-
-main {
-  background-color: var(--salbei);
-  width: 100%;
-  /* max-width: 410px;
-  min-height: 840px; */
-  padding: 24px 30px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
- /* --- oberer Headerbereich --- */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px;
-  margin: -24px -30px 10px -30px; /* Zieht den Header exakt an den oberen Rand der App */
-}
-
-.header img {
-  width: 50px;
-  height: 50px;
-  background-color: #FCE7F3; /* Sanfter pinker Kreis wie im Mockup */
-  border-radius: 50%;
-  padding: 4px;
-}
-
-.header div {
-  display: flex;
-  justify-content: left;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-left: 12px;
-}
-
-.header h1 {
   color: var(--cassis);
-  font-size: 18px;
-  margin: 0;
-  line-height: 1.2;
-}
-
-.header p {
-  margin: 4px 0 0 0;
-}
-
-.header a {
-  margin-left: auto;
-  text-decoration: none;
-  color:inherit
-}
-
-/* Der runde User-Button im Header */
-.header a button {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #F3E8FF;
-  color: var(--purple-text);
-  border: none;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 0;
-}
-
-.main_konto {
-  background-color: var(--salbei);
-  width: 100%;
-  /* max-width: 410px;
-  min-height: 840px; */
-  padding: 0 30px 24px 30px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.main_konto .header {
-  display: block;
-  width: 100%;
-  text-align: left;
-  padding: 0;
-  margin: 0 0 30px 0;
-}
-
-.main_konto .header h1 {
-  font-size: 2.5rem; /* Macht die Überschrift schön gross und präsent */
-  margin: 0;
-  line-height: 1.1 ;
-}
-
-.main_konto .header p {
-  font-size: 1.3rem; /* Macht den Untertitel passend grösser */
-}
-
-
-/* --- Grid & Die Karten (Cards) --- */
-.grid {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-article {
-  background-color: white;
-  border-radius: 24px;
-  padding: 20px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
-}
-
-.card {
-  background-color: white;
-  border-radius: 24px;
-  padding: 20px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
-}
-
-.card-title {
-  font-weight: 700;
-  color: var(--text-dark);
-  font-size: 1rem;
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-
-
-/* Der neue Container sorgt für die schmale, zentrierte Ausrichtung */
-.welcome-container {
-  width: 100%;
-  max-width: 800px;
-  text-align: center;
-  padding: 24px;
-  box-sizing: border-box;
-}
-
-/* Die hero-section gruppiert das Icon und die Überschrift */
-.hero-section {
-  margin-bottom: 58px;
-}
-
-.hero-section h1 {
-  color: var(--text-white);
-  margin: 0;
-  text-align: center;
-  display: block;
-  width: 100%;
-  font-size: 5rem; 
-}
-/* Das gelbe Kreis-Icon aus dem Screenshot */
-.monster-icon {
-  width: 250px;
-  height: 250px;
-  background-color: var(--wasabi);
-  border-radius: 50%;
-  margin: 0 auto 24px; /* Zentriert den Kreis */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-h1 {
-  color: white;
-  font-size: 4.5rem;
-  margin: 0;
-}
-
-h2 {
-  color: var(--cassis);
-  font-size: 2rem;
-  margin: 0;
-}
-
-/* Die Button-Gruppe */
-.auth-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 18px; /* Abstand zwischen den Buttons */
-  align-items: center;
-}
-
-.auth-buttons a {
-  text-decoration: none;
-  width: 100%;
-  max-width: 400px;
-  display: block;
-}
-
-button {
-  background-color: var(--wasabi);
-  width: 100%;
-  padding: 21px;
-  border-radius: 18px;
-  border: none;
-  font-size: 2.5rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* Registrieren-Button */
-.btn-main {
-  background-color: white;
-  color: var(--cassis);
-}
-
-/* Anmelden-Button mit Glass-Effekt */
-.btn-secondary {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(10px);
-}
-
-/* Interaktionseffekte */
-button:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
-}
-
-button:active {
-  transform: translateY(0);
+  min-height: 100vh;
 }
 
 #back_btn_container {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 24px;
+  left: 24px;
   text-decoration: none;
   z-index: 10;
 }
 
 #back_btn {
-  font-size: 1.5rem;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: bold;
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
   backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: transform 0.2s, ease;
 }
 
-/* --- Spezifische Styles für die Login- und Registrierungsseite --- */
+#back_btn:hover {
+  transform: translateY(-2px);
+}
 
-#loginForm {
-  width: 100%;
-  max-width: 800px;
-  padding: 60px 40px;
-  box-sizing: border-box;
+
+
+
+
+
+/* Index-Seite*/
+
+
+.welcome-container {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-top: 80px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 24px;
+  text-align: center;
 }
 
-#registerForm {
-  width: 100%;
-  max-width: 800px;
-  padding: 60px 40px;
-  box-sizing: border-box;
+.welcome-container .monster-icon {
+  width: 200px;
+  height: 200px;
+  background-color: var(--wasabi);
+  border-radius: 50%;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-container .monster-icon img {
+  width: 65%;
+  height: 65%;
+  object-fit: contain;
+  margin: auto;
+}
+
+.welcome-container h1 {
+  color: var(--text-white);
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.welcome-container h2 {
+  color: var(--cassis);
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 70px;
+}
+
+.auth-buttons {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-top: 80px;
+  gap: 16px;
+  width: 100%;
+  max-width: 420px;
+  margin-top: 30px;
 }
 
 
+
+
+
+
+
+
+
+
+
+/* Buttons alle gleich */
+
+.card {
+  background-color: white;
+  border-radius: 24px;
+  padding: 30px 24px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
 .field {
   display: flex;
   flex-direction: column;
-  text-align: left;   /* Linksbündiger Text für die Beschriftung */
+  text-align: left;
 }
 
 .field label {
   color: var(--cassis);
   font-weight: 700;
-  font-size: 1.8rem;
-  margin-bottom: 8px; /* Abstand vom Text zum Eingabefeld direkt darunter */
+  margin-bottom: 8px;
+  font-size: 1.2rem;
 }
 
 .field input {
   width: 100%;
-  height: 80px;
-  padding: 16px;
-  border: 1.5px solid var(--wasabi);
+  height: 90px;
+  /* Moderne, touch-freundliche Höhe */
+  padding: 0 16px;
+  border: 2px solid transparent;
   border-radius: 14px;
   font-size: 1.8rem;
-  box-sizing: border-box;
-  background-color: rgb(225, 231, 221); /* Nutzt eure hellblaue UI-Farbe */
+  font-family: inherit;
+  background-color: var(--input-bg, #e1e7dd);
+  /* Nutzt eure UI-Farbe */
   color: var(--cassis);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.field input:focus {
+  border-color: var(--wasabi);
+}
+
+.btn {
+  width: 100%;
+  padding: 30px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: inherit;
+  border: none;
+  border-radius: 30px;
+  background-color: var(--wasabi);
+  color: var(--cassis);
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.btn:active {
+  transform: translateY(0);
 }
 
 .register-hint {
+  margin-top: 24px;
+  font-size: 1.5rem;
   color: var(--cassis);
-  margin-top: 20px;
-  font-size: 1.8rem;
 }
 
 .register-hint a {
-  color: var(--wasabi);
+  color: var(--text-white);
   font-weight: bold;
+  text-decoration: none;
 }
 
 
-/* --- Spezifische Styles für die Kontoseite --- */
+
+
+
+
+
+/* Konto- und Home-Seite */
+
+main,
+.main_konto {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header img {
+  width: 56px;
+  height: 56px;
+  background-color: #FCE7F3;
+  /* Sanfter pinker Kreis aus eurem Design */
+  border-radius: 50%;
+  padding: 6px;
+}
+
+.header div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+main h1,
+.main_konto h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--cassis);
+  line-height: 1.2;
+}
+
+main p,
+.main_konto p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.btn-profile {
+  margin-left: auto;
+  /* Schiebt den Button ganz nach rechts */
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #F3E8FF;
+  border: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-profile:hover {
+  transform: scale(1.05);
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--cassis);
+}
+
+#profileViewMode p {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.card label {
+  display: block;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+  margin-top: 12px;
+}
+
+.card input[type="text"] {
+  width: 100%;
+  height: 48px;
+  padding: 0 12px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background-color: var(--input-bg, #e1e7dd);
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--cassis);
+  outline: none;
+}
+
+.card input[type="text"]:focus {
+  border-color: var(--wasabi);
+}
+
+.monster {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.monster-avatar {
+  width: 60px;
+  height: 60px;
+  background-color: var(--blue);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.hint-text {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-top: 8px;
+}
+
+.btn-sub {
+  background-color: rgba(53, 30, 40, 0.1) !important;
+  /* Nutzt cassis mit Deckkraft */
+  color: var(--cassis) !important;
+  margin-top: 8px;
+}
+
+.btn-danger {
+  background-color: var(--orange) !important;
+  color: var(--text-white) !important;
+}
 
 #deleteAccountBtn {
-  color: red;
-  margin-top: 20px;
-  font-size: 1.8rem;
+  color: var(--orange);
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
   display: block;
+  margin-top: 16px;
+  font-size: 1.1rem;
+}
+
+#deleteAccountBtn:hover {
+  text-decoration: underline;
 }

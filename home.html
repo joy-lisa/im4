@@ -1,55 +1,59 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
-</style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+  </style>
   <link rel="stylesheet" href="css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body>
+<body class="content-page">
+
   <main>
-  <header class="header">
-    <img src="resources/img/Logo_Monster-Scanner.svg" alt="Monster-Scanner Logo">
-    
-    <div>
-    <h1>Monster-Scanner</h1>
-    <p>Willkommen zurück!</p>
-    </div>
+    <header class="header">
+      <img src="resources/img/Logo_Monster-Scanner.svg" alt="Monster-Scanner Logo">
+
+      <div>
+        <h1>Monster-Scanner</h1>
+        <p>Willkommen zurück!</p>
+      </div>
 
       <a href="konto.html">
-      <button>👤</button>
-    </a>
-  </header>
+        <button class="btn-profile">👤</button>
+      </a>
+    </header>
 
 
 
-  <section class="grid">
-    <article class="card">
-      <div class="card-title">📈 Trend</div>
-      <div>wie berechnen wir das?</div>
-    </article>
+    <section class="grid">
+      <article class="card">
+        <div class="card-title">📈 Trend</div>
+        <div>wie berechnen wir das?</div>
+      </article>
 
-    <article class="card">
-      <div class="card-title">🔔 Letzte Alarme</div>
-      <div>3 Alarme</div>
-    </article>
+      <article class="card">
+        <div class="card-title">🔔 Letzte Alarme</div>
+        <div>3 Alarme</div>
+      </article>
 
-    <article class="card">
-      <div class="card-title">🌙 Nachtaktivität</div>
-      <canvas id="monsterChart"></canvas>
-    </article>
-  </section>
-</main>
+      <article class="card">
+        <div class="card-title">🌙 Nachtaktivität</div>
+        <canvas id="monsterChart"></canvas>
+      </article>
+    </section>
+  </main>
 
-<div id="no-household-zone">
-  <h2>Willkommen!</h2>
-  <p>Du bist noch in keinem Haushalt.</p>
-  
+
+  <!-- <div id="no-household-zone">
+    <h2>Willkommen!</h2>
+    <p>Du bist noch in keinem Haushalt.</p>
+  </div>
+
   <div>
     <h3>Neuen Haushalt gründen</h3>
     <input type="text" id="householdName" placeholder="Name deines Haushalts" />
@@ -60,9 +64,12 @@
     <h3>Haushalt beitreten</h3>
     <input type="text" id="joinCode" placeholder="Beitrittscode" />
     <button id="btnJoin">Beitreten</button>
+  </div> -->
+
 
   <script src="js/home.js"></script>
   <script src="js/chart.js"></script>
-    <script src="js/auth.js"></script>
+  <script src="js/auth.js"></script>
 </body>
+
 </html>
