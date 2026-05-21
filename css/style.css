@@ -93,6 +93,7 @@ body {
   width: 65%;
   height: 65%;
   object-fit: contain;
+  display: block;
   margin: auto;
 }
 
@@ -265,7 +266,7 @@ main {
 .header img {
   width: 56px;
   height: 56px;
-  background-color: #FCE7F3;
+  background-color: var(--wasabi);
   /* Sanfter pinker Kreis aus eurem Design */
   border-radius: 50%;
   padding: 6px;
