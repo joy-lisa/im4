@@ -96,7 +96,26 @@
 
             <article class="card sicherheit">
                 <h2>Passwort</h2>
-                <button class="btn-sub btn">Passwort ändern</button>
+                <button id="btnTogglePasswordForm" class="btn-sub btn">Passwort ändern</button>
+
+                <form id="passwordForm" style="display: none;">
+                    <div>
+                        <label for="oldPassword">Aktuelles Passwort:</label>
+                        <input type="password" id="oldPassword" />
+                    </div>
+
+                    <div>
+                        <label for="newPassword">Neues Passwort:</label>
+                        <input type="password" id="newPassword" />
+                    </div>
+
+                    <div>
+                        <label for="newPasswordConfirm">Neues Passwort bestätigen:</label>
+                        <input type="password" id="newPasswordConfirm" />
+                    </div>
+
+                    <button type="submit" class="btn">Passwort aktualisieren</button>
+                </form>
             </article>
 
         </section>

@@ -20,7 +20,7 @@ if (empty($joinCode)) {
 
 try {
     // Haushalt suchen
-    $stmt = $pdo->prepare("SELECT id FROM haushalt WHERE join_code = ?");
+    $stmt = $pdo->prepare("SELECT id, name FROM haushalt WHERE join_code = ?");
     $stmt->execute([$joinCode]);
     $household = $stmt->fetch();
 
