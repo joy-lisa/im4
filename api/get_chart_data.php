@@ -47,7 +47,50 @@ try {
         ];
     }
 
-    echo json_encode($chartData);
+    // =========================================================================
+    // ERGÄNZUNG: TREND FÜR DIE AKTULLE BUZZER_ID BERECHNEN
+    // =========================================================================
+    
+    // 1. Auslösungen dieser Woche zählen für diese buzzer_id (letzte 7 Tage)
+    $stmt1 = $pdo->prepare("SELECT COUNT(*) FROM buzzer_event WHERE buzzer_ID = :id AND timestamp >= NOW() - INTERVAL 7 DAY");
+    $stmt1->execute(['id' => $buzzer_id]);
+    $dieseWoche = $stmt1->fetchColumn();
+
+    // 2. Auslösungen letzte Woche zählen für diese buzzer_id (Tag 8 bis 14 in der Vergangenheit)
+    $stmt2 = $pdo->prepare("SELECT COUNT(*) FROM buzzer_event WHERE buzzer_ID = :id AND timestamp >= NOW() - INTERVAL 14 DAY AND timestamp < NOW() - INTERVAL 7 DAY");
+    $stmt2->execute(['id' => $buzzer_id]);
+    $letzteWoche = $stmt2->fetchColumn();
+
+    $prozent = 0;
+    $trendText = "";
+
+    if ($letzteWoche == 0 && $dieseWoche > 0) {
+        $prozent = 100;
+        $trendText = "+100% häufiger";
+    } elseif ($letzteWoche == 0 && $dieseWoche == 0) {
+        $prozent = 0;
+        $trendText = "0% (Alles ruhig)";
+    } else {
+        $differenz = $dieseWoche - $letzteWoche;
+        $prozent = round(($differenz / $letzteWoche) * 100);
+        
+        if ($prozent > 0) {
+            $trendText = "+" . $prozent . "% häufiger";
+        } elseif ($prozent < 0) {
+            $trendText = $prozent . "% seltener";
+        } else {
+            $trendText = "Gleichbleibend";
+        }
+    }
+
+
+    echo json_encode([
+        "chartData" => $chartData, 
+        "trend" => [
+        "prozent" => $prozent,
+        "text" => $trendText
+        ]
+    ]);
 
 } catch (PDOException $e) {
     echo json_encode(["error" => $e->getMessage()]);

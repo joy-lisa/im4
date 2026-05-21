@@ -19,9 +19,11 @@ try {
                 users.email,
                 users.haushalt_ID,
                 haushalt.name AS haushalt_name,
-                haushalt.join_code
+                haushalt.join_code,
+                buzzer.ID AS buzzer_id
             FROM users
             LEFT JOIN haushalt ON users.haushalt_ID = haushalt.ID
+            LEFT JOIN buzzer ON haushalt.ID = buzzer.haushalt_ID
             WHERE users.ID = ?";
 
     $stmt = $pdo->prepare($sql);
