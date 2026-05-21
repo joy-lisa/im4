@@ -86,7 +86,7 @@ Der Monster-Scanner kann unter dem folgenden Link aufgerufen werden:
 * **Datenschnittstelle: \[***zwischen WebApp und Physical Computing*\]
 * **🗄️ Datenbank**
 
-wir haben die Datenbank auf Hostpoint gemacht. Hier findest du die Datenbankplanung: [Klick hier](https://github.com/joy-lisa/im4/blob/e23317e88c35619695ed21b4ff20466ba2c2c5fb/Datenbank-Planung.pdf)
+wir haben die Datenbank auf Hostpoint gemacht. Hier findest du die Datenbankplanung: [Klick hier](https://github.com/joy-lisa/im4/blob/main/Datenbankplanung.pdf)
 * **ERM:** \[*Erklärung und Schaubild*\] 
 * **🔑👤 Authentifizierung für Monster-Scanner**
 
