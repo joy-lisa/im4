@@ -12,7 +12,7 @@
 
 #### Welches Problem im Alltag von Eltern mit kleinen Kindern wird gelöst?
 
-Ziel: Die Angst vor Monstern unter dem Bett hemmen, indem Sicherheit sichtbar und überprüfbar gemacht wird. 
+Viele Kinder haben Angst vor Monstern unter dem Bett, dies ist nicht nur eine grosse Belastung für die Kinder selbst sondern auch für die Eltern bedeutet das mehr Care-Arbeit und schlaflose Nächte - der Monser-Scanner löst genau dieses Problem.
 
 #### Was ist der „Sinn und Zweck“ des Systems?
 
