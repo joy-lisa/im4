@@ -4,14 +4,14 @@ require_once("../system/config.php");
 // echo "This script receives HTTP POST messages and pushes their content into the database.";
 
 $inputJSON = file_get_contents('php://input');
-$input = json_decode($inputJSON, true);
+$input = json_decode($inputJSON, true); 
 
 ###################################### Empfangen der JSON-Daten
 
 $scan1 = $input["scan1"];
 $scan2 = $input["scan2"];
 $monster_da = $input["bewegung"];
-$buzzer_ID = $input["buzzer_ID"];
+$buzzer_ID = $input ["buzzer_ID"];
 
 // Hol den Wert an der Stelle "wert" aus dem JS-Objekt (ehemals JSON-String)
 # insert new user into db
