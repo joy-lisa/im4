@@ -8,151 +8,87 @@ document.getElementById("btnCreate").addEventListener("click", async () => {
 
     const name = document.getElementById("householdName").value.trim();
     if (!name) {
-
         alert("Bitte gib einen Namen für den Haushalt ein!");
-
         return;
-
     }
-
-
 
     // 1. Zufälligen 6-stelligen Code generieren (Großbuchstaben & Zahlen)
 
     const generateCode = () => {
-
         return Math.random().toString(36).substring(2, 8).toUpperCase();
-
     };
-
     const joinCode = generateCode();
 
-
-
     try {
-
         const response = await fetch("api/create_household.php", {
-
             method: "POST",
-
             headers: {
-
                 "Content-Type": "application/json",
-
             },
 
             // Wir schicken den Namen und den generierten Code
 
             body: JSON.stringify({
-
                 name: name,
-
                 join_code: joinCode
-
             }),
 
         });
 
-
-
         const result = await response.json();
 
-
-
         if (result.status === "success") {
-
             alert(`Haushalt "${name}" wurde erstellt!\nDein Beitritts-Code ist: ${joinCode}`);
 
             // Seite neu laden, um den neuen Haushalt anzuzeigen
-
             window.location.reload();
-
         } else {
-
             alert("Fehler: " + result.message);
-
         }
 
     } catch (error) {
-
         console.error("Error:", error);
-
         alert("Verbindung zum Server fehlgeschlagen.");
-
     }
 
 });
-
-
 // =========================================================================
 
 // 2. HAUSHALT BEITRETEN
 
 // =========================================================================
 
-
-
 document.getElementById("btnJoin").addEventListener("click", async () => {
-
     const code = document.getElementById("joinCode").value.trim().toUpperCase();
 
-
-
     if (!code) {
-
         alert("Bitte gib einen Beitritts-Code ein!");
-
         return;
-
     }
 
-
-
     try {
-
         const response = await fetch("api/join_household.php", {
-
             method: "POST",
-
             headers: {
-
                 "Content-Type": "application/json",
-
             },
-
             body: JSON.stringify({ join_code: code }),
-
         });
-
-
-
         const result = await response.json();
 
-
-
         if (result.status === "success") {
-
             alert(result.message);
-
             window.location.reload();
-
         } else {
-
             alert("Fehler: " + result.message);
-
         }
 
     } catch (error) {
-
         console.error("Error:", error);
-
         alert("Verbindung zum Server fehlgeschlagen.");
-
     }
 
 });
-
-
 
 // =========================================================================
 
@@ -210,23 +146,42 @@ async function loadUserData() {
                 if (document.getElementById("householdInfo")) document.getElementById("householdInfo").style.display = "block";
                 if (document.getElementById("noHousehold")) document.getElementById("noHousehold").style.display = "none";
 
+                const aktuelleBuzzerId = user.buzzer_id;
+                const container = document.getElementById("canvasContainer");
+
+                if (!aktuelleBuzzerId) {
+                    // Kein Buzzer zugewiesen -> Text statt Chart anzeigen
+                    if (container) {
+                        container.innerHTML = `<p style="color: #AEB8A0; text-align: center; padding: 20px 0; font-style: italic;">
+                            Noch kein Buzzer mit diesem Haushalt verknüpft.
+                        </p>`;
+                    }
+
+                    const trendDiv = document.getElementById("trendValue");
+                    if (trendDiv) {
+                        trendDiv.textContent = "Kein Gerät aktiv";
+                        trendDiv.style.color = "#AEB8A0";
+                    }
+                } else {
+                    // Buzzer ist da -> Chart ganz normal laden
+                    if (typeof loadChart === "function") {
+                        loadChart(aktuelleBuzzerId);
+                    }
+                }
             } else {
-                //User hat keinen Haushalt, Erstellen und Beitreten anzeigen
+                // User hat keinen Haushalt
                 if (document.getElementById("householdInfo")) document.getElementById("householdInfo").style.display = "none";
                 if (document.getElementById("noHousehold")) document.getElementById("noHousehold").style.display = "flex";
             }
-
         } else {
             console.error("Fehler beim Laden:", result.message);
         }
-
     } catch (error) {
         console.error("Verbindung zum Server fehlgeschlagen", error);
     }
 }
 
-// Wenn Seite fertig gelade ist, Daten holen
-
+// Wenn Seite fertig geladen ist, Daten holen
 document.addEventListener("DOMContentLoaded", loadUserData);
 
 // =========================================================================
@@ -240,11 +195,8 @@ document.addEventListener("DOMContentLoaded", loadUserData);
 // Ansicht wechseln zu: Bearbeiten
 
 document.getElementById("btnEditProfile").addEventListener("click", () => {
-
     document.getElementById("profileViewMode").style.display = "none";
-
     document.getElementById("profileEditMode").style.display = "block";
-
 });
 
 
@@ -252,11 +204,8 @@ document.getElementById("btnEditProfile").addEventListener("click", () => {
 // Ansicht wechseln zu: Anzeigen (Abbrechen)
 
 document.getElementById("btnCancelEdit").addEventListener("click", () => {
-
     document.getElementById("profileEditMode").style.display = "none";
-
     document.getElementById("profileViewMode").style.display = "block";
-
 });
 
 
@@ -448,4 +397,3 @@ document.getElementById("passwordForm").addEventListener("submit", async (e) => 
     }
 
 });
-
