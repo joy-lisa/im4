@@ -1,4 +1,3 @@
-<img width="1536" height="1024" alt="komponentenplan-im4" src="https://github.com/user-attachments/assets/0842efd2-b5b2-412f-8f84-37f2dcdf8292" />
 # im4 - Monster-Scanner 🌙
 
 ➡️ bei der Chat Gpt-Anfrage bezüglich der Datenbank: erwähnen, dass wir es mit PDO machen
@@ -72,13 +71,18 @@ Der Monster-Scanner kann unter dem folgenden Link aufgerufen werden:
 * ***Was muss ich wie bauen, verbinden, installieren?***  
 
 **Komponentenplan** 
-bild
- 
-**Steckplan** 
-bild
+
+<img width="1536" height="1024" alt="komponentenplan-im4" src="https://github.com/user-attachments/assets/0842efd2-b5b2-412f-8f84-37f2dcdf8292" />
 
  
-* noch einfügen:echte bilder von steckplatte
+**Steckplan** 
+
+<img width="1920" height="1080" alt="steckplan-im4" src="https://github.com/user-attachments/assets/6a4a2647-f7b3-4a33-910f-8a655c3f1c8e" />
+
+Hier noch ein Bild von der realen Steckplatte.
+<img width="2570" height="3427" alt="bild-steckplatte-im4" src="https://github.com/user-attachments/assets/7bafc2ba-547c-435e-b57e-6a752c8439ac" />
+<img width="3030" height="4040" alt="bild-gesamtesprojekt-im4" src="https://github.com/user-attachments/assets/f9e7d1a5-7132-45da-8278-54aeef80ff39" />
+
 
 ## Technische Details
 
