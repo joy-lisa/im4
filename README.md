@@ -1,3 +1,4 @@
+<img width="1536" height="1024" alt="komponentenplan-im4" src="https://github.com/user-attachments/assets/0842efd2-b5b2-412f-8f84-37f2dcdf8292" />
 # im4 - Monster-Scanner 🌙
 
 ➡️ bei der Chat Gpt-Anfrage bezüglich der Datenbank: erwähnen, dass wir es mit PDO machen
