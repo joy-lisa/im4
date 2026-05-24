@@ -138,6 +138,15 @@ form {
   gap: 20px;
 }
 
+#passwordForm button[type="submit"] {
+  margin-top: 16px;
+}
+
+
+#passwordForm .btn-sub {
+  margin-top: 8px;
+}
+
 .field {
   display: flex;
   flex-direction: column;
@@ -255,6 +264,7 @@ main {
   justify-content: space-between;
   width: 100%;
   gap: 16px;
+  margin-bottom: 24px;
 }
 
 .header img {
@@ -266,10 +276,20 @@ main {
   padding: 6px;
 }
 
-.header div {
+main:not(.main_konto) .header div {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.main_konto .header div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
 }
 
 main h1 {

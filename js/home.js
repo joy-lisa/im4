@@ -290,9 +290,82 @@ document.getElementById("btnSaveProfile").addEventListener("click", async () => 
 
 // =========================================================================
 
+const btnTogglePasswordForm = document.getElementById("btnTogglePasswordForm");
+const passwordForm = document.getElementById("passwordForm");
+const btnCancelPassword = document.getElementById("btnCancelPassword");
+
+// Formular einblenden und Hauptbutton verstecken
+if (btnTogglePasswordForm && passwordForm) {
+    btnTogglePasswordForm.addEventListener("click", () => {
+        passwordForm.style.display = "block";
+        btnTogglePasswordForm.style.display = "none";
+    });
+}
+
+// Formular ausblenden, Felder leeren und Hauptbutton wieder anzeigen
+if (btnCancelPassword && passwordForm && btnTogglePasswordForm) {
+    btnCancelPassword.addEventListener("click", () => {
+        passwordForm.style.display = "none";
+        passwordForm.reset(); // Löscht die Eingaben bei Klick auf Abbrechen
+        btnTogglePasswordForm.style.display = "block";
+    });
+}
+
+// Passwort-Daten an Server senden
+if (passwordForm) {
+    passwordForm.addEventListener("submit", async (e) => {
+        e.preventDefault(); // Verhindert Neuladen der Seite beim Abschicken
+
+        const oldPassword = document.getElementById("oldPassword").value;
+        const newPassword = document.getElementById("newPassword").value;
+        const newPasswordConfirm = document.getElementById("newPasswordConfirm").value;
+
+        // Überprüfung im Frontend
+        if (newPassword !== newPasswordConfirm) {
+            alert("Die neuen Passwörter stimmen nicht überein!");
+            return;
+        }
+
+        if (newPassword.length < 6) {
+            alert("Das neue Passwort muss mindestens 6 Zeichen lang sein!");
+            return;
+        }
+
+        try {
+            const response = await fetch("api/change_password.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    old_password: oldPassword,
+                    new_password: newPassword
+                }),
+            });
+
+            const result = await response.json();
+
+            if (result.status === "success") {
+                alert("Passwort erfolgreich geändert!");
+                passwordForm.reset(); // Formular-Felder leeren
+                passwordForm.style.display = "none"; // Formular wieder einklappen
+
+                // Bringt den "Passwort ändern"-Button nach erfolgreichem Absenden zurück
+                if (btnTogglePasswordForm) {
+                    btnTogglePasswordForm.style.display = "block";
+                }
+            } else {
+                alert("Fehler: " + result.message);
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Verbindung zum Server fehlgeschlagen.");
+        }
+    });
+}
 
 
-// Formular ein- und ausklappen
+
+
+/* // Formular ein- und ausklappen
 
 document.getElementById("btnTogglePasswordForm").addEventListener("click", () => {
 
@@ -396,4 +469,4 @@ document.getElementById("passwordForm").addEventListener("submit", async (e) => 
 
     }
 
-});
+}); */
