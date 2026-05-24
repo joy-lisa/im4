@@ -74,20 +74,12 @@
                 </div>
 
                 <div id="householdInfo" style="display:none;">
-                    <h2>Willkommen bei Familie<br> <span id="hName"></span></h2>
+                    <h2>Willkommen bei Familie <span id="hName"></span></h2>
                     <p>Teile diesen Code, um deine Familie einzuladen: <span id="hCode"></span></p>
                 </div>
 
             </article>
 
-            <!-- <article class="card dein-monster">
-                <h2>Dein Monster</h2>
-                <div class="monster">
-                    <div class="monster-avatar"></div>
-                    <button type="button" class="btn btn-sub">Monster ändern</button>
-                </div>
-                <p class="hint-text">Hier kannst du dein Monster auswählen.</p>
-            </article> -->
 
             <article class="card email">
                 <h2>Deine Email-Adresse</h2>
@@ -122,7 +114,6 @@
 
         </section>
 
-
         <section class="logout">
             <button id="logoutBtn" class="btn btn-danger">Logout</button>
         </section>
@@ -130,10 +121,26 @@
         <a href="#" id="deleteAccountBtn">Konto löschen</a>
     </main>
 
+
+    <div id="deleteAccountPopup" class="popup-overlay" style="display: none;">
+        <div class="popup-content delete-popup">
+            <h2>Konto unwiderruflich löschen?</h2>
+
+            <p class="delete-warning-text">
+                Bist du sicher? Alle deine Daten werden dauerhaft aus unserem System gelöscht. Dieser Schritt kann nicht
+                rückgängig gemacht werden.
+            </p>
+
+            <button id="btnConfirmDelete" class="btn btn-sub">Ja, Konto löschen</button>
+            <button id="btnCancelDelete" class="btn btn-danger">Abbrechen</button>
+        </div>
+    </div>
+
     <script src="js/home.js"></script>
     <script src="js/logout.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/register.js"></script>
+    <script src="js/delete_account.js"></script>
 </body>
 
 </html>

@@ -56,30 +56,42 @@
 
       <article class="card">
         <div class="card-title">🌙 Nachtaktivität</div>
-        <canvas id="monsterChart"></canvas>
+        <div id="chartValue">Lade Diagramm...</div>
+        <canvas id="monsterChart" style="display: none;"></canvas>
       </article>
+
     </section>
   </main>
 
   <!-- Popup für Leute ohne Haushalt -->
-  <div id="noHousehold" class="popup-overlay" style="display: none;">
-    <div class="popup-content">
+  <div id="noHousehold" class="popup-overlay" style="display: flex;">
+    <div class="popup-content card haushalt-popup">
+
       <div id="no-household-zone">
         <h2>Willkommen!</h2>
-        <p>Du bist noch in keinem Haushalt.</p>
+        <p class="hint-text">Du bist noch in keinem Haushalt.</p>
       </div>
 
-      <div class="popup-section">
-        <h3>Neuen Haushalt gründen</h3>
-        <input type="text" id="householdName" placeholder="Name deines Haushalts" />
-        <button id="btnCreate">Erstellen</button>
-      </div>
+      <form id="householdForm" onsubmit="event.preventDefault();">
+        <div class="field">
+          <label for="householdName">Neuen Haushalt gründen</label>
+          <input type="text" id="householdName" placeholder="Name deines Haushalts" />
+        </div>
 
-      <div class="popup-section">
-        <h3>Haushalt beitreten</h3>
-        <input type="text" id="joinCode" placeholder="Beitrittscode" />
-        <button id="btnJoin">Beitreten</button>
-      </div>
+        <button id="btnCreate" class="btn">Erstellen</button>
+      </form>
+
+      <div class="popup-spacer"></div>
+
+      <form id="joinHouseholdForm" onsubmit="event.preventDefault();">
+        <div class="field">
+          <label for="joinCode">Haushalt beitreten</label>
+          <input type="text" id="joinCode" placeholder="Beitrittscode" />
+        </div>
+
+        <button id="btnJoin" class="btn btn-sub">Beitreten</button>
+      </form>
+
     </div>
   </div>
 

@@ -167,8 +167,9 @@ form {
 
 .btn {
   width: 100%;
+  height: 110px;
   padding: 30px;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
   font-family: inherit;
   border: none;
@@ -180,6 +181,9 @@ form {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn:hover {
@@ -304,6 +308,11 @@ main p {
   opacity: 0.8;
 }
 
+main .header small {
+  color: var(--cassis);
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
 
 .main_konto h1 {
   font-size: 3rem;
@@ -350,6 +359,7 @@ main p {
 }
 
 .card-title {
+  color: var(--cassis);
   font-weight: 700;
   font-size: 1.1rem;
   margin-bottom: 12px;
@@ -392,6 +402,13 @@ main p {
   align-items: center;
   z-index: 9999;
   /* Immer ganz oben */
+}
+
+
+#hCode {
+  font-weight: 700;
+  color: var(--cassis);
+  letter-spacing: 0.5px;
 }
 
 /* Das eigentliche Fenster im Vordergrund */
@@ -476,4 +493,90 @@ main p {
   display: flex;
   justify-content: flex-start;
   margin-bottom: 16px;
+}
+
+
+/* =========================================================================
+   Spezifisches Design für das Haushalts-Popup
+   ========================================================================= */
+
+
+.popup-content.haushalt-popup {
+  max-width: 400px;
+  padding: 24px;
+}
+
+
+.haushalt-popup form {
+  text-align: left;
+  gap: 8px;
+}
+
+
+.haushalt-popup h2 {
+  color: var(--cassis);
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+
+.haushalt-popup #no-household-zone {
+  margin-bottom: 12px;
+}
+
+.haushalt-popup .field label {
+  font-size: 1rem;
+  margin-bottom: 4px;
+  margin-top: 6px;
+}
+
+.haushalt-popup input[type="text"] {
+  height: 40px;
+  font-size: 0.8rem;
+}
+
+.haushalt-popup .btn {
+  height: 50px;
+  padding: 16px 20px;
+  font-size: 0.8rem;
+  margin-top: 2px;
+}
+
+.haushalt-popup .popup-spacer {
+  height: 10px;
+}
+
+
+/* =========================================================================
+   Spezifisches Design für das Konto-Löschen-Popup
+   ========================================================================= */
+
+.popup-content.delete-popup {
+  max-width: 700px;
+  padding: 35px 30px;
+}
+
+
+.delete-popup h2 {
+  font-size: 2rem;
+  color: var(--cassis);
+  margin-bottom: 16px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.delete-popup .btn {
+  font-size: 1.8rem;
+  padding: 24px 20px;
+}
+
+
+.delete-popup .delete-warning-text {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  opacity: 0.8;
+  margin-bottom: 24px;
+}
+
+.delete-popup #btnConfirmDelete {
+  margin-bottom: 12px;
 }

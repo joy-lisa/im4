@@ -150,20 +150,34 @@ async function loadUserData() {
                 const container = document.getElementById("canvasContainer");
 
                 if (!aktuelleBuzzerId) {
-                    // Kein Buzzer zugewiesen -> Text statt Chart anzeigen
-                    if (container) {
-                        container.innerHTML = `<p style="color: #AEB8A0; text-align: center; padding: 20px 0; font-style: italic;">
-                            Noch kein Buzzer mit diesem Haushalt verknüpft.
-                        </p>`;
-                    }
-
+                    // 1. Trend-Text setzen
                     const trendDiv = document.getElementById("trendValue");
                     if (trendDiv) {
                         trendDiv.textContent = "Kein Gerät aktiv";
                         trendDiv.style.color = "#AEB8A0";
                     }
+
+                    // 2. NEU: Nachtaktivität-Text setzen (identisch gelöst!)
+                    const chartDiv = document.getElementById("chartValue");
+                    if (chartDiv) {
+                        chartDiv.textContent = "Noch keine Daten gesammelt";
+                        chartDiv.style.color = "#AEB8A0"; // Schön salbeigrün gefärbt
+                    }
+
+                    // Leeres Canvas verstecken
+                    if (document.getElementById("monsterChart")) {
+                        document.getElementById("monsterChart").style.display = "none";
+                    }
                 } else {
-                    // Buzzer ist da -> Chart ganz normal laden
+                    // Buzzer ist da -> Text wegschalten & Chart anzeigen
+                    if (document.getElementById("chartValue")) {
+                        document.getElementById("chartValue").style.display = "none";
+                    }
+                    if (document.getElementById("monsterChart")) {
+                        document.getElementById("monsterChart").style.display = "block";
+                    }
+
+                    // Chart ganz normal laden
                     if (typeof loadChart === "function") {
                         loadChart(aktuelleBuzzerId);
                     }
