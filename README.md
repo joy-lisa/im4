@@ -69,21 +69,86 @@ Der Monster-Scanner kann unter dem folgenden Link aufgerufen werden:
 #### Bauanleitung Physical Computing
 
 * ***Was muss ich wie bauen, verbinden, installieren?***  
-* *ergänze: **Komponentenplan** (betrifft Physical Computing, vgl. Slides Kapitel 15): Schaubild enthält*  
-  * *die eingesetzten Komponenten*  
-  * *die verbundenen Sensoren und Aktoren*  
-  * *die Programme (mit Dateinamen)*  
-  * *die Kommunikationswege*  
-* *ergänze: **Steckplan** (betrifft Physical Computing, vgl. Slides Kapitel 15): generiert z.B. mit Fritzing (empfohlen), Tinkercad, Wokwi*  
-  * *beachtet die [Fritzing Parts](https://github.com/Interaktive-Medien/im_physical_computing/tree/main/15_Intro_Projektdoku) extra für euch*  
-* *ggf. **Bildmaterial***
 
-## technische Details
+**Komponentenplan** 
+
+<img width="1536" height="1024" alt="komponentenplan-im4" src="https://github.com/user-attachments/assets/0842efd2-b5b2-412f-8f84-37f2dcdf8292" />
+
+
+ 
+**Steckplan** 
+
+<img width="1920" height="1080" alt="steckplan-im4" src="https://github.com/user-attachments/assets/6a4a2647-f7b3-4a33-910f-8a655c3f1c8e" />
+
+Hier noch Bilder der realen Steckplatte.
+
+<table>
+  <tr>
+    <td>
+      <img width="400" alt="bild-steckplatte-im4" src="https://github.com/user-attachments/assets/7bafc2ba-547c-435e-b57e-6a752c8439ac" />
+    </td>
+    <td>
+      <img width="400" alt="bild-gesamtesprojekt-im4" src="https://github.com/user-attachments/assets/f9e7d1a5-7132-45da-8278-54aeef80ff39" />
+    </td>
+  </tr>
+</table>
+
+
+## Technische Details
 
 // Hier sollte das Verständnis ersichtlich sein / Wie stehen die Dateien in Beziehung zueinander, Wie reden Die Dateien miteinander, Wie ist der Weg der Daten
 
-* **Projektstruktur / Code-Struktur:** \[*Hinweis: Der Code selbst muss im Repository liegen und im Kopfbereich jeder Datei eine kurze Zusammenfassung enthalten.*\]  
-* **Datenschnittstelle: \[***zwischen WebApp und Physical Computing*\]
+**Systemübersicht**
+
+Das System basiert auf einem ESP32-C6-Mikrocontroller, einem Ultraschallsensor (HC-SR04), einem physischen Buzzer/Button sowie einem adressierbaren WS2812B-LED-Ring. Das Projekt kombiniert Physical Computing mit einer WebApp und einer Datenbankanbindung.
+
+Der Ultraschallsensor misst mithilfe von Ultraschallwellen Distanzen unter dem Bett. Sobald der Buzzer gedrückt wird, startet der ESP32 einen zweifachen Scan-Prozess. Die gemessenen Werte werden anschliessend direkt auf dem Mikrocontroller verglichen, um festzustellen, ob sich zwischen den beiden Messungen etwas bewegt hat.
+
+Der LED-Ring dient als visuelles Feedback:
+
+Rotierendes grünes Licht → Scan läuft
+Kompletter grüner Ring → Daten erfolgreich in DB gespeichert
+Kompletter roter Ring → Fehler beim Speichern in DB
+
+Die Daten werden per WLAN über einen HTTP-POST-Request an eine PHP-Schnittstelle (load.php) gesendet und anschliessend in einer MySQL-Datenbank gespeichert.
+
+**Ablauf der Daten**
+* Das Kind drückt den Buzzer am Monster-Gerät
+* Der ESP32 startet den Scan-Prozess
+* Der Ultraschallsensor misst zweimal die Distanz unter dem Bett
+* Der ESP32 berechnet die Differenz direkt auf dem Mikrocontroller
+* Bei einer Differenz > 3 cm wird monster_da = 1
+* Die Daten werden als JSON über WLAN an load.php gesendet
+load.php verarbeitet die Daten serverseitig
+* Die Daten werden in der MySQL-Datenbank gespeichert
+* Die WebApp liest die Daten aus der Datenbank aus
+* Bei monster_da = 1 wird eine Warnung in der WebApp (für die Eltern) angezeigt
+
+**Projektstruktur / Code-Struktur:** \[*Hinweis: Der Code selbst muss im Repository liegen und im Kopfbereich jeder Datei eine kurze Zusammenfassung enthalten.*\]  
+
+Der Code befindet sich vollständig im Repository. Jede Datei enthält im Kopfbereich eine kurze Beschreibung ihrer Funktion.
+
+Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
+* **monster_scanner.ino**
+  WLAN-Verbindung vom Microcontroller, gesamte Sensorsteuerung inklusive Buzzer-Betätigung, LED-Animationen, Bewegungserkennung, JSON-Erstellung, HTTP-POST-Requests
+* **load.php**
+  Empfang der JSON-Daten, Verarbeitung der POST-Requests, Speicherung in der Datenbank
+* **config.php**
+  Datenbank-Zugangsdaten, PDO-Verbindung zur MySQL-Datenbank
+* **Weiterer code von Web-App Gruppe ab hier**
+* usw
+* noch mehr Code
+* immer mit kurzer inhaltlicher Beschreibung
+* alle Codes hihi
+
+
+**Datenschnittstelle zwischen Physical Computing und WebApp:**
+
+Die Kommunikation zwischen Physical Computing und WebApp erfolgt über HTTP-POST-Requests im JSON-Format. Der Datenfluss sieht wie folgt aus:
+
+ESP32 →  WLAN → HTTP POST Request → load.php → MySQL-Datenbank → WebApp 
+(@webapp gruppe: hier noch genauer schreiben wie der datenfluss von webapp auf DB zugreift, mit php usw)
+
 * **🗄️ Datenbank**
 
 wir haben die Datenbank auf Hostpoint gemacht. Hier findest du die Datenbankplanung: [Klick hier](https://github.com/joy-lisa/im4/blob/main/Datenbankplanung.pdf)
