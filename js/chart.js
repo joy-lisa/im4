@@ -57,51 +57,6 @@ async function loadChart(buzzerId = 1) {
                 tension: 0.3
             }]
         },
-        // options: {
-        //     // responsive: true,
-        //     maintainAspectRatio: false,
-        //     scales: {
-        //         y: {
-        //             beginAtZero: true,
-        //             ticks: {
-        //                 stepSize: 1
-        //             }
-        //         }
-        //     }
-        // }
+
     });
 }
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     if (document.getElementById('monsterChart')) {
-//         loadChart(1);
-//     }
-// });
-//     //Daten für Chart.js vorbereiten
-//     const labels = dbData.map(item => item.x); // x-Werte Datumstempel
-//     const values = dbData.map(item => item.y); // y-Werte Anzahl Buzzer-Aktivierungen
-
-//     const ctx = document.getElementById('monsterChart').getContext('2d');
-
-//     new Chart(ctx, {
-//         type: 'line',
-//         data: {
-//             labels: labels,
-//             datasets: [{
-//                 label: 'Buzzer-Aktivierungen',
-//                 data: values,
-//                 borderColor: '#ffa4d4',
-//                 backgroundColor: 'rgba(255, 164, 212, 0.2)',
-//                 borderWidth: 2,
-//                 tension: 0.3
-//             }]
-//         },
-//         options: {
-//             scales: {
-//                 y: {beginAtZero: true}
-//             }
-//         }
-//     });
-// }
-
-// loadChart(1);

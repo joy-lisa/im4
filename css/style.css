@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
 
 
-html {
-  font-size: 18px;
-  /* Standard ist 16px. 18px macht die gesamte App dezent grösser */
-}
-
 
 :root {
   --wasabi: #E9F056;
@@ -13,8 +8,6 @@ html {
   --blue: #D7EFFF;
   --cassis: #351E28;
   --salbei: #AEB8A0;
-
-  /*zusätzliche Farben*/
   --bg-button-secondary: rgba(255, 255, 255, 0.3);
   --text-white: #FFFFFF;
 }
@@ -27,12 +20,18 @@ html {
 
 
 
+html {
+  font-size: 18px;
+}
+
+
 body {
   background-color: var(--salbei);
   font-family: 'Inter', sans-serif;
   color: var(--cassis);
   min-height: 100vh;
 }
+
 
 #back_btn_container {
   position: absolute;
@@ -207,7 +206,7 @@ form {
   text-decoration: none;
 }
 
-/* Inputs: Alle Text-, Email- und Passwortfelder in Formularen bekommen die gleiche mobile Höhe */
+
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],
@@ -216,7 +215,6 @@ form input[type="password"],
 #editChildName {
   width: 100%;
   height: 80px;
-  /* Deine perfekt definierte mobile Höhe */
   padding: 0 16px;
   border: 2px solid transparent;
   border-radius: 14px;
@@ -275,7 +273,6 @@ main {
   width: 56px;
   height: 56px;
   background-color: var(--wasabi);
-  /* Sanfter pinker Kreis aus eurem Design */
   border-radius: 50%;
   padding: 6px;
 }
@@ -333,7 +330,6 @@ main .header small {
 
 .btn-profile {
   margin-left: auto;
-  /* Schiebt den Button ganz nach rechts */
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -388,7 +384,7 @@ main .header small {
   margin-top: 12px;
 }
 
-/* Das Pop-up-Overlay blockiert den gesamten Bildschirm und dunkelt ihn ab */
+
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -396,12 +392,10 @@ main .header small {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  /* Dunkler, transparenter Hintergrund */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  /* Immer ganz oben */
 }
 
 
@@ -411,7 +405,7 @@ main .header small {
   letter-spacing: 0.5px;
 }
 
-/* Das eigentliche Fenster im Vordergrund */
+
 .popup-content {
   background-color: white;
   padding: 30px;
@@ -421,7 +415,6 @@ main .header small {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   text-align: center;
   color: #333;
-  /* Falls euer globaler Text weiß ist */
 }
 
 .popup-section {
@@ -496,9 +489,7 @@ main .header small {
 }
 
 
-/* =========================================================================
-   Spezifisches Design für das Haushalts-Popup
-   ========================================================================= */
+/*Spezifisches Design für das Haushalts-Popup */
 
 
 .popup-content.haushalt-popup {
@@ -546,9 +537,7 @@ main .header small {
 }
 
 
-/* =========================================================================
-   Spezifisches Design für das Konto-Löschen-Popup
-   ========================================================================= */
+/*Spezifisches Design für das Konto-Löschen-Popup */
 
 .popup-content.delete-popup {
   max-width: 700px;
@@ -579,4 +568,357 @@ main .header small {
 
 .delete-popup #btnConfirmDelete {
   margin-bottom: 12px;
+}
+
+
+
+/* =========================================================================
+   RESONSIVE FÜR DESKTOP
+   ========================================================================= */
+
+@media (min-width: 992px) {
+
+
+  .welcome-container {
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+
+  .welcome-container .monster-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 12px;
+  }
+
+  .welcome-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 6px;
+  }
+
+  .welcome-container h2 {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+  }
+
+  .auth-buttons {
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .btn {
+    width: 260px;
+    height: 44px;
+    font-size: 1.1rem;
+    border-radius: 22px;
+    padding: 0;
+    margin: 16px auto 0 auto;
+  }
+
+  .auth-buttons .btn {
+    width: 260px;
+    height: 44px;
+    font-size: 1.1rem;
+    border-radius: 22px;
+    padding: 0;
+    margin: 0;
+
+  }
+
+
+  .card {
+    padding: 24px 24px 35px 24px;
+    border-radius: 20px;
+  }
+
+  form {
+    gap: 12px;
+  }
+
+  .field label {
+    margin-top: 0px;
+    margin-bottom: 4px;
+    font-size: 1.1rem;
+  }
+
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  .field input {
+    height: 44px;
+    font-size: 1.1rem;
+    padding: 0 12px;
+    border-radius: 10px;
+  }
+
+  .register-hint {
+    margin-top: 16px;
+    font-size: 1.1rem;
+  }
+
+  #back_btn_container {
+    top: 16px;
+    left: 16px;
+  }
+
+  #back_btn {
+    padding: 8px 16px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+  }
+
+  #registerForm.card .btn {
+    width: 340px;
+    height: 44px;
+    font-size: 1.1rem;
+    border-radius: 22px;
+    padding: 0;
+    margin: 24px auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  body.content-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  html body.content-page main#householdInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  html body.content-page #householdInfo .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 40px auto;
+    padding: 20px 24px;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  html body.content-page #householdInfo .header div {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  html body.content-page #householdInfo .grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  html body.content-page #householdInfo .grid .card {
+    width: 100%;
+    max-width: 750px;
+    box-sizing: border-box;
+  }
+
+  html body.content-page #householdInfo .header div h1 {
+    font-size: 2.3rem;
+    margin-bottom: 4px;
+    margin-top: 20px;
+    font-weight: 800;
+  }
+
+
+  html body.content-page #householdInfo .header div p {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+
+  html body.content-page #householdInfo .header div small {
+    font-size: 1rem;
+    color: #4a4a4a;
+  }
+
+  /* KONTOSEITE FÜR DESKTOP */
+
+  body.account-page main.main_konto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: 0px;
+    margin-top: 0px;
+  }
+
+
+  body.account-page .main_konto .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 750px;
+  }
+
+  body.account-page .main_konto .header div {
+    text-align: center;
+    width: 100%;
+  }
+
+  body.account-page .main_konto .header div h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+
+  body.account-page .main_konto .header div p {
+    font-size: 1.05rem;
+    color: #555555;
+  }
+
+  body.account-page .main_konto .grid .card h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  body.account-page .main_konto .grid .card p,
+  body.account-page .main_konto .grid .card p strong,
+  body.account-page .main_konto .grid .card p span,
+  body.account-page .main_konto .grid .card div p,
+  body.account-page .main_konto .grid .card div span {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+
+  body.account-page .main_konto .grid .card div label {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  body.account-page .main_konto .grid .card p strong {
+    font-weight: 700;
+    color: #2b2b2b;
+  }
+
+  body.account-page .main_konto .grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+
+  body.account-page .main_konto .grid .card {
+    width: 100%;
+    max-width: 750px;
+    box-sizing: border-box;
+    padding: 20px
+  }
+
+  body.account-page .main_konto .logout {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0px
+  }
+
+  body.account-page .main_konto #deleteAccountBtn {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+
+  body.account-page .main_konto .grid .card .btn,
+  body.account-page .main_konto .grid .card button,
+  body.account-page .main_konto .grid .card input[type="submit"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 44px;
+    font-size: 1rem;
+    border-radius: 22px;
+    padding: 0;
+    margin: 24px 0 0 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  body.account-page .popup-content.delete-popup {
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 24px;
+    box-sizing: border-box;
+  }
+
+
+  body.account-page .popup-content.delete-popup h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 16px;
+    margin-top: 0;
+    color: #000000;
+  }
+
+
+  body.account-page .popup-content.delete-popup p.delete-warning-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 28px;
+    color: #4a4a4a;
+  }
+
+
+  body.account-page .popup-content.delete-popup .btn,
+  body.account-page .popup-content.delete-popup button {
+    width: 240px !important;
+    max-width: 100% !important;
+    height: 42px;
+    font-size: 1rem;
+    border-radius: 21px;
+    margin: 12px auto 0 auto !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  body.account-page .main_konto .grid .card #profileEditMode input[type="text"] {
+    width: 100%;
+    max-width: 100%;
+    height: 38px;
+    font-size: 1rem;
+    padding: 0 12px;
+    border-radius: 8px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    box-sizing: border-box;
+  }
+
 }
