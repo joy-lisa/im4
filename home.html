@@ -43,6 +43,15 @@
       </a>
     </header>
 
+    <div id="liveMonsterAlert" class="card alert-card" style="display: none;">
+      <span id="closeAlertBtn">&times;</span>
+      <span class="alert-icon">🚨</span>
+      <div>
+        <strong>ACHTUNG: Gerade eben wurde ein Monster entdeckt!</strong>
+        <p>Bestätigung um <span id="alertTime">--:-- Uhr</span></p>
+      </div>
+    </div>
+
     <section class="grid">
       <article class="card">
         <div class="card-title">📈 Trend</div>
@@ -50,8 +59,16 @@
       </article>
 
       <article class="card">
-        <div class="card-title">🔔 Letzte Alarme</div>
-        <div>3 Alarme</div>
+        <div class="card-title">🔔 Alarme nach Datum</div>
+
+        <div class="filter-container">
+          <label for="alarmDateFilter" class="filter-label">Datum auswählen:</label>
+          <input type="date" id="alarmDateFilter" class="filter-input">
+        </div>
+
+        <ul id="buzzerEventList" class="event-list">
+          <li class="no-events">Bitte wähle ein Datum...</li>
+        </ul>
       </article>
 
       <article class="card">
