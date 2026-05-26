@@ -171,10 +171,19 @@ Seiten, die man nur eingeloggt besuchen kann sind die index.hmtl- und das konto.
 
 ## Umsetzungsprozess
 
-* **Reflexion / Erfahrung / Lernfortschritt:** *Was haben wir gelernt? Würden wir es nochmal genauso machen? Was war gut, was war schlecht?*  
-* **Herausforderungen & Lösungen:** \[*Verworfene Ansätze, Fehler, Umplanungen*\]  
-* **KI-Einsatz:** *Dokumentation der verwendeten KI-Tools und deren Nutzen (KI ist nicht verboten)*  
-* **Fazit:** …
+* **Reflexion / Erfahrung / Lernfortschritt:** 
+Beim Umsetzungsprozess haben wir sehr viel über das Zusammenspiel von Physical Computing, Datenbank und WebApp gelernt. Besonders spannend war für uns, dass unser physisches Artefakt nicht nur lokal funktioniert, sondern Daten über WLAN an eine Datenbank senden kann. Dadurch haben wir besser verstanden, wie IoT-Systeme aufgebaut sind und wie verschiedene Komponenten miteinander kommunizieren. Wir haben gelernt, wie ein ESP32-C6 mit Sensoren, einem Buzzer und einem LED-Ring verbunden und programmiert wird. Zusätzlich haben wir verstanden, wie Messwerte verarbeitet, als JSON formatiert und über HTTP-POST-Requests an eine PHP-Schnittstelle gesendet werden. Für die Datenbankanbindung haben wir mit PDO gearbeitet, damit die Daten sicher in einer MySQL-Datenbank gespeichert werden können.
+
+* **Herausforderungen & Lösungen:** 
+Eine grosse Herausforderung war die Verbindung zwischen dem ESP32 und der Datenbank. Am Anfang war nicht klar, wie die Daten korrekt vom Mikrocontroller an das Backend geschickt werden müssen. Dieses Problem konnten wir lösen, indem wir die Messwerte als JSON strukturiert und an die Datei load.php gesendet haben. Dort werden die Daten verarbeitet und anschliessend mit PDO in der Datenbank gespeichert. Auch die Bewegungserkennung war nicht einfach, da wir definieren mussten, wann wirklich eine Bewegung erkannt wird. Dafür vergleichen wir zwei Messungen des Ultraschallsensors direkt auf dem ESP32. Sobald die Differenz grösser als 3 cm ist, wird monster_da = 1 gesetzt.
+
+Eine weitere Herausforderung war das visuelle Feedback mit dem LED-Ring. Dieser sollte dem Kind klar zeigen, was gerade passiert. Deshalb haben wir verschiedene Zustände programmiert: Ein rotierendes grünes Licht zeigt den laufenden Scan, ein komplett grüner Ring bedeutet, dass die Daten erfolgreich gespeichert wurden, und ein roter Ring zeigt einen Fehler an. Ursprünglich hatten wir noch zusätzliche Features geplant, zum Beispiel einen Schichtplan für Eltern oder eine Funktion für mehrere Kinder. Diese Ideen hätten das System jedoch deutlich komplizierter gemacht. Deshalb haben wir uns bewusst auf einen realistisch umsetzbaren Funktionsumfang konzentriert.
+* 
+* **KI-Einsatz:** 
+KI-Tools haben wir unterstützend eingesetzt, vor allem um technische Abläufe besser zu verstehen, Probleme beim Coding zu lösen und die README zu strukturieren. Besonders hilfreich war KI bei Fragen zur Datenbankanbindung mit PHP und PDO, bei HTTP-POST-Requests sowie beim Debugging einzelner Probleme. Chatgpt hat uns ebenfalls geholfen Codes mit Arduino zu schreiben und Zusammenhänge zu verstehen. 
+* **Fazit:**
+Insgesamt sind wir sehr zufrieden mit unserem Projekt. Der Monster-Scanner verbindet ein alltägliches Problem mit einer kreativen technischen Lösung und zeigt, wie Physical Computing und WebApp sinnvoll zusammenspielen können. Besonders schön finden wir, dass das Projekt nicht nur technisch funktioniert, sondern auch emotional einen Nutzen hat. Kinder erhalten durch den Scanner und den LED-Ring ein Gefühl von Sicherheit, während die Eltern entlastet werden können.
+Während der Umsetzung konnten wir viele neue Erfahrungen sammeln und haben gemerkt, wie spannend es ist, wenn Hardware, Backend und Frontend am Ende wirklich zusammen funktionieren. Es war ein cooles Gefühl zu sehen, wie aus einer ersten Idee Schritt für Schritt ein funktionierendes System entstanden ist. Das Projekt hat uns nicht nur technisch weitergebracht, sondern auch gezeigt, wie wichtig Teamarbeit, Kommunikation und kreatives Problemlösen bei interaktiven Projekten sind.
 
 
 - Beinhaltet die Konfigurationsdatei für die Datenbankverbindung.
