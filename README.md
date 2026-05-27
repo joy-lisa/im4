@@ -36,7 +36,11 @@ Anhand des AB-Testings haben wir herausgefunden, dass die App bei Eltern mit kle
 **Figma:** [Hier gehts zum Figma](https://www.figma.com/design/6s5t7Cb0NK4FvaAhdiKhcd/IM-4-%E2%80%93-App-Konzeption?node-id=78-325&t=XFWmMQKEByA0oNdQ-1)
 
 **User Flow \+ Screen Flow**
+User Flow WebApp:
+<img width="2837" height="1270" alt="Userflow_WebApp" src="https://github.com/user-attachments/assets/d745c373-b7f8-4081-9467-d050f01d22e0" />
 
+User Flow Physical Computing:
+<img width="2587" height="1102" alt="Userflow_Physical Computing" src="https://github.com/user-attachments/assets/cb48924a-c3cb-4052-819f-fd4a5a1db328" />
 
 * ggf. weitere Ergänzungen
 * *Welche Features waren angedacht?*
