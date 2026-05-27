@@ -116,11 +116,19 @@ Der Monster-Scanner kann unter dem folgenden Link aufgerufen werden:
 
 *6. Wie nehme ich das physische Artefakt in Betrieb?*
 
-
+* Der ESP32-C6 Mikrocontroller wird per USB-C Verbindung an den Laptop angeschlossen.
+* Auf Arduino schreibt man den Code in einen neuen Sketch und lädt ihn auf den Mikrocontroller.
+* Sobald dies erfolgreich geschehen ist (zuerst noch kurz auf dem ESP32-C6 den Reset-Button klicken) kann dann der Buzzer ausgelöst und im Serial Monitor ist zu sehen, ob alles reibungslos klappt.
+* Das physische Artefakt wird am Bett so installiert, dass der Sensor auf der Steckplatte inklusive Batterieverbindung unter dem Bett liegt und die Monster-Box mit dem Buzzer und dem verbauten LED-Ring auf dem Nachttisch steht. 
+* Nun kann per Buzzer die Messung ausgeführt werden, die Daten werden in die DAtenbank gespeichert und die WebApp aktualisiert.
 
 #### Bauanleitung Physical Computing
 
-* ***Was muss ich wie bauen, verbinden, installieren?***  
+Um den Physical Computing Teil nachzubauen, kann man sich an folgenden Abbildungen orientieren. 
+
+Auf dem Komponentenplan sind alle notwendigen Komponenten zu sehen, von Sensoren bis Dateien. Alle Codes sind im Repository zu finden.
+
+Auf dem Steckplan ist zu sehen, wie genau die einzelnen physischen Komponenten ineinander gesteckt und verbunden werden müssen.
 
 **Komponentenplan** 
 
@@ -176,7 +184,9 @@ load.php verarbeitet die Daten serverseitig
 * Die WebApp liest die Daten aus der Datenbank aus
 * Bei monster_da = 1 wird eine Warnung in der WebApp (für die Eltern) angezeigt
 
-**Projektstruktur / Code-Struktur:** \[*Hinweis: Der Code selbst muss im Repository liegen und im Kopfbereich jeder Datei eine kurze Zusammenfassung enthalten.*\]  
+**Projektstruktur / Code-Struktur:** 
+
+**Hinweis: Der Code selbst muss im Repository liegen und im Kopfbereich jeder Datei eine kurze Zusammenfassung enthalten.**
 
 Der Code befindet sich vollständig im Repository. Jede Datei enthält im Kopfbereich eine kurze Beschreibung ihrer Funktion.
 
