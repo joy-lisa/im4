@@ -315,18 +315,23 @@ Wir haben die Datenbank über Hostpoint gemacht. Hier findest du die Datenbankpl
 Unser ERM bildet das logische Fundament für den „Monster Scanner“. Es zeigt, wie die Accounts der Eltern, die Haushaltsgruppen und die eingehenden Signale der physischen Monster-Box in der MySQL-Datenbank miteinander verknüpft sind. Die Kernkomponenten teilen sich in folgende Tabellen (Entities) auf:
 
 *haushalt:* 
+
 Er besitzt eine eindeutige id, einen name und einen join_code. Über diesen Code können andere Familienmitglieder der Gruppe beitreten. Zudem wird hier das gewählte monster_icon für das UI-Design hinterlegt.
 
 *users (Die Eltern/Babystter:innen):* 
+
 Hier werden die Registrierungsdaten der Eltern gespeichert (id, name, email, pw). Jeder User ist über das Attribut haushalt_id fest einem Haushalt zugeordnet (1:n-Beziehung). Zusätzlich wird hier der childname (Name des Kindes) für die persönliche Ansprache in der WebApp hinterlegt.
 
 *buzzer:* 
+
 Diese Tabelle repräsentiert die physische Monster-Box. Sie ist über die haushalt_id mit dem jeweiligen Haushalt verknüpft und enthält Informationen wie die id des Geräts, das zugeordnete kind und den Typ des Monsters.
 
 *buzzer-event:* 
+
 Sobald der Button auf dem Monster gedrückt wird, entsteht hier ein neuer Eintrag. Das Event speichert über die buzzer_id, von welchem Gerät der Alarm kommt. Ein präziser timestamp hält fest, wann der Knopf gedrückt wurde. Die Attribute scan-1, scan-2 und monster-da (1 = ja, 0 = nein) dokumentieren das Ergebnis des „Monster-Scans“ für das Dashboard.
 
 *Schichten (Konzeptphase):*
+
 Unten links befindet sich ein optionales Tabellen-Konzept, mit dem zukünftig feste Überwachungsschichten (datum, user_id) für die Eltern innerhalb eines Haushalts koordiniert werden könnten. Dieses Feature haben wir allerdings nicht umgesetzt.
   
 * **🔑👤 Authentifizierung für Monster-Scanner**
