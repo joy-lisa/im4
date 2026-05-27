@@ -71,7 +71,7 @@ Der Monster-Scanner kann unter dem folgenden Link aufgerufen werden: [Link zur W
 
 Die Video-Erklärung kann unter dem folgenden Link aufgerufen werden: [Link zum Video auf Youtube](http://link.zum.video) 
 
-#### 📲Installationsanleitung WebApp
+### 📲Installationsanleitung WebApp
 
 *1. Was benötige ich an Infrastruktur?* 
 
@@ -120,7 +120,7 @@ Die Video-Erklärung kann unter dem folgenden Link aufgerufen werden: [Link zum 
 * Das physische Artefakt wird am Bett so installiert, dass der Sensor auf der Steckplatte inklusive Batterieverbindung unter dem Bett liegt und die Monster-Box mit dem Buzzer und dem verbauten LED-Ring auf dem Nachttisch steht. 
 * Nun kann per Buzzer die Messung ausgeführt werden, die Daten werden in die DAtenbank gespeichert und die WebApp aktualisiert.
 
-#### 🚧Bauanleitung Physical Computing
+### 🚧Bauanleitung Physical Computing
 
 Um den Physical Computing Teil nachzubauen, kann man sich an folgenden Abbildungen orientieren. 
 
@@ -152,7 +152,7 @@ Hier noch Bilder der realen Steckplatte.
 </table>
 
 
-## 🖲️Technische Details
+### 🖲️Technische Details
 
 // Hier sollte das Verständnis ersichtlich sein / Wie stehen die Dateien in Beziehung zueinander, Wie reden Die Dateien miteinander, Wie ist der Weg der Daten
 
@@ -306,7 +306,7 @@ Die Kommunikation zwischen Physical Computing und WebApp erfolgt über HTTP-POST
 
 ESP32 →  WLAN → HTTP POST Request → load.php → MySQL-Datenbank → PHP-Schnittstelle (get_buzzer_events.php) → JavaScript (home.js) via Fetch-API  → HTML-Dashboard (home.html)
 
-* **🗄️ Datenbank**
+* **Datenbank**
 
 Wir haben die Datenbank über Hostpoint gemacht. Hier findest du die Datenbankplanung: [Klick hier](https://github.com/joy-lisa/im4/blob/main/Datenbankplanung.pdf)
 * **ERM: Erklärung**
@@ -323,7 +323,7 @@ Unser ERM bildet das logische Fundament für den „Monster Scanner“. Es zeigt
 
 * Schichten (Konzeptphase): Unten links befindet sich ein optionales Tabellen-Konzept, mit dem zukünftig feste Überwachungsschichten (datum, user_id) für die Eltern innerhalb eines Haushalts koordiniert werden könnten. Dieses Feature haben wir allerdings nicht umgesetzt.
   
-* **🔑👤 Authentifizierung für Monster-Scanner**
+* **Authentifizierung für Monster-Scanner**
 
   Hier passiert die Anmeldung auf unsere App. 
 
@@ -333,7 +333,7 @@ Unser ERM bildet das logische Fundament für den „Monster Scanner“. Es zeigt
 
   Seiten, die man nur eingeloggt besuchen kann sind die home.hmtl- und das konto.html-Seite. Ausgeloggt kann man die Startseite (index.html), sowie   die Login- (login.html) und Registrierungseite (register.html) besuchen.
 
-## 🔌Known bugs
+### 🔌Known bugs
 
 * Was funktioniert noch nicht einwandfrei?  
 * Was ist uns aufgefallen bei der Entwicklung?
@@ -344,7 +344,7 @@ Die Entwicklung einer solchen App ist sehr zeitaufwändig und bedingt eine gute 
 
 Das Design der App könnte an manchen Stellen sicherlich noch überarbeitet/verfeinert werden. Zudem wäre es toll, noch einige Features mehr einzubauen. 
 
-## ✔️ Umsetzungsprozess
+### ✔️ Umsetzungsprozess
 
 * **Reflexion / Erfahrung / Lernfortschritt:** 
 Beim Umsetzungsprozess haben wir sehr viel über das Zusammenspiel von Physical Computing, Datenbank und WebApp gelernt. Besonders spannend war für uns, dass unser physisches Artefakt nicht nur lokal funktioniert, sondern Daten über WLAN an eine Datenbank senden kann. Dadurch haben wir besser verstanden, wie IoT-Systeme aufgebaut sind und wie verschiedene Komponenten miteinander kommunizieren. Wir haben gelernt, wie ein ESP32-C6 mit Sensoren, einem Buzzer und einem LED-Ring verbunden und programmiert wird. Zusätzlich haben wir verstanden, wie Messwerte verarbeitet, als JSON formatiert und über HTTP-POST-Requests an eine PHP-Schnittstelle gesendet werden. Für die Datenbankanbindung haben wir mit PDO gearbeitet, damit die Daten sicher in einer MySQL-Datenbank gespeichert werden können.
