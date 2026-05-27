@@ -104,9 +104,19 @@ Der Monster-Scanner kann unter dem folgenden Link aufgerufen werden:
 
 *4. Wo muss ich die DB-Credentials eintragen?*  
 
+* Öffne die Datei config.php in Visual Studio Code.
+* Ersetze die Platzhalter mit den echten Zugangsdaten, die du vorhin bei deinem Webhosting für deine Live-Datenbank erstellt hast
+* Speichere die Datei ab und lade diese aktualisierte config.php nun einzig und allein via FTP direkt auf deinen Server hoch. Stelle sicher, dass diese Datei niemals zurück auf GitHub gepusht wird!
 
-7. *…*  
-8. *Wie nehme ich das physische Artefakt in Betrieb?*
+*5. WebApp im Browser aufrufen und testen*
+
+* Öffne deinen Browser (Google Chrome).
+* Gib deine registrierte Domain oder Subdomain ein.
+* Die WebApp ist nun voll einsatzbereit!
+
+*6. Wie nehme ich das physische Artefakt in Betrieb?*
+
+
 
 #### Bauanleitung Physical Computing
 
