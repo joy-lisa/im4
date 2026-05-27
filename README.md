@@ -65,7 +65,7 @@ Da am Ende doch noch ein klein wenig Zeit blieb, haben wir uns entschieden ein F
 
 ### 🤳Setup
 
-## Unsere WebApp
+**Unsere WebApp**
 
 Der Monster-Scanner kann unter dem folgenden Link aufgerufen werden: [Link zur Webapp](https://im4.lisa-joy.ch)
 
