@@ -190,6 +190,7 @@ Der Code befindet sich vollständig im Repository. Jede Datei enthält im Kopfbe
 
 Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
 
+
 *Hauptverzeichnis (Frontend-Seiten)*
   
 * **index.html**
@@ -212,6 +213,7 @@ Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
   
 * **sender.html**
   Test-Oberfläche zur manuellen Simulation von Sensor-Daten (hilfreich für Entwicklung und Debugging).
+
 
 *PHP-Backend-Schnittstellen*
 
@@ -254,7 +256,8 @@ Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
 * **get_chart_data.php**
   Aufbereitung und Bereitstellung der Sensor-Statistiken für die grafischen Diagramme.
 
-**Frontend-Logik & API-Anbindung**
+
+*Frontend-Logik & API-Anbindung*
 
 * **auth.js**
   Kern-Logik für die Authentifizierungsprozesse im Frontend.
@@ -291,6 +294,7 @@ Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
 
 * **monster_scanner.ino**
   WLAN-Verbindung vom Microcontroller, gesamte Sensorsteuerung inklusive Buzzer-Betätigung, LED-Animationen, Bewegungserkennung, JSON-Erstellung, HTTP-POST-Requests
+
 
 *Design*
 
