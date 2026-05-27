@@ -302,12 +302,11 @@ Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
 
 Die Kommunikation zwischen Physical Computing und WebApp erfolgt über HTTP-POST-Requests im JSON-Format. Der Datenfluss sieht wie folgt aus:
 
-ESP32 →  WLAN → HTTP POST Request → load.php → MySQL-Datenbank → WebApp 
-(@webapp gruppe: hier noch genauer schreiben wie der datenfluss von webapp auf DB zugreift, mit php usw)
+ESP32 →  WLAN → HTTP POST Request → load.php → MySQL-Datenbank → PHP-Schnittstelle (get_buzzer_events.php) → JavaScript (home.js) via Fetch-API  → HTML-Dashboard (home.html)
 
 * **🗄️ Datenbank**
 
-wir haben die Datenbank auf Hostpoint gemacht. Hier findest du die Datenbankplanung: [Klick hier](https://github.com/joy-lisa/im4/blob/main/Datenbankplanung.pdf)
+Wir haben die Datenbank auf Hostpoint gemacht. Hier findest du die Datenbankplanung: [Klick hier](https://github.com/joy-lisa/im4/blob/main/Datenbankplanung.pdf)
 * **ERM:** \[*Erklärung und Schaubild*\] 
 * **🔑👤 Authentifizierung für Monster-Scanner**
 
@@ -317,7 +316,7 @@ Standardmässig bleibt die Session aktiv, solange der Browser offen ist und ende
 
 Wir haben uns bewusst gegen eine präzise Zeitbegrenzung entschieden, weil in unserem Fall die Zeitspanne passend ist und das auch zu einer guten User Experience führt
 
-Seiten, die man nur eingeloggt besuchen kann sind die index.hmtl- und das konto.html-Seite. Ausgeloggt kann man die Startseite (start.html), sowie die Login- (login.html) und Registrierungseite (register.html) besuchen.
+Seiten, die man nur eingeloggt besuchen kann sind die home.hmtl- und das konto.html-Seite. Ausgeloggt kann man die Startseite (index.html), sowie die Login- (login.html) und Registrierungseite (register.html) besuchen.
 
 ## Known bugs
 
