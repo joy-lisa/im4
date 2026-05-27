@@ -201,7 +201,7 @@ Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
 **Hauptverzeichnis (Frontend-Seiten)**
   
 * **index.html**
-  Automatischer Einstiegspunkt der Applikation, welcher nicht eingeloggte User direkt auf die Login-Seite weiterleitet.
+  Automatischer Einstiegspunkt der Applikation.
 
 * **login.html**
   Benutzeroberfläche für das Anmeldefenster der Applikation.
@@ -216,10 +216,51 @@ Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
   Benutzerprofil-Seite zur Verwaltung des Kontos (Haushalt erstellen/beitreten, Passwort ändern).
   
 * **protected.html**
-  Eine vorgeschaltete Sicherheitsseite, die prüft, ob eine gültige Session aktiv ist, bevor sensible Inhalte geladen werden.
+  Eine vorgeschaltete Sicherheitsseite, die prüft, ob eine gültige Session aktiv ist, bevor die Inhalte geladen werden.
   
 * **sender.html**
   Test-Oberfläche zur manuellen Simulation von Sensor-Daten (hilfreich für Entwicklung und Debugging).
+
+  **PHP-Backend-Schnittstellen**
+
+* **config.php**
+  Zentrale Datenbank-Zugangsdaten und PDO-Verbindungsaufbau zur Live-MySQL-Datenbank.
+
+* **load.php**
+  Empfang der JSON-Daten vom physischen Monster-Artefakt via HTTP-POST-Request und Speicherung in der Datenbank.
+
+* **login.php**
+  Validierung der Benutzerdaten beim Login und Initiierung der PHP-Session.
+
+* **logout.php**
+  Beenden der aktiven Session und sicheres Abmelden des Benutzers.
+
+* **register.php**
+  Verarbeitung der Registrierungsdaten und sicheres Speichern neuer Benutzer.
+
+* **protected.php**
+  Serverseitige Überprüfung des Login-Status zum Schutz der geschlossenen Bereiche.
+
+* **get_user_info.php**
+  Abfrage der Profildaten des aktuell eingeloggten Benutzers aus der Datenbank.
+
+* **update_profile.php**
+  Aktualisierung von Profiländerungen (z. B. Name oder E-Mail).
+
+* **change_password.php**
+  Schnittstelle zur sicheren Änderung des Benutzerpassworts.
+
+* **create_household.php**
+  Generierung und Speicherung eines neuen, einzigartigen Haushalts-Codes.
+
+* **join_household.php**
+  Zuordnung eines Benutzers zu einem bereits existierenden Haushalt via Code.
+
+* **get_buzzer_events.php**
+  Abfrage der jüngsten Interaktionen (Knopfdrücke) für die Echtzeitanzeige im Dashboard.
+
+* **get_chart_data.php**
+  Aufbereitung und Bereitstellung der Sensor-Statistiken für die grafischen Diagramme.
 
 
 
