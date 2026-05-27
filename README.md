@@ -77,13 +77,36 @@ Der Monster-Scanner kann unter dem folgenden Link aufgerufen werden:
 
 *1. Was benötige ich an Infrastruktur?* 
 
-* 2. Was muss ich auf meinem Webserver installieren?*
+* Webhosting & Domain: Ein aktiver Webspace bei einem Hosting-Anbieter (z. B. Infomaniak oder Hostpoint) inklusive einer eigenen Domain.
+* Datenbank: Eine MySQL-Datenbank, die über das Hosting-Panel (z. B. phpMyAdmin) des Anbieters verwaltet wird.
+* Versionsverwaltung & Code-Editor: Ein GitHub-Account zum Klonen des Codes sowie Visual Studio Code zur Ansicht und Bearbeitung der Dateien.
+* FTP-Programm: Ein Tool wie FileZilla (oder eine entsprechende Erweiterung in Visual Studio Code), um die Dateien vom eigenen Computer auf den Server des Hosting-Anbieters hochzuladen.
+
+
+*2. Was muss ich auf meinem Webserver installieren?*
  
+ * Öffne das GitHub-Repository unseres Projekts.
+ * Klone das Projekt mit Git auf deinen lokalen Computer oder lade es als ZIP-Datei herunter und entpacke es.
+ * Öffne den Projektordner in Visual Studio Code, um die Dateistruktur vor dir zu haben.
+ * Logge dich bei deinem Hosting-Anbieter ein.
+ * Erstelle dort eine passende Subdomain oder nutze deine Hauptdomain
+ * Verbinde dein FTP-Programm mithilfe der FTP-Zugangsdaten deines Hosters mit deinem Webspace.
+ * Lade den Inhalt des Projektordners aus Visual Studio Code in das Zielverzeichnis auf deinen Live-Server hoch. **ACHTUNG!** Die Datei, welche die echten Passwörter und Zugangsdaten zu deiner Live-Datenbank enthält (z. B. config.php) darfst du nicht hochladen!
      
-4. *Wie kann ich die Datenbank importieren?*  
-5. *Wo muss ich die DB-Credentials eintragen?*  
-6. *…*  
-7. *Wie nehme ich das physische Artefakt in Betrieb?*
+*3. Wie kann ich die Datenbank importieren?*
+
+* Erstelle eine neue MySQL-Datenbank und notiere dir den Datenbanknamen, Benutzernamen sowie das Passwort.
+* Öffne phpMyAdmin direkt über dein Hosting-Kundenportal.
+* Wähle in der linken Spalte deine neu erstellte, leere Datenbank aus.
+* Klicke im oberen Menü auf den Reiter „Importieren“.
+* Klicke auf „Datei auswählen“ und lade die im GitHub-Projektordner bereitgestellte SQL-Datei hoch.
+* Bestätige den Vorgang ganz unten mit einem Klick auf „Importieren“, um die Tabellenstruktur für den Monster-Scanner und die Benutzerkonten live zu laden.
+
+*4. Wo muss ich die DB-Credentials eintragen?*  
+
+
+7. *…*  
+8. *Wie nehme ich das physische Artefakt in Betrieb?*
 
 #### Bauanleitung Physical Computing
 
