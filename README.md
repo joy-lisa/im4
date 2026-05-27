@@ -1,4 +1,4 @@
-# im4 - Monster-Scanner 🌙
+# IM IV FS26 - Monster-Scanner 🌙
 
 ➡️ bei der Chat Gpt-Anfrage bezüglich der Datenbank: erwähnen, dass wir es mit PDO machen
 
@@ -21,9 +21,14 @@ Viele Kinder haben Angst vor Monstern unter dem Bett, dies ist nicht nur eine gr
 * Ängste werden auf effektive Weise beruhigt
 * das Selbstbewusstsein der Kinder wird gestärkt
 
-Es wird überprüft, ob Monster da sind und dann brauchen die Kinder eine visuelle Bestätigung. Die Eltern sollen informiert werden, sobald Bewegung unter dem Bett festgestellt wurde.
+#### Wie funktioniert das Ganze?
 
-\[*Bilder / GIFs (optional)*\]
+Falls das Kind denkt, etwas könnte unter dem Bett sein, drückt es einen Button im Bett. Mittels Sensor, der unter dem Bett angebracht ist, wird überprüft, ob ein Monster da ist. Nach einigen Sekunden bekommt das Kind ene visuelle Bestätigung mittels grünem Licht. Falls wirklich eine Bewegung festgestellt wurde, erhalten die Eltern eine Push-Nachricht auf dem Handy mit der Aufforderung das Kinderzimmer aufzusuchen. 
+Somit müssen Eltern erst dann aktiv werden, wenn es wirklich nötig ist.
+
+<img height="200" alt="Bild_Knopf" src="https://github.com/user-attachments/assets/c47b1175-4c6b-4c99-93a2-d4d82284f05a" />
+<img height="200" alt="Bild_Sensor" src="https://github.com/user-attachments/assets/fe17fdb9-a21c-47d2-a811-5a513c48288b" />
+<img height="200" alt="Bild_Pus-Nachricht" src="https://github.com/user-attachments/assets/2c405d8a-11f4-4bce-8960-df4cb2bb72c2" />
 
 ### UX & Konzeption
 
@@ -44,17 +49,23 @@ Anhand des AB-Testings haben wir herausgefunden, dass die App bei Eltern mit kle
 
 #### 🤳Features
 
+**Schichtplan + Switcher**
+
 Zu Beginn waren wir sehr motiviert, tolle Features einzubauen, wie beispielsweise einen Schichtplan, bei dem sich die Eltern eintragen können, wann sie an der Reihe sind aufzustehen, wenn der Alarm los geht. Eine weitere Funktion wäre ein Switch-Button gewesen, welcher zum Zug käme, wenn man mehr als 1 Kind hat. Somit könnte man zwischen zwei Homebildschirmen wechseln (je einer pro Kind). 
 
 Diese zwei Features haben wir aber schliesslich  nicht umgesetzt, da wir nur einen Buzzer haben und unser Konzept auf ein Kind beschränkt ist. Beim Schichtplan hätte es sehr viele Eventualitäten geben können, wenn noch andere Personen (Babysitter:innen) "Nachtschicht" hätten oder mehr als zwei Personen zuständig sind. Das war in der Umsetzung dann etwas sehr kompliziert, warum wir uns von diesen Ideen trennen mussten. 
+
+**Punkte-System**
 
 Eine weitere Idee wäre gewesen, eine Art Punkte-System einzubauen, bei welchem das Kind Sterne sammeln kann. Beispielsweise, wenn das Kind eine Nacht durchschläft, ohne den Buzzer zu betätigen, werden +5 Punkte auf das Sternen-Konto gezählt. Jede weitere Nacht in Folge ohne Buzzer-Betätigung bringt +3 Punkte. Aber wenn dann der Buzzer in einer Nacht wieder gedrückt wird, erfolgen -5 Punkte. Die Eltern könnten dann Ziele/Belohnungen festlegen, wie beispielsweise einen Ausflug in den Zoo bei 50 Punkten. 
 
 Auch diese Idee wurde ziemlich rasch verworfen, da wir uns erst auf die Hauptfunktion der App konzentrieren und uns nicht in unnötigen Features verlieren wollten. Die Ideenfindung hat aber sehr Spass gemacht und hätten wir mehr Zeit gehabt, wären vielleicht noch die eine oder andere Funktion in die Realität umgesetzt worden. 
 
-### Setup
+**Wähle dein Monster**
 
-#### 🏁 Unsere WebApp
+Da am Ende doch noch ein klein wenig Zeit blieb, haben wir uns entschieden ein Feature in die App einzubauen, bei dem im Profil eines aus fünf verschiedenen Monstern ausgewählt werden kann. Die Idee dahinter ist, dass sich das Kind für ein Monster entscheiden kann, welches die Wache unter em Bett hält und es beschützen wird. Somit wird bereits der erste Kontakt zwischen Kind und Monster geknüpft und es kann aufgezeigt werden, dass es auch liebe Monster gibt, die den Kindern helfen. 
+
+### 🏁Unsere WebApp
 
 Der Monster-Scanner kann unter dem folgenden Link aufgerufen werden:
 
@@ -64,14 +75,15 @@ Der Monster-Scanner kann unter dem folgenden Link aufgerufen werden:
 
 #### Installationsanleitung WebApp
 
-***verständliche** Schritt-für-Schritt-Anleitung für Aussenstehende, um das Projekt zu klonen und auf einem eigenen Server zu installieren*
+*1. Was benötige ich an Infrastruktur?* 
 
-1. *Was benötige ich an Infrastruktur?*  
-2. *Was muss ich auf meinem Webserver installieren?*  
-3. *Wie kann ich die Datenbank importieren?*  
-4. *Wo muss ich die DB-Credentials eintragen?*  
-5. *…*  
-6. *Wie nehme ich das physische Artefakt in Betrieb?*
+* 2. Was muss ich auf meinem Webserver installieren?*
+ 
+     
+4. *Wie kann ich die Datenbank importieren?*  
+5. *Wo muss ich die DB-Credentials eintragen?*  
+6. *…*  
+7. *Wie nehme ich das physische Artefakt in Betrieb?*
 
 #### Bauanleitung Physical Computing
 
