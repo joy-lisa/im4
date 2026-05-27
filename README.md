@@ -35,21 +35,22 @@ Anhand des AB-Testings haben wir herausgefunden, dass die App bei Eltern mit kle
 
 **Figma:** [Hier gehts zum Figma](https://www.figma.com/design/6s5t7Cb0NK4FvaAhdiKhcd/IM-4-%E2%80%93-App-Konzeption?node-id=78-325&t=XFWmMQKEByA0oNdQ-1)
 
-**User Flow \+ Screen Flow**
-User Flow WebApp:
+
+**User Flow WebApp:**
 <img width="2837" height="1270" alt="Userflow_WebApp" src="https://github.com/user-attachments/assets/d745c373-b7f8-4081-9467-d050f01d22e0" />
 
-User Flow Physical Computing:
+**User Flow Physical Computing:**
 <img width="2587" height="1102" alt="Userflow_Physical Computing" src="https://github.com/user-attachments/assets/cb48924a-c3cb-4052-819f-fd4a5a1db328" />
 
-* ggf. weitere Ergänzungen
-* *Welche Features waren angedacht?*
+#### 🤳Features
 
-* *Welche Features wurden nicht umgesetzt? (Warum)*
+Zu Beginn waren wir sehr motiviert, tolle Features einzubauen, wie beispielsweise einen Schichtplan, bei dem sich die Eltern eintragen können, wann sie an der Reihe sind aufzustehen, wenn der Alarm los geht. Eine weitere Funktion wäre ein Switch-Button gewesen, welcher zum Zug käme, wenn man mehr als 1 Kind hat. Somit könnte man zwischen zwei Homebildschirmen wechseln (je einer pro Kind). 
 
-Wir haben uns zu Beginn noch überlegt, ob wir noch einen Schichtplan ergänzen, wo sich die Eltern eintragen können, wann sie an der Reihe sind aufzustehen, wenn der Alarm los geht. Eine weitere Funktion wäre ein Switch gewesen, welcher zum Zug käme, wenn man mehr als 1 Kind hat. Das man zwei Homebildschirme hat (je einen pro Kind). 
+Diese zwei Features haben wir aber schliesslich  nicht umgesetzt, da wir nur einen Buzzer haben und unser Konzept auf ein Kind beschränkt ist. Beim Schichtplan hätte es sehr viele Eventualitäten geben können, wenn noch andere Personen (Babysitter:innen) "Nachtschicht" hätten oder mehr als zwei Personen zuständig sind. Das war in der Umsetzung dann etwas sehr kompliziert, warum wir uns von diesen Ideen trennen mussten. 
 
-Diese zwei Features haben wir nicht umgesetzt, da wir nur einen Buzzer haben und darum unser Konzept auf ein Kind beschränkt ist. Beim Schichtplan hätte es sehr viele Eventualitäten geben können wenn noch andere Personen "Nachtschicht" hätten oder mehr als zwei Personen zuständig sind. Das war in der Umsetzung dann etwas sehr kompliziert.
+Eine weitere Idee wäre gewesen, eine Art Punkte-System einzubauen, bei welchem das Kind Sterne sammeln kann. Beispielsweise, wenn das Kind eine Nacht durchschläft, ohne den Buzzer zu betätigen, werden +5 Punkte auf das Sternen-Konto gezählt. Jede weitere Nacht in Folge ohne Buzzer-Betätigung bringt +3 Punkte. Aber wenn dann der Buzzer in einer Nacht wieder gedrückt wird, erfolgen -5 Punkte. Die Eltern könnten dann Ziele/Belohnungen festlegen, wie beispielsweise einen Ausflug in den Zoo bei 50 Punkten. 
+
+Auch diese Idee wurde ziemlich rasch verworfen, da wir uns erst auf die Hauptfunktion der App konzentrieren und uns nicht in unnötigen Features verlieren wollten. Die Ideenfindung hat aber sehr Spass gemacht und hätten wir mehr Zeit gehabt, wären vielleicht noch die eine oder andere Funktion in die Realität umgesetzt worden. 
 
 ### Setup
 
