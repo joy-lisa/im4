@@ -28,9 +28,9 @@ Somit müssen Eltern erst dann aktiv werden, wenn es wirklich nötig ist.
 <img height="200" alt="Bild_Sensor" src="https://github.com/user-attachments/assets/fe17fdb9-a21c-47d2-a811-5a513c48288b" />
 <img height="200" alt="Bild_Pus-Nachricht" src="https://github.com/user-attachments/assets/2c405d8a-11f4-4bce-8960-df4cb2bb72c2" />
 
-### UX & Konzeption
+### 🎨UX & Konzeption
 
-#### 🎨 Design
+#### Design
 
 Wir haben bei der Erstellung des Designs versucht, kindliche Elemente in einem schlichten Design darzustellen. Das heisst so, dass es für die Eltern, sowie für die Kinder ansprechend gestaltet ist. Somit kann die App auch problemlso den Kindern gezeigt werden, welche die Funktionen der App mit wenigen Erklärungen der Eltern verstehen. Da wir drei verschiedene Designs ausgetestet haben, war für uns auch schnell klar, in welche Richtung wir in der Gestaltung gehen wollen. 
 
@@ -45,7 +45,7 @@ Anhand des AB-Testings haben wir herausgefunden, dass die App bei Eltern mit kle
 **User Flow Physical Computing:**
 <img width="2587" height="1102" alt="Userflow_Physical Computing" src="https://github.com/user-attachments/assets/cb48924a-c3cb-4052-819f-fd4a5a1db328" />
 
-#### 🤳Features
+#### Features
 
 **Schichtplan + Switcher**
 
@@ -63,13 +63,15 @@ Auch diese Idee wurde ziemlich rasch verworfen, da wir uns erst auf die Hauptfun
 
 Da am Ende doch noch ein klein wenig Zeit blieb, haben wir uns entschieden ein Feature in die App einzubauen, bei dem im Profil eines aus fünf verschiedenen Monstern ausgewählt werden kann. Die Idee dahinter ist, dass sich das Kind für ein Monster entscheiden kann, welches die Wache unter em Bett hält und es beschützen wird. Somit wird bereits der erste Kontakt zwischen Kind und Monster geknüpft und es kann aufgezeigt werden, dass es auch liebe Monster gibt, die den Kindern helfen. 
 
-### 🏁Unsere WebApp
+### 🤳Setup
+
+## Unsere WebApp
 
 Der Monster-Scanner kann unter dem folgenden Link aufgerufen werden: [Link zur Webapp](https://im4.lisa-joy.ch)
 
 Die Video-Erklärung kann unter dem folgenden Link aufgerufen werden: [Link zum Video auf Youtube](http://link.zum.video) 
 
-#### Installationsanleitung WebApp
+#### 📲Installationsanleitung WebApp
 
 *1. Was benötige ich an Infrastruktur?* 
 
@@ -118,7 +120,7 @@ Die Video-Erklärung kann unter dem folgenden Link aufgerufen werden: [Link zum 
 * Das physische Artefakt wird am Bett so installiert, dass der Sensor auf der Steckplatte inklusive Batterieverbindung unter dem Bett liegt und die Monster-Box mit dem Buzzer und dem verbauten LED-Ring auf dem Nachttisch steht. 
 * Nun kann per Buzzer die Messung ausgeführt werden, die Daten werden in die DAtenbank gespeichert und die WebApp aktualisiert.
 
-#### Bauanleitung Physical Computing
+#### 🚧Bauanleitung Physical Computing
 
 Um den Physical Computing Teil nachzubauen, kann man sich an folgenden Abbildungen orientieren. 
 
@@ -150,7 +152,7 @@ Hier noch Bilder der realen Steckplatte.
 </table>
 
 
-## Technische Details
+## 🖲️Technische Details
 
 // Hier sollte das Verständnis ersichtlich sein / Wie stehen die Dateien in Beziehung zueinander, Wie reden Die Dateien miteinander, Wie ist der Weg der Daten
 
@@ -331,7 +333,7 @@ Unser ERM bildet das logische Fundament für den „Monster Scanner“. Es zeigt
 
   Seiten, die man nur eingeloggt besuchen kann sind die home.hmtl- und das konto.html-Seite. Ausgeloggt kann man die Startseite (index.html), sowie   die Login- (login.html) und Registrierungseite (register.html) besuchen.
 
-## Known bugs
+## 🔌Known bugs
 
 * Was funktioniert noch nicht einwandfrei?  
 * Was ist uns aufgefallen bei der Entwicklung?
@@ -342,7 +344,7 @@ Die Entwicklung einer solchen App ist sehr zeitaufwändig und bedingt eine gute 
 
 Das Design der App könnte an manchen Stellen sicherlich noch überarbeitet/verfeinert werden. Zudem wäre es toll, noch einige Features mehr einzubauen. 
 
-## Umsetzungsprozess
+## ✔️ Umsetzungsprozess
 
 * **Reflexion / Erfahrung / Lernfortschritt:** 
 Beim Umsetzungsprozess haben wir sehr viel über das Zusammenspiel von Physical Computing, Datenbank und WebApp gelernt. Besonders spannend war für uns, dass unser physisches Artefakt nicht nur lokal funktioniert, sondern Daten über WLAN an eine Datenbank senden kann. Dadurch haben wir besser verstanden, wie IoT-Systeme aufgebaut sind und wie verschiedene Komponenten miteinander kommunizieren. Wir haben gelernt, wie ein ESP32-C6 mit Sensoren, einem Buzzer und einem LED-Ring verbunden und programmiert wird. Zusätzlich haben wir verstanden, wie Messwerte verarbeitet, als JSON formatiert und über HTTP-POST-Requests an eine PHP-Schnittstelle gesendet werden. Für die Datenbankanbindung haben wir mit PDO gearbeitet, damit die Daten sicher in einer MySQL-Datenbank gespeichert werden können.
