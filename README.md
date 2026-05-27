@@ -287,12 +287,15 @@ Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
   Logik für die Test-Oberfläche, um Knopfdrücke des Artefakts zu simulieren.
 
 
-
-* **style.css**
-  Das gesamte, zentrale Stylesheet der Applikation inklusive aller Layouts, Komponenten-Styles und Media Queries für das responsive Design.
+**Hardware-Quellcode**
 
 * **monster_scanner.ino**
   WLAN-Verbindung vom Microcontroller, gesamte Sensorsteuerung inklusive Buzzer-Betätigung, LED-Animationen, Bewegungserkennung, JSON-Erstellung, HTTP-POST-Requests
+
+**Design**
+
+  * **style.css**
+  Das gesamte, zentrale Stylesheet der Applikation inklusive aller Layouts, Komponenten-Styles und Media Queries für das responsive Design.
 
 
 **Datenschnittstelle zwischen Physical Computing und WebApp:**
