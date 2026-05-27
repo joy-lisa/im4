@@ -197,11 +197,30 @@ Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
   Empfang der JSON-Daten, Verarbeitung der POST-Requests, Speicherung in der Datenbank
 * **config.php**
   Datenbank-Zugangsdaten, PDO-Verbindung zur MySQL-Datenbank
-* **Weiterer code von Web-App Gruppe ab hier**
-* usw
-* noch mehr Code
-* immer mit kurzer inhaltlicher Beschreibung
-* alle Codes hihi
+
+**Hauptverzeichnis (Frontend-Seiten)**
+  
+* **index.html**
+  Automatischer Einstiegspunkt der Applikation, welcher nicht eingeloggte User direkt auf die Login-Seite weiterleitet.
+
+* **login.html**
+  Benutzeroberfläche für das Anmeldefenster der Applikation.
+  
+* **register.html**
+  Registrierungsformular für Neubenutzer, um ein Eltern-Konto zu erstellen.
+  
+* **home.html**
+  Das zentrale Dashboard für die Eltern, auf dem die Sensor-Aktivitäten und Auswertungen angezeigt werden.
+  
+* **konto.html**
+  Benutzerprofil-Seite zur Verwaltung des Kontos (Haushalt erstellen/beitreten, Passwort ändern).
+  
+* **protected.html**
+  Eine vorgeschaltete Sicherheitsseite, die prüft, ob eine gültige Session aktiv ist, bevor sensible Inhalte geladen werden.
+  
+* **sender.html**
+  Test-Oberfläche zur manuellen Simulation von Sensor-Daten (hilfreich für Entwicklung und Debugging).
+
 
 
 **Datenschnittstelle zwischen Physical Computing und WebApp:**
