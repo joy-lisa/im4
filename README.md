@@ -186,17 +186,9 @@ load.php verarbeitet die Daten serverseitig
 
 **Projektstruktur / Code-Struktur:** 
 
-**Hinweis: Der Code selbst muss im Repository liegen und im Kopfbereich jeder Datei eine kurze Zusammenfassung enthalten.**
-
 Der Code befindet sich vollständig im Repository. Jede Datei enthält im Kopfbereich eine kurze Beschreibung ihrer Funktion.
 
 Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
-* **monster_scanner.ino**
-  WLAN-Verbindung vom Microcontroller, gesamte Sensorsteuerung inklusive Buzzer-Betätigung, LED-Animationen, Bewegungserkennung, JSON-Erstellung, HTTP-POST-Requests
-* **load.php**
-  Empfang der JSON-Daten, Verarbeitung der POST-Requests, Speicherung in der Datenbank
-* **config.php**
-  Datenbank-Zugangsdaten, PDO-Verbindung zur MySQL-Datenbank
 
 **Hauptverzeichnis (Frontend-Seiten)**
   
@@ -221,13 +213,13 @@ Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
 * **sender.html**
   Test-Oberfläche zur manuellen Simulation von Sensor-Daten (hilfreich für Entwicklung und Debugging).
 
-  **PHP-Backend-Schnittstellen**
+**PHP-Backend-Schnittstellen**
 
 * **config.php**
-  Zentrale Datenbank-Zugangsdaten und PDO-Verbindungsaufbau zur Live-MySQL-Datenbank.
+  Datenbank-Zugangsdaten, PDO-Verbindung zur MySQL-Datenbank
 
 * **load.php**
-  Empfang der JSON-Daten vom physischen Monster-Artefakt via HTTP-POST-Request und Speicherung in der Datenbank.
+  Empfang der JSON-Daten, Verarbeitung der POST-Requests, Speicherung in der Datenbank
 
 * **login.php**
   Validierung der Benutzerdaten beim Login und Initiierung der PHP-Session.
@@ -262,6 +254,45 @@ Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
 * **get_chart_data.php**
   Aufbereitung und Bereitstellung der Sensor-Statistiken für die grafischen Diagramme.
 
+**Frontend-Logik & API-Anbindung**
+
+* **auth.js**
+  Kern-Logik für die Authentifizierungsprozesse im Frontend.
+
+* **login.js**
+  Validiert die Eingaben der login.html und sendet sie an die Login-API.
+
+* **register.js**
+  Steuert den Registrierungsablauf und fängt Fehleingaben ab.
+
+* **home.js**
+  Lädt die Live-Daten des Monster-Scanners dynamisch ins Dashboard und steuert die Benutzeroberfläche.
+
+* **chart.js**
+  Initialisiert und rendert die visuellen Diagramme (Statistiken) auf der Home-Seite.
+
+* **konto.js**
+  Verarbeitet die Interaktionen auf der Profilseite (Passwortänderung, Haushalts-Verwaltung).
+
+* **protected.js**
+  Blockiert den Zugriff auf HTML-Seiten, falls kein gültiger Login-Token/Session vorhanden ist.
+
+* **logout.js**
+  Löscht die lokalen Session-Daten und triggert das serverseitige Logout.
+
+* **delete_account.js**
+  Steuert den Sicherheitsdialog und die API-Anfrage zur endgültigen Löschung eines Kontos.
+
+* **sender.js**
+  Logik für die Test-Oberfläche, um Knopfdrücke des Artefakts zu simulieren.
+
+
+
+* **style.css**
+  Das gesamte, zentrale Stylesheet der Applikation inklusive aller Layouts, Komponenten-Styles und Media Queries für das responsive Design.
+
+* **monster_scanner.ino**
+  WLAN-Verbindung vom Microcontroller, gesamte Sensorsteuerung inklusive Buzzer-Betätigung, LED-Animationen, Bewegungserkennung, JSON-Erstellung, HTTP-POST-Requests
 
 
 **Datenschnittstelle zwischen Physical Computing und WebApp:**
