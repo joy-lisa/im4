@@ -1,7 +1,5 @@
 # IM IV FS26 - Monster-Scanner 🌙
 
-➡️ bei der Chat Gpt-Anfrage bezüglich der Datenbank: erwähnen, dass wir es mit PDO machen
-
 ## Kurzbeschreibung des Projekts
 
 * **Modul:** Interaktive Medien 4 an der Fachhochschule Graubünden (FS26)  
@@ -67,11 +65,9 @@ Da am Ende doch noch ein klein wenig Zeit blieb, haben wir uns entschieden ein F
 
 ### 🏁Unsere WebApp
 
-Der Monster-Scanner kann unter dem folgenden Link aufgerufen werden:
+Der Monster-Scanner kann unter dem folgenden Link aufgerufen werden: [Link zur Webapp](https://im4.lisa-joy.ch)
 
-[Link zur Webapp](https://im4.lisa-joy.ch)
-
-* **Video-Dokumentation:** [Link zum Video auf Youtube](http://link.zum.video) 
+Die Video-Erklärung kann unter dem folgenden Link aufgerufen werden: [Link zum Video auf Youtube](http://link.zum.video) 
 
 #### Installationsanleitung WebApp
 
@@ -327,13 +323,13 @@ Unser ERM bildet das logische Fundament für den „Monster Scanner“. Es zeigt
   
 * **🔑👤 Authentifizierung für Monster-Scanner**
 
-Hier passiert die Anmeldung auf unsere App. 
+  Hier passiert die Anmeldung auf unsere App. 
 
-Standardmässig bleibt die Session aktiv, solange der Browser offen ist und endet mit dem Schliessen des Browsers. Wenn die Session ca. 24 Minuten inaktiv ist endet die Session und der User wird ausgeloggt.
+  Standardmässig bleibt die Session aktiv, solange der Browser offen ist und endet mit dem Schliessen des Browsers. Wenn die Session ca. 24 Minuten   inaktiv ist endet die Session und der User wird ausgeloggt.
 
-Wir haben uns bewusst gegen eine präzise Zeitbegrenzung entschieden, weil in unserem Fall die Zeitspanne passend ist und das auch zu einer guten User Experience führt
+  Wir haben uns bewusst gegen eine präzise Zeitbegrenzung entschieden, weil in unserem Fall die Zeitspanne passend ist und das auch zu einer guten   User Experience führt
 
-Seiten, die man nur eingeloggt besuchen kann sind die home.hmtl- und das konto.html-Seite. Ausgeloggt kann man die Startseite (index.html), sowie die Login- (login.html) und Registrierungseite (register.html) besuchen.
+  Seiten, die man nur eingeloggt besuchen kann sind die home.hmtl- und das konto.html-Seite. Ausgeloggt kann man die Startseite (index.html), sowie   die Login- (login.html) und Registrierungseite (register.html) besuchen.
 
 ## Known bugs
 
