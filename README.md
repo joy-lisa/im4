@@ -32,7 +32,7 @@ Somit müssen Eltern erst dann aktiv werden, wenn es wirklich nötig ist.
 
 #### Design
 
-Wir haben bei der Erstellung des Designs versucht, kindliche Elemente in einem schlichten Design darzustellen. Das heisst so, dass es für die Eltern, sowie für die Kinder ansprechend gestaltet ist. Somit kann die App auch problemlso den Kindern gezeigt werden, welche die Funktionen der App mit wenigen Erklärungen der Eltern verstehen. Da wir drei verschiedene Designs ausgetestet haben, war für uns auch schnell klar, in welche Richtung wir in der Gestaltung gehen wollen. 
+Wir haben bei der Erstellung des Designs versucht, kindliche Elemente in einem schlichten Design darzustellen. Das heisst so, dass es für die Eltern, sowie für die Kinder ansprechend gestaltet ist. Somit kann die App auch problemlos den Kindern gezeigt werden, welche die Funktionen der App mit wenigen Erklärungen der Eltern verstehen. Da wir drei verschiedene Designs ausgetestet haben, war für uns auch schnell klar, in welche Richtung wir in der Gestaltung gehen wollen. 
 
 Anhand des AB-Testings haben wir herausgefunden, dass die App bei Eltern mit kleinen Kindern gut ankommt, da es sich um eine Anwendung handelt, welche für das Sicherheitsgefühl der Kinder sorgt und die Eltern entlasten soll. Mögliche Änderungswünsche der Testpersonen sind als Kommentare in unserer Figma-Datei ersichtlich.
 
