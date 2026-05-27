@@ -190,7 +190,7 @@ Der Code befindet sich vollständig im Repository. Jede Datei enthält im Kopfbe
 
 Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
 
-**Hauptverzeichnis (Frontend-Seiten)**
+*Hauptverzeichnis (Frontend-Seiten)*
   
 * **index.html**
   Automatischer Einstiegspunkt der Applikation.
@@ -213,7 +213,7 @@ Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
 * **sender.html**
   Test-Oberfläche zur manuellen Simulation von Sensor-Daten (hilfreich für Entwicklung und Debugging).
 
-**PHP-Backend-Schnittstellen**
+*PHP-Backend-Schnittstellen*
 
 * **config.php**
   Datenbank-Zugangsdaten, PDO-Verbindung zur MySQL-Datenbank
@@ -287,12 +287,12 @@ Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
   Logik für die Test-Oberfläche, um Knopfdrücke des Artefakts zu simulieren.
 
 
-**Hardware-Quellcode**
+*Hardware-Quellcode*
 
 * **monster_scanner.ino**
   WLAN-Verbindung vom Microcontroller, gesamte Sensorsteuerung inklusive Buzzer-Betätigung, LED-Animationen, Bewegungserkennung, JSON-Erstellung, HTTP-POST-Requests
 
-**Design**
+*Design*
 
   * **style.css**
   Das gesamte, zentrale Stylesheet der Applikation inklusive aller Layouts, Komponenten-Styles und Media Queries für das responsive Design.
