@@ -12,7 +12,7 @@
 
 #### Welches Problem im Alltag von Eltern mit kleinen Kindern wird gelöst?
 
-Viele Kinder haben Angst vor Monstern unter dem Bett, dies ist nicht nur eine grosse Belastung für die Kinder selbst sondern auch für die Eltern bedeutet das mehr Care-Arbeit und schlaflose Nächte - der Monster-Scanner löst genau dieses Problem.
+Viele Kinder haben Angst vor Monstern unter dem Bett, dies ist nicht nur eine grosse Belastung für die Kinder selbst sondern auch für die Eltern bedeutet das mehr Care-Arbeit und schlaflose Nächte. Der Monster-Scanner löst genau dieses Problem.
 
 #### Was ist der „Sinn und Zweck“ des Systems?
 
@@ -21,21 +21,23 @@ Viele Kinder haben Angst vor Monstern unter dem Bett, dies ist nicht nur eine gr
 * Ängste werden auf effektive Weise beruhigt
 * das Selbstbewusstsein der Kinder wird gestärkt
 
-Es muss wirklich überprüft werden, dass keine Monster da sind und dann brauchen die Kinder eine visuelle Bestätigung. Die Eltern sollen informiert werden, sobald Bewegung unter dem Bett festgestellt wurde.
+Es wird überprüft, ob Monster da sind und dann brauchen die Kinder eine visuelle Bestätigung. Die Eltern sollen informiert werden, sobald Bewegung unter dem Bett festgestellt wurde.
 
 \[*Bilder / GIFs (optional)*\]
 
 ### UX & Konzeption
-*In diesem Teil werden die gemeinsamen Schritte aus der UX-Abgabe dokumentiert, damit sich hier alles vollständig an einem Ort befindet (betrifft WebApp und Physical Computing)*
 
 #### 🎨 Design
 
-Wir haben bei der Erstellung des Design versucht eine Mischung einem schlichten Design, sowie etwas kindlichen Elementen zu machen. Das heisst so, dass es für die Eltern, sowie für die Kinder ansprechend designt ist.
+Wir haben bei der Erstellung des Designs versucht, kindliche Elemente in einem schlichten Design darzustellen. Das heisst so, dass es für die Eltern, sowie für die Kinder ansprechend gestaltet ist. Somit kann die App auch problemlso den Kindern gezeigt werden, welche die Funktionen der App mit wenigen Erklärungen der Eltern verstehen. Da wir drei verschiedene Designs ausgetestet haben, war für uns auch schnell klar, in welche Richtung wir in der Gestaltung gehen wollen. 
 
-Anhand des AB-Testings haben wir herausgefunden, dass dies bei den Eltern mit kleinen Kindern sehr gut ankommt, da es sich ja dabei um ein App handelt, welches für das Sicherheitsgefühl der Kinder sorgt.
+Anhand des AB-Testings haben wir herausgefunden, dass die App bei Eltern mit kleinen Kindern gut ankommt, da es sich um eine Anwendung handelt, welche für das Sicherheitsgefühl der Kinder sorgt und die Eltern entlasten soll. Mögliche Änderungswünsche der Testpersonen sind als Kommentare in unserer Figma-Datei ersichtlich.
 
-* **Figma:** [Hier gehts zum Figma](https://www.figma.com/design/6s5t7Cb0NK4FvaAhdiKhcd/IM-4-%E2%80%93-App-Konzeption?node-id=78-325&t=XFWmMQKEByA0oNdQ-1)
-* **User Flow \+ Screen Flow** (Screenshot aus Figma)  
+**Figma:** [Hier gehts zum Figma](https://www.figma.com/design/6s5t7Cb0NK4FvaAhdiKhcd/IM-4-%E2%80%93-App-Konzeption?node-id=78-325&t=XFWmMQKEByA0oNdQ-1)
+
+**User Flow \+ Screen Flow**
+
+
 * ggf. weitere Ergänzungen
 * *Welche Features waren angedacht?*
 
