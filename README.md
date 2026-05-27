@@ -218,24 +218,37 @@ Seiten, die man nur eingeloggt besuchen kann sind die index.hmtl- und das konto.
 ## Known bugs
 
 * Was funktioniert noch nicht einwandfrei?  
-* Was ist uns aufgefallen bei der Entwicklung?  
+* Was ist uns aufgefallen bei der Entwicklung?
+
+Die Entwicklung einer solchen App ist sehr zeitaufwändig und bedingt eine gute Kommunikation innerhalb des Teams. 
+    
 * Was könnte noch verbessert werden?
+
+Das Design der App könnte an manchen Stellen sicherlich noch überarbeitet/verfeinert werden. Zudem wäre es toll, noch einige Features mehr einzubauen. 
 
 ## Umsetzungsprozess
 
 * **Reflexion / Erfahrung / Lernfortschritt:** 
 Beim Umsetzungsprozess haben wir sehr viel über das Zusammenspiel von Physical Computing, Datenbank und WebApp gelernt. Besonders spannend war für uns, dass unser physisches Artefakt nicht nur lokal funktioniert, sondern Daten über WLAN an eine Datenbank senden kann. Dadurch haben wir besser verstanden, wie IoT-Systeme aufgebaut sind und wie verschiedene Komponenten miteinander kommunizieren. Wir haben gelernt, wie ein ESP32-C6 mit Sensoren, einem Buzzer und einem LED-Ring verbunden und programmiert wird. Zusätzlich haben wir verstanden, wie Messwerte verarbeitet, als JSON formatiert und über HTTP-POST-Requests an eine PHP-Schnittstelle gesendet werden. Für die Datenbankanbindung haben wir mit PDO gearbeitet, damit die Daten sicher in einer MySQL-Datenbank gespeichert werden können.
 
+Im Bereich WebApp konnten wir unser Know-How im Zusammenspiel mit HTML, JS und PHP vertiefen und uns erneut mit einem coolen Styling per CSS ausleben. Besonders lehrreich war hierbei die Optimierung für verschiedene Bildschirmgrössen mittels CSS Media Queries. Uns wurde rasch bewusst, wie aufwändig es sein kann, wenn der "normale" CSS-Code etwas unübersichtlich und verschachtelt geschrieben ist. Das hat uns viel Zeit und Nerven gekostet. 
+
 * **Herausforderungen & Lösungen:** 
 Eine grosse Herausforderung war die Verbindung zwischen dem ESP32 und der Datenbank. Am Anfang war nicht klar, wie die Daten korrekt vom Mikrocontroller an das Backend geschickt werden müssen. Dieses Problem konnten wir lösen, indem wir die Messwerte als JSON strukturiert und an die Datei load.php gesendet haben. Dort werden die Daten verarbeitet und anschliessend mit PDO in der Datenbank gespeichert. Auch die Bewegungserkennung war nicht einfach, da wir definieren mussten, wann wirklich eine Bewegung erkannt wird. Dafür vergleichen wir zwei Messungen des Ultraschallsensors direkt auf dem ESP32. Sobald die Differenz grösser als 3 cm ist, wird monster_da = 1 gesetzt.
 
 Eine weitere Herausforderung war das visuelle Feedback mit dem LED-Ring. Dieser sollte dem Kind klar zeigen, was gerade passiert. Deshalb haben wir verschiedene Zustände programmiert: Ein rotierendes grünes Licht zeigt den laufenden Scan, ein komplett grüner Ring bedeutet, dass die Daten erfolgreich gespeichert wurden, und ein roter Ring zeigt einen Fehler an. Ursprünglich hatten wir noch zusätzliche Features geplant, zum Beispiel einen Schichtplan für Eltern oder eine Funktion für mehrere Kinder. Diese Ideen hätten das System jedoch deutlich komplizierter gemacht. Deshalb haben wir uns bewusst auf einen realistisch umsetzbaren Funktionsumfang konzentriert.
-* 
+
+Das Team WebApp hatte erst einige Probleme mit dem Login-Prozess für die App. Der Aufbau der App war zeitintensiv und wir mussten oft sehr lange nach Fehlern im Code suchen. Als das Grundgerüst stand, war die Motivation dann auch wieder höher, nun die Daten des Sensors einzubinden und mittels PHP und JS in die App zu übertragen. Eine der grössten Herausforderungen war das ganze Styling der App. Im Nachhinein würden wir das anders angehen und versuchen alle Seiten einheitlicher zu gestalten. Da wir die Formularelemente anfangs sehr spezifisch für den Login-Prozess gestylt hatten, kam es später bei dem Profil- und Bearbeitungsmodus zu unvorhergesehenen Layout-Konflikten. Felder flogen im Desktop-Modus auseinander, Buttons überlagerten sich und Abstände brachen weg. Durch diese intensive Fehlersuche haben wir gelernt, wie wichtig ein strukturiertes CSS-Konzept und eine saubere Trennung von Layout-Logiken sind. Erst durch die präzise Feinabstimmung von Media Queries konnten wir die App schlussendlich auf ein konsistentes, responsives Desktop- und Mobile-Niveau bringen.
+
+
 * **KI-Einsatz:** 
-KI-Tools haben wir unterstützend eingesetzt, vor allem um technische Abläufe besser zu verstehen, Probleme beim Coding zu lösen und die README zu strukturieren. Besonders hilfreich war KI bei Fragen zur Datenbankanbindung mit PHP und PDO, bei HTTP-POST-Requests sowie beim Debugging einzelner Probleme. Chatgpt hat uns ebenfalls geholfen Codes mit Arduino zu schreiben und Zusammenhänge zu verstehen. 
+KI-Tools haben wir unterstützend eingesetzt, vor allem um technische Abläufe besser zu verstehen, Probleme beim Coding zu lösen und die README zu strukturieren. Besonders hilfreich war KI bei Fragen zur Datenbankanbindung mit PHP und PDO, bei HTTP-POST-Requests sowie beim Debugging einzelner Probleme. Chatgpt hat uns ebenfalls geholfen Codes mit Arduino zu schreiben und Zusammenhänge zu verstehen.
+
+Im Bereich von WebApp haben wir viel mit KI (Gemini) gearbeitet, um uns die weiteren Schritte des Aufbaus der App erklären zu lassen. Uns war wichtig, nie die reinen Code-Zeilen von KI zu übernehmen, sondern stets zu kontrollieren, was wir bereits hatten und was wir noch in unserem Code ergänzen mussten. Dadurch haben wir uns immer jede Code-Zeile durchgelesen und sie versucht, bestmöglichst zu verstehen. Das ist uns teils mehr, teils weniger gelungen. Dabei ist uns einmal mehr aufgefallen, wie wichtig es ist, in der Zusammenarbeit mit KI immer die Kontrolle und den Überblick zu behalten.
+
 * **Fazit:**
-Insgesamt sind wir sehr zufrieden mit unserem Projekt. Der Monster-Scanner verbindet ein alltägliches Problem mit einer kreativen technischen Lösung und zeigt, wie Physical Computing und WebApp sinnvoll zusammenspielen können. Besonders schön finden wir, dass das Projekt nicht nur technisch funktioniert, sondern auch emotional einen Nutzen hat. Kinder erhalten durch den Scanner und den LED-Ring ein Gefühl von Sicherheit, während die Eltern entlastet werden können.
-Während der Umsetzung konnten wir viele neue Erfahrungen sammeln und haben gemerkt, wie spannend es ist, wenn Hardware, Backend und Frontend am Ende wirklich zusammen funktionieren. Es war ein cooles Gefühl zu sehen, wie aus einer ersten Idee Schritt für Schritt ein funktionierendes System entstanden ist. Das Projekt hat uns nicht nur technisch weitergebracht, sondern auch gezeigt, wie wichtig Teamarbeit, Kommunikation und kreatives Problemlösen bei interaktiven Projekten sind.
+Insgesamt sind wir zufrieden mit unserem Projekt. Der Monster-Scanner verbindet ein alltägliches Problem mit einer kreativen technischen Lösung und zeigt, wie Physical Computing und WebApp sinnvoll zusammenspielen können. Besonders schön finden wir, dass das Projekt nicht nur technisch funktioniert, sondern auch emotional einen Nutzen hat. Kinder erhalten durch den Scanner und den LED-Ring ein Gefühl von Sicherheit, während die Eltern entlastet werden können.
+Es war ein cooles Gefühl zu sehen, wie aus einer ersten Idee Schritt für Schritt ein funktionierendes System entstanden ist. Das Projekt hat uns nicht nur technisch weitergebracht, sondern auch gezeigt, wie wichtig Teamarbeit, Kommunikation und kreatives Problemlösen bei interaktiven Projekten sind.
 
 
 - Beinhaltet die Konfigurationsdatei für die Datenbankverbindung.
