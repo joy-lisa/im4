@@ -26,6 +26,50 @@
 
         <section class="grid">
 
+            <article class="card monster-section">
+                <h2>👾 Monster-Scanner Ziel</h2>
+
+                <div id="monsterViewMode">
+                    <p>Dein aktuelles Monster:</p>
+                    <div class="current-monster-preview">
+                        <img id="currentMonsterImg" src="resources/img/monster_wasabi_02.svg" alt="Aktuelles Monster"
+                            class="monster-preview-img" />
+                    </div>
+                    <br>
+                    <button id="btnEditMonster" class="btn">Monster ändern</button>
+                </div>
+
+                <div id="monsterEditMode" style="display: none;">
+                    <p>Wähle dein Lieblingsmonster aus:</p>
+
+                    <div class="monster-gallery">
+                        <label class="monster-item">
+                            <input type="radio" name="monster_choice" value="monster_wasabi_02" />
+                            <img src="resources/img/monster_wasabi_02.svg" alt="Wasabi" class="monster-img" />
+                        </label>
+                        <label class="monster-item">
+                            <input type="radio" name="monster_choice" value="monster_grün_02" />
+                            <img src="resources/img/monster_grün_02.svg" alt="Grünes Monster" class="monster-img" />
+                        </label>
+                        <label class="monster-item">
+                            <input type="radio" name="monster_choice" value="monster_bla_02" />
+                            <img src="resources/img/monster_bla_02.svg" alt="Blaues Monster" class="monster-img" />
+                        </label>
+                        <label class="monster-item">
+                            <input type="radio" name="monster_choice" value="monster_lila_02" />
+                            <img src="resources/img/monster_lila_02.svg" alt="Lila Monster" class="monster-img" />
+                        </label>
+                        <label class="monster-item">
+                            <input type="radio" name="monster_choice" value="monster_orange_02" />
+                            <img src="resources/img/monster_orange_02.svg" alt="Oranges Monster" class="monster-img" />
+                        </label>
+                    </div>
+                    <br>
+                    <button id="btnSaveMonster" class="btn">Monster speichern</button>
+                    <button id="btnCancelMonsterEdit" class="btn btn-sub">Abbrechen</button>
+                </div>
+            </article>
+
             <article class="card profil-einstellungen">
                 <h2>Deine Familie</h2>
 

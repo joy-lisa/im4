@@ -11,9 +11,9 @@ async function loadChart(buzzerId = 1) {
     }
 
     // =========================================================================
-    // ERGÄNZUNG 1: TREND ANZEIGEN & FÄRBEN
+    // TREND ANZEIGEN & FÄRBEN
     // =========================================================================
-    // Wir suchen das Div in eurem Trend-Kärtchen (vorausgesetzt es hat ein Element mit id="trendValue")
+    // Wir suchen das Div in Trend-Kärtchen (vorausgesetzt es hat ein Element mit id="trendValue")
     const trendDiv = document.getElementById("trendValue");
     if (trendDiv && dbData.trend) {
         trendDiv.textContent = dbData.trend.text;
@@ -29,7 +29,7 @@ async function loadChart(buzzerId = 1) {
     }
 
     // =========================================================================
-    // ERGÄNZUNG 2: CHARTERSTELLUNG AN NEUES FORMAT ANPASSEN
+    // CHARTERSTELLUNG AN NEUES FORMAT ANPASSEN
     // dbData.chart_data enthält jetzt euer gewohntes Array!
     // =========================================================================
     const chartArray = dbData.chartData;
