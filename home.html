@@ -24,22 +24,26 @@
 
 <body class="content-page">
 
-
-
-  <main id="householdInfo">
-    <header class="header">
+  <header class="header">
+    <div class="header-links">
       <img id="homeMonsterLogo" src="resources/img/monster_wasabi_02.svg" alt="Monster-Scanner Logo">
 
-      <div>
-        <h1>Monster-Scanner</h1>
-        <p>Willkommen zurück!</p>
-        <small>Familie <span id="hName">Du bist noch in keinem Haushalt</span></small>
+      <div class="header-text">
+        <h1 class="header-title">Monster-Scanner</h1>
+        <p class="header-subtitle">Willkommen zurück <small class="header-subtitle">Familie <span id="hName">Du bist
+              noch in keinem Haushalt</span>!</small></p>
+
       </div>
 
-      <a href="konto.html">
-        <button class="btn-profile">👤</button>
-      </a>
-    </header>
+    </div>
+
+    <a href="konto.html">
+      <button class="btn-profile">👤</button>
+    </a>
+  </header>
+
+  <main id="householdInfo">
+
 
     <div id="liveMonsterAlert" class="card alert-card" style="display: none;">
       <span id="closeAlertBtn">&times;</span>
@@ -54,13 +58,14 @@
       <article class="card">
         <div class="card-title">📈 Trend</div>
         <div id="trendValue">Lade Trend...</div>
+        <div class="trend-comparison"> vs. letzte Woche</div>
       </article>
 
       <article class="card">
         <div class="card-title">🔔 Alarme nach Datum</div>
 
         <div class="filter-container">
-          <label for="alarmDateFilter" class="filter-label">Datum auswählen:</label>
+          <label for="alarmDateFilter" class="filter-label">Wähle ein Datum</label>
           <input type="date" id="alarmDateFilter" class="filter-input">
         </div>
 

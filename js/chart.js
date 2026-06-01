@@ -58,5 +58,15 @@ async function loadChart(buzzerId = 1) {
             }]
         },
 
+        options: {
+            responsive: true,
+            maintainAspectRatio: false, // Erlaubt uns, die Höhe per CSS zu steuern
+            plugins: {
+                legend: {
+                    display: false // Versteckt die Legende oben, spart wertvollen Platz auf dem Handy
+                }
+            }
+        }
+
     });
 }
