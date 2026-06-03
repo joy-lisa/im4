@@ -18,9 +18,9 @@
   padding: 0;
 }
 
-html {
+/* html {
   font-size: 18px;
-}
+} */
 
 
 body {
@@ -31,12 +31,17 @@ body {
 }
 
 
-#back_btn_container {
+/* #back_btn_container {
   position: absolute;
   top: 24px;
   left: 24px;
   text-decoration: none;
   z-index: 10;
+} */
+
+#back_btn_container {
+  position: static;
+  text-decoration: none;
 }
 
 #back_btn {
@@ -88,13 +93,13 @@ body {
   margin: auto;
 }
 
-.welcome-container h1 {
+/* .welcome-container h1 {
   color: var(--text-white);
   font-size: 4rem;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 20px;
-}
+} */
 
 .welcome-container h2 {
   color: white;
@@ -270,8 +275,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* width: 100%; */
-  /* gap: 16px; */
   padding: 15px;
   background-color: white;
   position: sticky;
@@ -281,11 +284,25 @@ main {
   z-index: 1000;
 }
 
-.header-konto {
+/* .header-konto {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 24px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+} */
+
+.header_konto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 50px;
+  padding: 15px 50px;
   background-color: white;
   position: sticky;
   top: 0;
@@ -321,19 +338,19 @@ main {
   gap: 4px;
 }
 
-.header-konto-text {
+/* .header-konto-text {
   display: flex;
   flex-direction: column;
   gap: 4px;
   text-align: right;
-}
+} */
 
 .header-title {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .header-subtitle {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 /* main:not(.main_konto) .header div {
@@ -352,30 +369,30 @@ main {
   text-align: left;
 } */
 
-main h1 {
+/* main h1 {
   font-size: 1rem;
   font-weight: 800;
   color: var(--cassis);
   line-height: 1.2;
-}
+} */
 
 main p {
   font-size: 0.8rem;
   opacity: 0.8;
 }
 
-main .header small {
+/* main .header small {
   color: var(--cassis);
   font-size: 0.9rem;
   opacity: 0.8;
-}
+} */
 
-.main_konto h1 {
+/* .main_konto h1 {
   font-size: 3rem;
   font-weight: 800;
   color: var(--cassis);
   line-height: 1.2;
-}
+} */
 
 .main p {
   font-size: 1.2rem;
@@ -383,7 +400,7 @@ main .header small {
 }
 
 .main_konto p {
-  font-size: 1.5rem;
+  font-size: 0.8rem;
   opacity: 0.8;
 }
 
@@ -406,7 +423,7 @@ main .header small {
 }
 
 .filter-input {
-  width: 100%;
+  width: 302px;
   max-width: 100%;
   height: 40px;
   padding: 0 12px;
@@ -569,7 +586,8 @@ main .header small {
 
 #monsterViewMode {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  gap: 12px;
 }
 
 .monster-gallery {
@@ -825,8 +843,6 @@ main .header small {
   margin-bottom: 12px;
 }
 
-
-
 /* =========================================================================
    RESONSIVE FÜR DESKTOP
    ========================================================================= */
@@ -954,62 +970,9 @@ main .header small {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  html body.content-page #householdInfo .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto 40px auto;
-    padding: 20px 24px;
-    box-sizing: border-box;
-    position: relative;
-  }
-
-  html body.content-page #householdInfo .header div {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-  }
-
-  html body.content-page #householdInfo .grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
     max-width: 750px;
     margin: 0 auto;
-  }
-
-  html body.content-page #householdInfo .grid .card {
-    width: 100%;
-    max-width: 750px;
-    box-sizing: border-box;
-  }
-
-  html body.content-page #householdInfo .header div h1 {
-    font-size: 2.3rem;
-    margin-bottom: 4px;
-    margin-top: 20px;
-    font-weight: 800;
-  }
-
-
-  html body.content-page #householdInfo .header div p {
-    font-size: 1.2rem;
-    margin: 0;
-  }
-
-
-  html body.content-page #householdInfo .header div small {
-    font-size: 1rem;
-    color: #4a4a4a;
+    padding-top: 40px;
   }
 
   /* KONTOSEITE FÜR DESKTOP */
@@ -1022,32 +985,6 @@ main .header small {
     width: 100%;
     padding-top: 0px;
     margin-top: 0px;
-  }
-
-
-  body.account-page .main_konto .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 750px;
-  }
-
-  body.account-page .main_konto .header div {
-    text-align: center;
-    width: 100%;
-  }
-
-  body.account-page .main_konto .header div h1 {
-    font-size: 2rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-  }
-
-  body.account-page .main_konto .header div p {
-    font-size: 1.05rem;
-    color: #555555;
   }
 
   body.account-page .main_konto .grid .card h2 {
@@ -1179,48 +1116,31 @@ main .header small {
     box-sizing: border-box;
   }
 
-  /* Basis-Styling für den Header auf der Kontoseite */
-  body.account-page header.header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    /* Links ausrichten wie auf der Homeseite */
+  .header {
+    display: flex !important;
+    flex-direction: row !important;
     align-items: center;
-    padding: 15px 24px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: white;
   }
 
-  /* Holt den Zurück-Button aus der absoluten Positionierung */
-  body.account-page header.header a#back_btn_container {
-    position: static;
-    margin-right: 20px;
-    /* Abstand zwischen Button und Text */
-    transform: none;
-    left: auto;
-    top: auto;
-  }
-
-  /* Passt die Größe des Zurück-Buttons an */
-  body.account-page header.header #back_btn {
-    padding: 10px 16px;
-    font-size: 1.2rem;
-    border-radius: 12px;
-  }
-
-  /* Erzwingt die linksbündige Text-Ausrichtung */
-  body.account-page header.header .header-text {
+  .header-links {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    transform: none;
-    position: static;
+    align-items: center;
+    gap: 20px;
   }
 
+  .header-text {
+    text-align: left;
+    margin-right: 50px;
+  }
+
+  /* Schaltet deine absolute Zentrierung aus, die das Layout zerschießt */
+  html body.content-page #householdInfo .header div,
+  body.account-page header.header .header-text {
+    position: static !important;
+    transform: none !important;
+    text-align: left !important;
+  }
 }
