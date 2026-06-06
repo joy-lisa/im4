@@ -114,11 +114,17 @@ async function loadAccountData() {
                     listContainer.innerHTML = "";
                     result.members.forEach(member => {
                         const li = document.createElement("li");
-                        li.style.padding = "8px 0";
-                        li.style.borderBottom = "1px solid #ddd";
+                        li.className = "member-card";
                         li.innerHTML = `
-                            <strong>👤 ${member.name}</strong> <br>
-                            <span style="font-size: 0.85em; color: #555;"> 📧 ${member.email}</span>
+                        <div class= "member-row">
+                            <span class="member-icon">👤</span>
+                            <span class="member-text">${member.name}</span>
+                        </div>
+
+                        <div class="member-email">
+                            <span class="member-icon"> 📧 </span>
+                            <span class="member-text">${member.email}</span>
+                        </div>
                         `;
                         listContainer.appendChild(li);
                     });

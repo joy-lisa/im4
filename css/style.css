@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-
 :root {
   --wasabi: #E9F056;
   --orange: #FF5C34;
@@ -18,11 +16,6 @@
   padding: 0;
 }
 
-/* html {
-  font-size: 18px;
-} */
-
-
 body {
   background-color: var(--salbei);
   font-family: 'Inter', sans-serif;
@@ -31,17 +24,12 @@ body {
 }
 
 
-/* #back_btn_container {
+#back_btn_container {
   position: absolute;
   top: 24px;
   left: 24px;
   text-decoration: none;
   z-index: 10;
-} */
-
-#back_btn_container {
-  position: static;
-  text-decoration: none;
 }
 
 #back_btn {
@@ -93,13 +81,13 @@ body {
   margin: auto;
 }
 
-/* .welcome-container h1 {
+.welcome-container h1 {
   color: var(--text-white);
   font-size: 4rem;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 20px;
-} */
+}
 
 .welcome-container h2 {
   color: white;
@@ -227,9 +215,7 @@ form {
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],
-.field input,
-#editUserName,
-#editChildName {
+.field input {
   width: 100%;
   height: 80px;
   padding: 0 16px;
@@ -260,7 +246,6 @@ main {
   gap: 24px;
 }
 
-
 .main_konto {
   width: 100%;
   max-width: 100%;
@@ -275,6 +260,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* width: 100%; */
+  /* gap: 16px; */
   padding: 15px;
   background-color: white;
   position: sticky;
@@ -284,25 +271,11 @@ main {
   z-index: 1000;
 }
 
-/* .header-konto {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 24px;
-  background-color: white;
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-} */
-
 .header_konto {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 50px;
-  padding: 15px 50px;
+  padding: 15px 24px;
   background-color: white;
   position: sticky;
   top: 0;
@@ -338,19 +311,24 @@ main {
   gap: 4px;
 }
 
-/* .header-konto-text {
+.header-konto-text {
   display: flex;
   flex-direction: column;
   gap: 4px;
   text-align: right;
-} */
+  margin-right: 40px;
+}
 
 .header-title {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .header-subtitle {
-  font-size: 1rem;
+  font-size: 0.8rem;
+}
+
+.header-subtitle-konto {
+  font-size: 1.5rem;
 }
 
 /* main:not(.main_konto) .header div {
@@ -369,30 +347,30 @@ main {
   text-align: left;
 } */
 
-/* main h1 {
+main h1 {
   font-size: 1rem;
   font-weight: 800;
   color: var(--cassis);
   line-height: 1.2;
-} */
+}
 
 main p {
   font-size: 0.8rem;
   opacity: 0.8;
 }
 
-/* main .header small {
+main .header small {
   color: var(--cassis);
   font-size: 0.9rem;
   opacity: 0.8;
-} */
+}
 
-/* .main_konto h1 {
+.main_konto h1 {
   font-size: 3rem;
   font-weight: 800;
   color: var(--cassis);
   line-height: 1.2;
-} */
+}
 
 .main p {
   font-size: 1.2rem;
@@ -400,7 +378,7 @@ main p {
 }
 
 .main_konto p {
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   opacity: 0.8;
 }
 
@@ -423,7 +401,7 @@ main p {
 }
 
 .filter-input {
-  width: 302px;
+  width: 100%;
   max-width: 100%;
   height: 40px;
   padding: 0 12px;
@@ -587,7 +565,7 @@ main p {
 #monsterViewMode {
   display: flex;
   /* justify-content: space-between; */
-  gap: 12px;
+  gap: 30px;
 }
 
 .monster-gallery {
@@ -639,23 +617,48 @@ main p {
   transform: scale(1.05);
 }
 
+strong {
+  font-weight: 700;
+  color: var(--cassis);
+  padding-bottom: 12px;
+}
+
 #displayUserName,
 #displayChildName {
+  height: 80px;
+  padding: 0 16px;
+  margin-bottom: 20px;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  font-size: 2rem;
+  font-family: inherit;
+  background-color: #e1e7dd;
+  color: var(--cassis);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+#displayUserName,
+#displayChildName {
+  font-size: 2rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+#editUserName,
+#editChildName {
   height: 80px;
   padding: 0 16px;
   border: 2px solid transparent;
   border-radius: 14px;
   font-size: 2rem;
   font-family: inherit;
-  background-color: var(--input-bg, #e1e7dd);
+  background-color: #e1e7dd;
   color: var(--cassis);
   outline: none;
   transition: border-color 0.2s ease;
-}
-
-#displayUserName {
-  font-size: 2rem;
-  font-weight: 700;
+  width: 100%;
 }
 
 .popup-overlay {
@@ -676,6 +679,7 @@ main p {
   font-weight: 700;
   color: var(--cassis);
   letter-spacing: 0.5px;
+  font-size: 2rem;
 }
 
 
@@ -691,11 +695,122 @@ main p {
 }
 
 .popup-section {
-  margin-top: 20px;
+  margin-top: 2rem;
   padding-top: 15px;
   border-top: 1px solid #eee;
 }
 
+#householdInfo {
+  display: flex;
+
+}
+
+#liveMonsterAlert {
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+#closeAlertBtn {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--cassis);
+}
+
+.alert-text {
+  line-height: 2;
+}
+
+.family-code {
+  color: var(--cassis);
+  margin: 15px 0;
+  line-height: 2;
+}
+
+h3 {
+  color: var(--cassis);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+#memberList {
+  font-size: 2rem;
+
+}
+
+.family-member {
+  font-weight: 500;
+  color: var(--cassis);
+  display: inline-flex;
+  align-items: center;
+  gap: 100px;
+}
+
+.member-card {
+  background-color: white;
+  border: 2px solid #e1e7dd;
+  /* Passt zu deinen Input-Hintergründen */
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 16px;
+  list-style-type: none;
+  /* Entfernt den Listenpunkt */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
+  /* Sehr feiner Schatten */
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* Der Abstand zwischen Name und E-Mail innerhalb der Kachel */
+}
+
+/* Flexbox-Zeilen für Name und E-Mail */
+.member-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  /* Lücke zwischen Emoji und Text */
+  color: var(--cassis);
+}
+
+.member-email {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  /* Lücke zwischen Emoji und Text */
+  color: var(--cassis);
+}
+
+.member-row .member-icon {
+  font-size: 2rem;
+  /* Große Emojis für Mobile */
+}
+
+.member-row .member-text {
+  font-size: 2rem;
+  /* Passt sich an deine Standard-Input-Schriftgröße an */
+  font-weight: 500;
+}
+
+/* E-Mail Zeile etwas dezenter */
+.member-row.email {
+  opacity: 0.8;
+}
+
+.member-row.email .member-text {
+  font-size: 1.5rem;
+  /* Etwas kleiner als der Name */
+}
+
+#userEmail {
+  font-size: 1.5rem;
+  color: var(--cassis);
+}
 
 .monster {
   display: flex;
@@ -755,10 +870,10 @@ main p {
   position: static;
   width: 100%;
   max-width: 100%;
-  padding: 0 24px;
+  padding: 24px;
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 16px;
+  margin: 16px;
 }
 
 
@@ -842,6 +957,8 @@ main p {
 .delete-popup #btnConfirmDelete {
   margin-bottom: 12px;
 }
+
+
 
 /* =========================================================================
    RESONSIVE FÜR DESKTOP
@@ -975,6 +1092,60 @@ main p {
     padding-top: 40px;
   }
 
+  /* html body.content-page #householdInfo .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 40px auto;
+    padding: 20px 24px;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  html body.content-page #householdInfo .header div {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  html body.content-page #householdInfo .grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  html body.content-page #householdInfo .grid .card {
+    width: 100%;
+    max-width: 750px;
+    box-sizing: border-box;
+  }
+
+  html body.content-page #householdInfo .header div h1 {
+    font-size: 2.3rem;
+    margin-bottom: 4px;
+    margin-top: 20px;
+    font-weight: 800;
+  }
+
+
+  html body.content-page #householdInfo .header div p {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+
+  html body.content-page #householdInfo .header div small {
+    font-size: 1rem;
+    color: #4a4a4a;
+  } */
+
   /* KONTOSEITE FÜR DESKTOP */
 
   body.account-page main.main_konto {
@@ -985,6 +1156,32 @@ main p {
     width: 100%;
     padding-top: 0px;
     margin-top: 0px;
+  }
+
+
+  body.account-page .main_konto .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 750px;
+  }
+
+  body.account-page .main_konto .header div {
+    text-align: center;
+    width: 100%;
+  }
+
+  body.account-page .main_konto .header div h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+
+  body.account-page .main_konto .header div p {
+    font-size: 1.05rem;
+    color: #555555;
   }
 
   body.account-page .main_konto .grid .card h2 {
@@ -1133,7 +1330,29 @@ main p {
 
   .header-text {
     text-align: left;
-    margin-right: 50px;
+  }
+
+  .member-card {
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    gap: 8px;
+  }
+
+  .member-row {
+    gap: 10px;
+  }
+
+  .member-row .member-icon {
+    font-size: 1.2rem;
+  }
+
+  .member-row .member-text {
+    font-size: 1rem;
+  }
+
+  .member-row.email .member-text {
+    font-size: 1rem;
   }
 
   /* Schaltet deine absolute Zentrierung aus, die das Layout zerschießt */
@@ -1144,3 +1363,49 @@ main p {
     text-align: left !important;
   }
 }
+
+/* Basis-Styling für den Header auf der Kontoseite */
+/* body.account-page header.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* Links ausrichten wie auf der Homeseite */
+/* align-items: center;
+    padding: 15px 24px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  } */
+
+/* Holt den Zurück-Button aus der absoluten Positionierung */
+/* body.account-page header.header a#back_btn_container {
+    position: static;
+    margin-right: 20px;
+    /* Abstand zwischen Button und Text */
+/* transform: none;
+    left: auto;
+    top: auto;
+  } */
+
+/* Passt die Größe des Zurück-Buttons an */
+/* body.account-page header.header #back_btn {
+    padding: 10px 16px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+  } */
+
+/* Erzwingt die linksbündige Text-Ausrichtung */
+/* body.account-page header.header .header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    transform: none;
+    position: static;
+  } */
+/* 
+} */

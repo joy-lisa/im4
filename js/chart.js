@@ -60,6 +60,14 @@ async function loadChart(buzzerId = 1) {
 
         options: {
             responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 1,
+                    }
+                }
+            },
             maintainAspectRatio: false, // Erlaubt uns, die Höhe per CSS zu steuern
             plugins: {
                 legend: {
