@@ -401,7 +401,7 @@ main .header small {
 }
 
 .filter-input {
-  width: 302px;
+  width: 100%;
   max-width: 100%;
   height: 40px;
   padding: 0 12px;
@@ -445,6 +445,43 @@ main .header small {
 /* Verhindert den Abstand beim letzten Element in der Scrollbox */
 .event-list li:last-child {
   margin-bottom: 0;
+}
+
+/* Äußerer Kasten: Verhindert, dass das Diagramm die Kachel sprengt */
+.chart-overflow-container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Innerer Kasten: Zwingt das Diagramm auf eine angenehm gestreckte Breite */
+.chart-scroll-wrapper {
+  width: 1000px;
+  /* Feste Höhe für die Kachel-Optik */
+  padding-bottom: 10px;
+  /* Platz für den Scrollbalken, damit er das Datum nicht verdeckt */
+}
+
+/* Optional: Verschönert den Scrollbalken für Webkit-Browser (Chrome, Safari, Edge) */
+.chart-overflow-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.chart-overflow-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.chart-overflow-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.chart-overflow-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
 }
 
 /* Container für Icon + Alarmtext links */
@@ -502,6 +539,10 @@ main .header small {
   height: 220px !important;
   /* Hier erzwingst du eine angenehme Mindesthöhe für das Smartphone */
   margin-top: 15px;
+}
+
+a {
+  text-decoration: none;
 }
 
 .btn-profile {
@@ -702,12 +743,21 @@ strong {
 
 #householdInfo {
   display: flex;
+  flex-direction: column;
+}
 
+.alert-card {
+  background-color: #FFEBEB !important;
+  /* Zartes Rot */
+  border: 2px solid var(--orange);
+  /* Orangener Alarm-Rand */
+  box-shadow: 0 10px 20px rgba(255, 92, 52, 0.2);
 }
 
 #liveMonsterAlert {
   gap: 16px;
   margin-bottom: 20px;
+  z-index: 1000;
 }
 
 #closeAlertBtn {
@@ -724,6 +774,10 @@ strong {
 
 .alert-text {
   line-height: 2;
+}
+
+alert-icon {
+  font-size: 2rem;
 }
 
 .family-code {
@@ -1017,10 +1071,25 @@ h3 {
 
   }
 
-
   .card {
     padding: 24px 24px 35px 24px;
     border-radius: 20px;
+  }
+
+  .alert-card {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    padding: 30px 40px;
+  }
+
+  .alert-card>div {
+    margin-left: 16px;
+  }
+
+  #closeAlertBtn {
+    margin-left: auto;
   }
 
   form {
@@ -1089,7 +1158,7 @@ h3 {
     width: 100%;
     max-width: 750px;
     margin: 0 auto;
-    padding-top: 40px;
+    padding-top: 24px;
   }
 
   /* html body.content-page #householdInfo .header {
@@ -1154,7 +1223,7 @@ h3 {
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    padding-top: 0px;
+    /* padding-top: 0px; */
     margin-top: 0px;
   }
 
@@ -1313,6 +1382,42 @@ h3 {
     box-sizing: border-box;
   }
 
+  #displayUserName,
+  #displayChildName {
+    width: 100%;
+    max-width: 100%;
+    height: 38px;
+    font-size: 1rem;
+    padding: 0 12px;
+    border-radius: 8px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    box-sizing: border-box;
+  }
+
+  #hCode {
+    font-weight: 700;
+    color: var(--cassis);
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h3 {
+    color: var(--cassis);
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  #userEmail {
+    font-size: 1rem;
+  }
+
   .header {
     display: flex !important;
     flex-direction: row !important;
@@ -1330,6 +1435,24 @@ h3 {
 
   .header-text {
     text-align: left;
+  }
+
+  .header_konto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 24px;
+    background-color: white;
+    height: 96px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .header-subtitle-konto {
+    font-size: 1rem;
   }
 
   .member-card {
