@@ -1,22 +1,38 @@
+=========================================================================
+BESCHREIBUNG: Vorlage für geschützte Ansichten innerhalb des Projekts (protected.html).
+FUNKTION:
+- Dient als geschützter Bereich, der nur nach erfolgreicher Authentifizierung
+zugänglich ist.
+- Zeigt dynamisch personalisierte Daten wie die E-Mail-Adresse und die
+User-ID der angemeldeten Person an.
+- Stellt eine Logout-Funktion bereit, um die aktuelle Sitzung sicher zu beenden.
+- Bindet die Autorisierungs-Logik (protected.js) ein, welche als Vorlage für
+alle abzusichernden Seiten des Projekts fungiert, sowie das Skript für den
+Abmeldevorgang (logout.js).
+=========================================================================
+
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Protected Page</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <h1>Protected Page</h1>
 
-    <!-- This is where we'll dynamically show the protected content -->
-    <div id="protectedContent">
-      <h2>Welcome, <span id="userEmail"></span>!</h2>
-      <p>Your user ID is: <span id="userId"></span></p>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <title>Protected Page</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-    <button id="logoutBtn">Logout</button>
+<body>
+  <h1>Protected Page</h1>
 
-    <script src="js/protected.js"></script> <!-- auf alle Seiten schmeissen, die geschützt werden sollen -->
-    <script src="js/logout.js"></script>
-  </body>
+  <!-- This is where we'll dynamically show the protected content -->
+  <div id="protectedContent">
+    <h2>Welcome, <span id="userEmail"></span>!</h2>
+    <p>Your user ID is: <span id="userId"></span></p>
+  </div>
+
+  <button id="logoutBtn">Logout</button>
+
+  <script src="js/protected.js"></script> <!-- auf alle Seiten schmeissen, die geschützt werden sollen -->
+  <script src="js/logout.js"></script>
+</body>
+
 </html>
