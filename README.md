@@ -21,7 +21,7 @@ Viele Kinder haben Angst vor Monstern unter dem Bett, dies ist nicht nur eine gr
 
 #### Wie funktioniert das Ganze?
 
-Falls das Kind denkt, etwas könnte unter dem Bett sein, drückt es einen Button im Bett. Mittels Sensor, der unter dem Bett angebracht ist, wird überprüft, ob ein Monster da ist. Nach einigen Sekunden bekommt das Kind ene visuelle Bestätigung mittels grünem Licht. Falls wirklich eine Bewegung festgestellt wurde, erhalten die Eltern eine Push-Nachricht auf dem Handy mit der Aufforderung das Kinderzimmer aufzusuchen. 
+Falls das Kind denkt, etwas könnte unter dem Bett sein, drückt es einen Button im Bett. Mittels Sensor, der unter dem Bett angebracht ist, wird überprüft, ob ein Monster da ist. Nach einigen Sekunden bekommt das Kind ene visuelle Bestätigung mittels grünem Licht. Falls wirklich eine Bewegung festgestellt wurde, erhalten die Eltern eine Push-Nachricht auf dem Handy mit der Aufforderung, das Kinderzimmer aufzusuchen. 
 Somit müssen Eltern erst dann aktiv werden, wenn es wirklich nötig ist.
 
 <img height="200" alt="Bild_Knopf" src="https://github.com/user-attachments/assets/c47b1175-4c6b-4c99-93a2-d4d82284f05a" />
@@ -47,13 +47,11 @@ Anhand des AB-Testings haben wir herausgefunden, dass die App bei Eltern mit kle
 
 #### Features
 
-**Schichtplan + Switcher**
+**Schichtplan, Switcher und Punktesystem**
 
 Zu Beginn waren wir sehr motiviert, tolle Features einzubauen, wie beispielsweise einen Schichtplan, bei dem sich die Eltern eintragen können, wann sie an der Reihe sind aufzustehen, wenn der Alarm los geht. Eine weitere Funktion wäre ein Switch-Button gewesen, welcher zum Zug käme, wenn man mehr als 1 Kind hat. Somit könnte man zwischen zwei Homebildschirmen wechseln (je einer pro Kind). 
 
 Diese zwei Features haben wir aber schliesslich  nicht umgesetzt, da wir nur einen Buzzer haben und unser Konzept auf ein Kind beschränkt ist. Beim Schichtplan hätte es sehr viele Eventualitäten geben können, wenn noch andere Personen (Babysitter:innen) "Nachtschicht" hätten oder mehr als zwei Personen zuständig sind. Das war in der Umsetzung dann etwas sehr kompliziert, warum wir uns von diesen Ideen trennen mussten. 
-
-**Punkte-System**
 
 Eine weitere Idee wäre gewesen, eine Art Punkte-System einzubauen, bei welchem das Kind Sterne sammeln kann. Beispielsweise, wenn das Kind eine Nacht durchschläft, ohne den Buzzer zu betätigen, werden +5 Punkte auf das Sternen-Konto gezählt. Jede weitere Nacht in Folge ohne Buzzer-Betätigung bringt +3 Punkte. Aber wenn dann der Buzzer in einer Nacht wieder gedrückt wird, erfolgen -5 Punkte. Die Eltern könnten dann Ziele/Belohnungen festlegen, wie beispielsweise einen Ausflug in den Zoo bei 50 Punkten. 
 
