@@ -204,7 +204,7 @@ Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
   Benutzerprofil-Seite zur Verwaltung des Kontos (Haushalt erstellen/beitreten, Passwort ändern, Monster auswählen).
   
 * **protected.html**
-  Eine vorgeschaltete Sicherheitsseite, die prüft, ob eine gültige Session aktiv ist, bevor die Inhalte geladen werden.
+  Sicherheitsseite, die prüft, ob eine gültige Session aktiv ist, bevor die Inhalte geladen werden.
   
 * **sender.html**
   Test-Oberfläche zur manuellen Simulation von Sensor-Daten (hilfreich für Entwicklung und Debugging).
