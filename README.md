@@ -267,7 +267,7 @@ Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
   Lädt die Live-Daten des Monster-Scanners dynamisch ins Dashboard und steuert die Benutzeroberfläche.
 
 * **chart.js**
-  Initialisiert und rendert die visuellen Diagramme (Statistiken) auf der Home-Seite.
+  Initialisiert und rendert das visuelle Diagramm auf der Home-Seite.
 
 * **konto.js**
   Verarbeitet die Interaktionen auf der Profilseite (Passwortänderung, Haushalts-Verwaltung).
