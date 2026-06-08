@@ -201,7 +201,7 @@ Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
   Das zentrale Dashboard für die Eltern, auf dem die Sensor-Aktivitäten und Auswertungen angezeigt werden.
   
 * **konto.html**
-  Benutzerprofil-Seite zur Verwaltung des Kontos (Haushalt erstellen/beitreten, Passwort ändern).
+  Benutzerprofil-Seite zur Verwaltung des Kontos (Haushalt erstellen/beitreten, Passwort ändern, Monster auswählen).
   
 * **protected.html**
   Eine vorgeschaltete Sicherheitsseite, die prüft, ob eine gültige Session aktiv ist, bevor die Inhalte geladen werden.
