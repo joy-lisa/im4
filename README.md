@@ -368,15 +368,12 @@ Das Team WebApp hatte erst einige Probleme mit dem Login-Prozess für die App. D
 * **KI-Einsatz:** 
 KI-Tools haben wir unterstützend eingesetzt, vor allem um technische Abläufe besser zu verstehen, Probleme beim Coding zu lösen und die README zu strukturieren. Besonders hilfreich war KI bei Fragen zur Datenbankanbindung mit PHP und PDO, bei HTTP-POST-Requests sowie beim Debugging einzelner Probleme. Chatgpt hat uns ebenfalls geholfen, Codes mit Arduino zu schreiben und Zusammenhänge zu verstehen.
 
-Im Bereich von WebApp haben wir viel mit KI (Gemini) gearbeitet, um uns die weiteren Schritte des Aufbaus der App erklären zu lassen. Uns war wichtig, nie die reinen Code-Zeilen von KI zu übernehmen, sondern stets zu kontrollieren, was wir bereits hatten und was wir noch in unserem Code ergänzen mussten. Dadurch haben wir uns immer jede Code-Zeile durchgelesen und sie versucht, bestmöglichst zu verstehen. Das ist uns teils mehr, teils weniger gelungen. Dabei ist uns einmal mehr aufgefallen, wie wichtig es ist, in der Zusammenarbeit mit KI immer die Kontrolle und den Überblick zu behalten.
+Im Bereich von WebApp haben wir viel mit Gemini gearbeitet, um uns die weiteren Schritte des Aufbaus der App erklären zu lassen. Uns war wichtig, nie die reinen Code-Zeilen von KI zu übernehmen, sondern stets zu kontrollieren, was wir bereits hatten und was wir noch in unserem Code ergänzen mussten. Dadurch haben wir uns immer jede Code-Zeile durchgelesen und sie versucht, bestmöglichst zu verstehen. Das ist uns teils mehr, teils weniger gelungen. Dabei ist uns einmal mehr aufgefallen, wie wichtig es ist, in der Zusammenarbeit mit KI immer die Kontrolle und den Überblick zu behalten.
 
 * **Fazit:**
 Insgesamt sind wir zufrieden mit unserem Projekt. Der Monster-Scanner verbindet ein alltägliches Problem mit einer kreativen technischen Lösung und zeigt, wie Physical Computing und WebApp sinnvoll zusammenspielen können. Besonders schön finden wir, dass das Projekt nicht nur technisch funktioniert, sondern auch emotional einen Nutzen hat. Kinder erhalten durch den Scanner und den LED-Ring ein Gefühl von Sicherheit, während die Eltern entlastet werden können.
 Es war ein cooles Gefühl zu sehen, wie aus einer ersten Idee Schritt für Schritt ein funktionierendes System entstanden ist. Das Projekt hat uns nicht nur technisch weitergebracht, sondern auch gezeigt, wie wichtig Teamarbeit, Kommunikation und kreatives Problemlösen bei interaktiven Projekten sind.
 
 
-- Beinhaltet die Konfigurationsdatei für die Datenbankverbindung.
-- Beinhaltet die Datei `database.sql`, die die `users` Tabelle erstellt.
-- Beinhaltet die Datei `config.php`, die die Konfiguration des Backends enthält.
 
 
