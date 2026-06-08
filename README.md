@@ -108,7 +108,6 @@ Die Video-Erklärung kann unter dem folgenden Link aufgerufen werden: [Link zum 
 
 * Öffne deinen Browser (Google Chrome).
 * Gib deine registrierte Domain oder Subdomain ein.
-* Die WebApp ist nun voll einsatzbereit!
 
 *6. Wie nehme ich das physische Artefakt in Betrieb?*
 
