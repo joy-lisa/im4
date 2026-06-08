@@ -1,7 +1,5 @@
 # IM IV FS26 - Monster-Scanner 🌙
 
-➡️ bei der Chat Gpt-Anfrage bezüglich der Datenbank: erwähnen, dass wir es mit PDO machen
-
 ## Kurzbeschreibung des Projekts
 
 * **Modul:** Interaktive Medien 4 an der Fachhochschule Graubünden (FS26)  
@@ -30,11 +28,11 @@ Somit müssen Eltern erst dann aktiv werden, wenn es wirklich nötig ist.
 <img height="200" alt="Bild_Sensor" src="https://github.com/user-attachments/assets/fe17fdb9-a21c-47d2-a811-5a513c48288b" />
 <img height="200" alt="Bild_Pus-Nachricht" src="https://github.com/user-attachments/assets/2c405d8a-11f4-4bce-8960-df4cb2bb72c2" />
 
-### UX & Konzeption
+### 🎨UX & Konzeption
 
-#### 🎨 Design
+#### Design
 
-Wir haben bei der Erstellung des Designs versucht, kindliche Elemente in einem schlichten Design darzustellen. Das heisst so, dass es für die Eltern, sowie für die Kinder ansprechend gestaltet ist. Somit kann die App auch problemlso den Kindern gezeigt werden, welche die Funktionen der App mit wenigen Erklärungen der Eltern verstehen. Da wir drei verschiedene Designs ausgetestet haben, war für uns auch schnell klar, in welche Richtung wir in der Gestaltung gehen wollen. 
+Wir haben bei der Erstellung des Designs versucht, kindliche Elemente in einem schlichten Design darzustellen. Das heisst so, dass es für die Eltern, sowie für die Kinder ansprechend gestaltet ist. Somit kann die App auch problemlos den Kindern gezeigt werden, welche die Funktionen der App mit wenigen Erklärungen der Eltern verstehen. Da wir drei verschiedene Designs ausgetestet haben, war für uns auch schnell klar, in welche Richtung wir in der Gestaltung gehen wollen. 
 
 Anhand des AB-Testings haben wir herausgefunden, dass die App bei Eltern mit kleinen Kindern gut ankommt, da es sich um eine Anwendung handelt, welche für das Sicherheitsgefühl der Kinder sorgt und die Eltern entlasten soll. Mögliche Änderungswünsche der Testpersonen sind als Kommentare in unserer Figma-Datei ersichtlich.
 
@@ -47,7 +45,7 @@ Anhand des AB-Testings haben wir herausgefunden, dass die App bei Eltern mit kle
 **User Flow Physical Computing:**
 <img width="2587" height="1102" alt="Userflow_Physical Computing" src="https://github.com/user-attachments/assets/cb48924a-c3cb-4052-819f-fd4a5a1db328" />
 
-#### 🤳Features
+#### Features
 
 **Schichtplan + Switcher**
 
@@ -65,15 +63,15 @@ Auch diese Idee wurde ziemlich rasch verworfen, da wir uns erst auf die Hauptfun
 
 Da am Ende doch noch ein klein wenig Zeit blieb, haben wir uns entschieden ein Feature in die App einzubauen, bei dem im Profil eines aus fünf verschiedenen Monstern ausgewählt werden kann. Die Idee dahinter ist, dass sich das Kind für ein Monster entscheiden kann, welches die Wache unter em Bett hält und es beschützen wird. Somit wird bereits der erste Kontakt zwischen Kind und Monster geknüpft und es kann aufgezeigt werden, dass es auch liebe Monster gibt, die den Kindern helfen. 
 
-### 🏁Unsere WebApp
+### 🤳Setup
 
-Der Monster-Scanner kann unter dem folgenden Link aufgerufen werden:
+**Unsere WebApp**
 
-[Link zur Webapp](https://im4.lisa-joy.ch)
+Der Monster-Scanner kann unter dem folgenden Link aufgerufen werden: [Link zur Webapp](https://im4.lisa-joy.ch)
 
-* **Video-Dokumentation:** [Link zum Video auf Youtube](http://link.zum.video) 
+Die Video-Erklärung kann unter dem folgenden Link aufgerufen werden: [Link zum Video auf Youtube](http://link.zum.video) 
 
-#### Installationsanleitung WebApp
+### 📲Installationsanleitung WebApp
 
 *1. Was benötige ich an Infrastruktur?* 
 
@@ -116,11 +114,19 @@ Der Monster-Scanner kann unter dem folgenden Link aufgerufen werden:
 
 *6. Wie nehme ich das physische Artefakt in Betrieb?*
 
+* Der ESP32-C6 Mikrocontroller wird per USB-C Verbindung an den Laptop angeschlossen.
+* Auf Arduino schreibt man den Code in einen neuen Sketch und lädt ihn auf den Mikrocontroller.
+* Sobald dies erfolgreich geschehen ist (zuerst noch kurz auf dem ESP32-C6 den Reset-Button klicken) kann dann der Buzzer ausgelöst und im Serial Monitor ist zu sehen, ob alles reibungslos klappt.
+* Das physische Artefakt wird am Bett so installiert, dass der Sensor auf der Steckplatte inklusive Batterieverbindung unter dem Bett liegt und die Monster-Box mit dem Buzzer und dem verbauten LED-Ring auf dem Nachttisch steht. 
+* Nun kann per Buzzer die Messung ausgeführt werden, die Daten werden in die DAtenbank gespeichert und die WebApp aktualisiert.
 
+### 🚧Bauanleitung Physical Computing
 
-#### Bauanleitung Physical Computing
+Um den Physical Computing Teil nachzubauen, kann man sich an folgenden Abbildungen orientieren. 
 
-* ***Was muss ich wie bauen, verbinden, installieren?***  
+Auf dem Komponentenplan sind alle notwendigen Komponenten zu sehen, von Sensoren bis Dateien. Alle Codes sind im Repository zu finden.
+
+Auf dem Steckplan ist zu sehen, wie genau die einzelnen physischen Komponenten ineinander gesteckt und verbunden werden müssen.
 
 **Komponentenplan** 
 
@@ -146,7 +152,7 @@ Hier noch Bilder der realen Steckplatte.
 </table>
 
 
-## Technische Details
+### 🖲️Technische Details
 
 // Hier sollte das Verständnis ersichtlich sein / Wie stehen die Dateien in Beziehung zueinander, Wie reden Die Dateien miteinander, Wie ist der Weg der Daten
 
@@ -176,46 +182,158 @@ load.php verarbeitet die Daten serverseitig
 * Die WebApp liest die Daten aus der Datenbank aus
 * Bei monster_da = 1 wird eine Warnung in der WebApp (für die Eltern) angezeigt
 
-**Projektstruktur / Code-Struktur:** \[*Hinweis: Der Code selbst muss im Repository liegen und im Kopfbereich jeder Datei eine kurze Zusammenfassung enthalten.*\]  
+**Projektstruktur / Code-Struktur:** 
 
 Der Code befindet sich vollständig im Repository. Jede Datei enthält im Kopfbereich eine kurze Beschreibung ihrer Funktion.
 
 Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
-* **monster_scanner.ino**
-  WLAN-Verbindung vom Microcontroller, gesamte Sensorsteuerung inklusive Buzzer-Betätigung, LED-Animationen, Bewegungserkennung, JSON-Erstellung, HTTP-POST-Requests
-* **load.php**
-  Empfang der JSON-Daten, Verarbeitung der POST-Requests, Speicherung in der Datenbank
+
+
+*Hauptverzeichnis (Frontend-Seiten)*
+  
+* **index.html**
+  Automatischer Einstiegspunkt der Applikation.
+
+* **login.html**
+  Benutzeroberfläche für das Anmeldefenster der Applikation.
+  
+* **register.html**
+  Registrierungsformular für Neubenutzer, um ein Eltern-Konto zu erstellen.
+  
+* **home.html**
+  Das zentrale Dashboard für die Eltern, auf dem die Sensor-Aktivitäten und Auswertungen angezeigt werden.
+  
+* **konto.html**
+  Benutzerprofil-Seite zur Verwaltung des Kontos (Haushalt erstellen/beitreten, Passwort ändern).
+  
+* **protected.html**
+  Eine vorgeschaltete Sicherheitsseite, die prüft, ob eine gültige Session aktiv ist, bevor die Inhalte geladen werden.
+  
+* **sender.html**
+  Test-Oberfläche zur manuellen Simulation von Sensor-Daten (hilfreich für Entwicklung und Debugging).
+
+
+*PHP-Backend-Schnittstellen*
+
 * **config.php**
   Datenbank-Zugangsdaten, PDO-Verbindung zur MySQL-Datenbank
-* **Weiterer code von Web-App Gruppe ab hier**
-* usw
-* noch mehr Code
-* immer mit kurzer inhaltlicher Beschreibung
-* alle Codes hihi
+
+* **load.php**
+  Empfang der JSON-Daten, Verarbeitung der POST-Requests, Speicherung in der Datenbank
+
+* **login.php**
+  Validierung der Benutzerdaten beim Login und Initiierung der PHP-Session.
+
+* **logout.php**
+  Beenden der aktiven Session und sicheres Abmelden des Benutzers.
+
+* **register.php**
+  Verarbeitung der Registrierungsdaten und sicheres Speichern neuer Benutzer.
+
+* **protected.php**
+  Serverseitige Überprüfung des Login-Status zum Schutz der geschlossenen Bereiche.
+
+* **get_user_info.php**
+  Abfrage der Profildaten des aktuell eingeloggten Benutzers aus der Datenbank.
+
+* **update_profile.php**
+  Aktualisierung von Profiländerungen (z. B. Name oder E-Mail).
+
+* **change_password.php**
+  Schnittstelle zur sicheren Änderung des Benutzerpassworts.
+
+* **create_household.php**
+  Generierung und Speicherung eines neuen, einzigartigen Haushalts-Codes.
+
+* **join_household.php**
+  Zuordnung eines Benutzers zu einem bereits existierenden Haushalt via Code.
+
+* **get_buzzer_events.php**
+  Abfrage der jüngsten Interaktionen (Knopfdrücke) für die Echtzeitanzeige im Dashboard.
+
+* **get_chart_data.php**
+  Aufbereitung und Bereitstellung der Sensor-Statistiken für die grafischen Diagramme.
+
+
+*Frontend-Logik & API-Anbindung*
+
+* **auth.js**
+  Kern-Logik für die Authentifizierungsprozesse im Frontend.
+
+* **login.js**
+  Validiert die Eingaben der login.html und sendet sie an die Login-API.
+
+* **register.js**
+  Steuert den Registrierungsablauf und fängt Fehleingaben ab.
+
+* **home.js**
+  Lädt die Live-Daten des Monster-Scanners dynamisch ins Dashboard und steuert die Benutzeroberfläche.
+
+* **chart.js**
+  Initialisiert und rendert die visuellen Diagramme (Statistiken) auf der Home-Seite.
+
+* **konto.js**
+  Verarbeitet die Interaktionen auf der Profilseite (Passwortänderung, Haushalts-Verwaltung).
+
+* **protected.js**
+  Blockiert den Zugriff auf HTML-Seiten, falls kein gültiger Login-Token/Session vorhanden ist.
+
+* **logout.js**
+  Löscht die lokalen Session-Daten und triggert das serverseitige Logout.
+
+* **delete_account.js**
+  Steuert den Sicherheitsdialog und die API-Anfrage zur endgültigen Löschung eines Kontos.
+
+* **sender.js**
+  Logik für die Test-Oberfläche, um Knopfdrücke des Artefakts zu simulieren.
+
+
+*Hardware-Quellcode*
+
+* **monster_scanner.ino**
+  WLAN-Verbindung vom Microcontroller, gesamte Sensorsteuerung inklusive Buzzer-Betätigung, LED-Animationen, Bewegungserkennung, JSON-Erstellung, HTTP-POST-Requests
+
+
+*Design*
+
+  * **style.css**
+  Das gesamte, zentrale Stylesheet der Applikation inklusive aller Layouts, Komponenten-Styles und Media Queries für das responsive Design.
 
 
 **Datenschnittstelle zwischen Physical Computing und WebApp:**
 
 Die Kommunikation zwischen Physical Computing und WebApp erfolgt über HTTP-POST-Requests im JSON-Format. Der Datenfluss sieht wie folgt aus:
 
-ESP32 →  WLAN → HTTP POST Request → load.php → MySQL-Datenbank → WebApp 
-(@webapp gruppe: hier noch genauer schreiben wie der datenfluss von webapp auf DB zugreift, mit php usw)
+ESP32 →  WLAN → HTTP POST Request → load.php → MySQL-Datenbank → PHP-Schnittstelle (get_buzzer_events.php) → JavaScript (home.js) via Fetch-API  → HTML-Dashboard (home.html)
 
-* **🗄️ Datenbank**
+* **Datenbank**
 
-wir haben die Datenbank auf Hostpoint gemacht. Hier findest du die Datenbankplanung: [Klick hier](https://github.com/joy-lisa/im4/blob/main/Datenbankplanung.pdf)
-* **ERM:** \[*Erklärung und Schaubild*\] 
-* **🔑👤 Authentifizierung für Monster-Scanner**
+Wir haben die Datenbank über Hostpoint gemacht. Hier findest du die Datenbankplanung: [Klick hier](https://github.com/joy-lisa/im4/blob/main/Datenbankplanung.pdf)
+* **ERM: Erklärung**
 
-Hier passiert die Anmeldung auf unsere App. 
+Unser ERM bildet das logische Fundament für den „Monster Scanner“. Es zeigt, wie die Accounts der Eltern, die Haushaltsgruppen und die eingehenden Signale der physischen Monster-Box in der MySQL-Datenbank miteinander verknüpft sind. Die Kernkomponenten teilen sich in folgende Tabellen (Entities) auf:
 
-Standardmässig bleibt die Session aktiv, solange der Browser offen ist und endet mit dem Schliessen des Browsers. Wenn die Session ca. 24 Minuten inaktiv ist endet die Session und der User wird ausgeloggt.
+* haushalt: Er besitzt eine eindeutige id, einen name und einen join_code. Über diesen Code können andere Familienmitglieder der Gruppe beitreten. Zudem wird hier das gewählte monster_icon für das UI-Design hinterlegt.
 
-Wir haben uns bewusst gegen eine präzise Zeitbegrenzung entschieden, weil in unserem Fall die Zeitspanne passend ist und das auch zu einer guten User Experience führt
+* users (Die Eltern/Babystter:innen): Hier werden die Registrierungsdaten der Eltern gespeichert (id, name, email, pw). Jeder User ist über das Attribut haushalt_id fest einem Haushalt zugeordnet (1:n-Beziehung). Zusätzlich wird hier der childname (Name des Kindes) für die persönliche Ansprache in der WebApp hinterlegt.
 
-Seiten, die man nur eingeloggt besuchen kann sind die index.hmtl- und das konto.html-Seite. Ausgeloggt kann man die Startseite (start.html), sowie die Login- (login.html) und Registrierungseite (register.html) besuchen.
+* buzzer: Diese Tabelle repräsentiert die physische Monster-Box. Sie ist über die haushalt_id mit dem jeweiligen Haushalt verknüpft und enthält Informationen wie die id des Geräts, das zugeordnete kind und den Typ des Monsters.
 
-## Known bugs
+* buzzer-event: Sobald der Button auf dem Monster gedrückt wird, entsteht hier ein neuer Eintrag. Das Event speichert über die buzzer_id, von welchem Gerät der Alarm kommt. Ein präziser timestamp hält fest, wann der Knopf gedrückt wurde. Die Attribute scan-1, scan-2 und monster-da (1 = ja, 0 = nein) dokumentieren das Ergebnis des „Monster-Scans“ für das Dashboard.
+
+* Schichten (Konzeptphase): Unten links befindet sich ein optionales Tabellen-Konzept, mit dem zukünftig feste Überwachungsschichten (datum, user_id) für die Eltern innerhalb eines Haushalts koordiniert werden könnten. Dieses Feature haben wir allerdings nicht umgesetzt.
+  
+* **Authentifizierung für Monster-Scanner**
+
+  Hier passiert die Anmeldung auf unsere App. 
+
+  Standardmässig bleibt die Session aktiv, solange der Browser offen ist und endet mit dem Schliessen des Browsers. Wenn die Session ca. 24 Minuten   inaktiv ist endet die Session und der User wird ausgeloggt.
+
+  Wir haben uns bewusst gegen eine präzise Zeitbegrenzung entschieden, weil in unserem Fall die Zeitspanne passend ist und das auch zu einer guten   User Experience führt
+
+  Seiten, die man nur eingeloggt besuchen kann sind die home.hmtl- und das konto.html-Seite. Ausgeloggt kann man die Startseite (index.html), sowie   die Login- (login.html) und Registrierungseite (register.html) besuchen.
+
+### 🔌Known bugs
 
 * Was funktioniert noch nicht einwandfrei?  
 * Was ist uns aufgefallen bei der Entwicklung?
@@ -226,7 +344,7 @@ Die Entwicklung einer solchen App ist sehr zeitaufwändig und bedingt eine gute 
 
 Das Design der App könnte an manchen Stellen sicherlich noch überarbeitet/verfeinert werden. Zudem wäre es toll, noch einige Features mehr einzubauen. 
 
-## Umsetzungsprozess
+### ✔️ Umsetzungsprozess
 
 * **Reflexion / Erfahrung / Lernfortschritt:** 
 Beim Umsetzungsprozess haben wir sehr viel über das Zusammenspiel von Physical Computing, Datenbank und WebApp gelernt. Besonders spannend war für uns, dass unser physisches Artefakt nicht nur lokal funktioniert, sondern Daten über WLAN an eine Datenbank senden kann. Dadurch haben wir besser verstanden, wie IoT-Systeme aufgebaut sind und wie verschiedene Komponenten miteinander kommunizieren. Wir haben gelernt, wie ein ESP32-C6 mit Sensoren, einem Buzzer und einem LED-Ring verbunden und programmiert wird. Zusätzlich haben wir verstanden, wie Messwerte verarbeitet, als JSON formatiert und über HTTP-POST-Requests an eine PHP-Schnittstelle gesendet werden. Für die Datenbankanbindung haben wir mit PDO gearbeitet, damit die Daten sicher in einer MySQL-Datenbank gespeichert werden können.

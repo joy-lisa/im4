@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-
 :root {
   --wasabi: #E9F056;
   --orange: #FF5C34;
@@ -17,13 +15,6 @@
   margin: 0;
   padding: 0;
 }
-
-
-
-html {
-  font-size: 18px;
-}
-
 
 body {
   background-color: var(--salbei);
@@ -45,10 +36,10 @@ body {
   padding: 16px 24px;
   font-size: 1.8rem;
   font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  color: var(--cassis);
   border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 12px;
+  border-radius: 14px;
   backdrop-filter: blur(10px);
   cursor: pointer;
   transition: transform 0.2s, ease;
@@ -58,13 +49,7 @@ body {
   transform: translateY(-2px);
 }
 
-
-
-
-
-
 /* Index-Seite*/
-
 
 .welcome-container {
   display: flex;
@@ -72,7 +57,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 40px 24px;
+  padding: 40px;
   text-align: center;
 }
 
@@ -105,9 +90,9 @@ body {
 }
 
 .welcome-container h2 {
-  color: var(--cassis);
+  color: white;
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 300;
   margin-bottom: 70px;
 }
 
@@ -116,17 +101,40 @@ body {
   flex-direction: column;
   gap: 16px;
   width: 100%;
-  max-width: 420px;
+  max-width: 700px;
   margin-top: 30px;
 }
 
+.btn-main {
+  background-color: white;
+  color: var(--cassis);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.20);
+  color: var(--text-white);
+}
+
+/* Login-Seite*/
+
+.los {
+  background-color: var(--cassis);
+  color: var(--text-white);
+}
+
+.divider {
+  color: var(--cassis);
+  align-self: center;
+  width: 90%;
+  margin-top: 20px;
+}
 
 /* Buttons alle gleich */
 
 .card {
   background-color: white;
-  border-radius: 24px;
-  padding: 30px 24px;
+  border-radius: 16px;
+  padding: 30px 40px;
   width: 100%;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
@@ -134,7 +142,7 @@ body {
 form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
 }
 
 #passwordForm button[type="submit"] {
@@ -160,10 +168,6 @@ form {
   font-size: 2rem;
 }
 
-
-
-
-
 .btn {
   width: 100%;
   height: 110px;
@@ -173,8 +177,8 @@ form {
   font-family: inherit;
   border: none;
   border-radius: 30px;
-  background-color: var(--wasabi);
-  color: var(--cassis);
+  /* background-color: var(--wasabi); */
+  /* color: var(--cassis); */
   cursor: pointer;
   transition: transform 0.2s ease, opacity 0.2s ease;
   text-align: center;
@@ -195,13 +199,14 @@ form {
 }
 
 .register-hint {
-  margin-top: 24px;
+  margin-top: 20px;
+  margin-bottom: 40px;
   font-size: 1.8rem;
   color: var(--cassis);
 }
 
 .register-hint a {
-  color: var(--text-white);
+  color: var(--orange);
   font-weight: bold;
   text-decoration: none;
 }
@@ -210,9 +215,7 @@ form {
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],
-.field input,
-#editUserName,
-#editChildName {
+.field input {
   width: 100%;
   height: 80px;
   padding: 0 16px;
@@ -231,12 +234,6 @@ form input:focus,
   border-color: var(--wasabi);
 }
 
-
-
-
-
-
-
 /* Konto- und Home-Seite */
 
 main {
@@ -248,7 +245,6 @@ main {
   flex-direction: column;
   gap: 24px;
 }
-
 
 .main_konto {
   width: 100%;
@@ -264,20 +260,78 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* width: 100%; */
+  /* gap: 16px; */
+  padding: 15px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  left: 0;
   width: 100%;
-  gap: 16px;
-  margin-bottom: 24px;
+  z-index: 1000;
+}
+
+.header_konto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 24px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* Hier stellst du ein, wie nah Logo und Text beieinander sein sollen! */
+}
+
+.header-zurück {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .header img {
   width: 56px;
   height: 56px;
-  background-color: var(--wasabi);
-  border-radius: 50%;
+  /* background-color: var(--wasabi); */
+  /* border-radius: 50%; */
   padding: 6px;
 }
 
-main:not(.main_konto) .header div {
+.header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header-konto-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: right;
+  margin-right: 40px;
+}
+
+.header-title {
+  font-size: 1rem;
+}
+
+.header-subtitle {
+  font-size: 0.8rem;
+}
+
+.header-subtitle-konto {
+  font-size: 1.5rem;
+}
+
+/* main:not(.main_konto) .header div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -291,7 +345,7 @@ main:not(.main_konto) .header div {
   justify-content: center;
   align-items: flex-start;
   text-align: left;
-}
+} */
 
 main h1 {
   font-size: 1rem;
@@ -326,6 +380,128 @@ main .header small {
 .main_konto p {
   font-size: 1.5rem;
   opacity: 0.8;
+}
+
+#trendValue {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.trend-comparison {
+  font-size: 0.8rem;
+  color: var(--cassis);
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+.card .filter-label {
+  font-size: 0.8rem;
+  color: var(--cassis);
+  opacity: 0.8;
+}
+
+.filter-input {
+  width: 302px;
+  max-width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  margin: 0 0 20px 0;
+}
+
+/* 2. DIE SCROLLBOX: Begrenzt die Höhe der Liste und aktiviert das Scrollen */
+.event-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  max-height: 280px;
+  /* Maximale Höhe, ab hier wird gescrollt */
+  overflow-y: auto;
+  /* Aktiviert den vertikalen Scrollbalken, wenn nötig */
+
+  /* Schickere Scrollbar für moderne Browser (optional) */
+  scrollbar-width: thin;
+  scrollbar-color: var(--cassis) #f0f0f0;
+}
+
+/* 3. Ein einzelner Listeneintrag (Alarm-Zeile) */
+.event-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Drückt Text nach links, Uhrzeit nach rechts */
+
+  background-color: #F2EBF0;
+  /* Das zarte Lila aus dem Screenshot */
+  border-radius: 16px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  /* Abstand zwischen den einzelnen Alarmen */
+}
+
+/* Verhindert den Abstand beim letzten Element in der Scrollbox */
+.event-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Container für Icon + Alarmtext links */
+.alarm-links-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Das runde, lila Alarm-Icon */
+.alarm-icon-bg {
+  width: 40px;
+  height: 40px;
+  background-color: #ebd9ff;
+  /* Etwas dunkleres Lila für den Kreis */
+  color: #9c27b0;
+  /* Farbe der Glocke */
+  border-radius: 50%;
+  /* Macht es kreisrund */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+/* Text-Block (Name + Datum) */
+.alarm-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.alarm-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: #333;
+}
+
+.alarm-date {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* Die Uhrzeit ganz rechts */
+.alarm-time {
+  font-weight: 700;
+  font-size: 14px;
+  color: #9c27b0;
+  /* Knalliges Lila für die Zeit */
+}
+
+/* Verhindert, dass das Canvas auf kleinen Bildschirmen flach gedrückt wird */
+#monsterChart {
+  width: 100% !important;
+  height: 220px !important;
+  /* Hier erzwingst du eine angenehme Mindesthöhe für das Smartphone */
+  margin-top: 15px;
 }
 
 .btn-profile {
@@ -374,16 +550,116 @@ main .header small {
 #profileViewMode p {
   font-size: 1.5rem;
   margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
 .card label {
   display: block;
   font-weight: 700;
   font-size: 1.5rem;
-  margin-bottom: 6px;
+  margin-bottom: 12px;
   margin-top: 12px;
 }
 
+#monsterViewMode {
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 30px;
+}
+
+.monster-gallery {
+  display: flex;
+  gap: 12px;
+}
+
+#btnEditMonster {
+  width: fit-content;
+}
+
+/* 1. Die Standard-Radio-Punkte komplett unsichtbar machen */
+.monster-gallery .monster-item input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* 2. Grund-Styling für die Monster-Bilder (Vorbereitung für den Klick) */
+.monster-gallery .monster-item {
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.monster-gallery .monster-img {
+  border-radius: 50%;
+  border: 4px solid transparent;
+  /* Unsichtbarer Rand, damit beim Klick nichts wackelt */
+  transition: all 0.2s ease;
+  padding: 4px;
+}
+
+/* 3. EFFEKT WENN AUSGEWÄHLT (Hier wird das Zauberwort :checked genutzt) */
+
+/* Option A: Ein fetter, farbiger Rahmen um das ausgewählte Monster */
+.monster-gallery .monster-item input[type="radio"]:checked+.monster-img {
+  border-color: var(--orange);
+  /* Nutzt dein definiertes Orange */
+  transform: scale(1.1);
+  /* Lässt das ausgewählte Monster leicht ploppen */
+  background-color: rgba(255, 92, 52, 0.1);
+  /* Zarter orangefarbener Hintergrund */
+}
+
+/* Optional: Kleiner Hover-Effekt, damit man merkt, dass es klickbar ist */
+.monster-gallery .monster-item:hover .monster-img {
+  transform: scale(1.05);
+}
+
+strong {
+  font-weight: 700;
+  color: var(--cassis);
+  padding-bottom: 12px;
+}
+
+#displayUserName,
+#displayChildName {
+  height: 80px;
+  padding: 0 16px;
+  margin-bottom: 20px;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  font-size: 2rem;
+  font-family: inherit;
+  background-color: #e1e7dd;
+  color: var(--cassis);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+#displayUserName,
+#displayChildName {
+  font-size: 2rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+#editUserName,
+#editChildName {
+  height: 80px;
+  padding: 0 16px;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  font-size: 2rem;
+  font-family: inherit;
+  background-color: #e1e7dd;
+  color: var(--cassis);
+  outline: none;
+  transition: border-color 0.2s ease;
+  width: 100%;
+}
 
 .popup-overlay {
   position: fixed;
@@ -403,6 +679,7 @@ main .header small {
   font-weight: 700;
   color: var(--cassis);
   letter-spacing: 0.5px;
+  font-size: 2rem;
 }
 
 
@@ -418,11 +695,122 @@ main .header small {
 }
 
 .popup-section {
-  margin-top: 20px;
+  margin-top: 2rem;
   padding-top: 15px;
   border-top: 1px solid #eee;
 }
 
+#householdInfo {
+  display: flex;
+
+}
+
+#liveMonsterAlert {
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+#closeAlertBtn {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--cassis);
+}
+
+.alert-text {
+  line-height: 2;
+}
+
+.family-code {
+  color: var(--cassis);
+  margin: 15px 0;
+  line-height: 2;
+}
+
+h3 {
+  color: var(--cassis);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+#memberList {
+  font-size: 2rem;
+
+}
+
+.family-member {
+  font-weight: 500;
+  color: var(--cassis);
+  display: inline-flex;
+  align-items: center;
+  gap: 100px;
+}
+
+.member-card {
+  background-color: white;
+  border: 2px solid #e1e7dd;
+  /* Passt zu deinen Input-Hintergründen */
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 16px;
+  list-style-type: none;
+  /* Entfernt den Listenpunkt */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
+  /* Sehr feiner Schatten */
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* Der Abstand zwischen Name und E-Mail innerhalb der Kachel */
+}
+
+/* Flexbox-Zeilen für Name und E-Mail */
+.member-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  /* Lücke zwischen Emoji und Text */
+  color: var(--cassis);
+}
+
+.member-email {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  /* Lücke zwischen Emoji und Text */
+  color: var(--cassis);
+}
+
+.member-row .member-icon {
+  font-size: 2rem;
+  /* Große Emojis für Mobile */
+}
+
+.member-row .member-text {
+  font-size: 2rem;
+  /* Passt sich an deine Standard-Input-Schriftgröße an */
+  font-weight: 500;
+}
+
+/* E-Mail Zeile etwas dezenter */
+.member-row.email {
+  opacity: 0.8;
+}
+
+.member-row.email .member-text {
+  font-size: 1.5rem;
+  /* Etwas kleiner als der Name */
+}
+
+#userEmail {
+  font-size: 1.5rem;
+  color: var(--cassis);
+}
 
 .monster {
   display: flex;
@@ -475,17 +863,17 @@ main .header small {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 24px 0;
+  padding-bottom: 24px;
 }
 
 .account-page #back_btn_container {
   position: static;
   width: 100%;
   max-width: 100%;
-  padding: 0 24px;
+  padding: 24px;
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 16px;
+  margin: 16px;
 }
 
 
@@ -578,6 +966,9 @@ main .header small {
 
 @media (min-width: 992px) {
 
+  #monsterChart {
+    height: 300px !important;
+  }
 
   .welcome-container {
     max-width: 550px;
@@ -696,11 +1087,12 @@ main .header small {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 100%;
+    max-width: 750px;
     margin: 0 auto;
+    padding-top: 40px;
   }
 
-  html body.content-page #householdInfo .header {
+  /* html body.content-page #householdInfo .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -752,7 +1144,7 @@ main .header small {
   html body.content-page #householdInfo .header div small {
     font-size: 1rem;
     color: #4a4a4a;
-  }
+  } */
 
   /* KONTOSEITE FÜR DESKTOP */
 
@@ -921,4 +1313,99 @@ main .header small {
     box-sizing: border-box;
   }
 
+  .header {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: white;
+  }
+
+  .header-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .header-text {
+    text-align: left;
+  }
+
+  .member-card {
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    gap: 8px;
+  }
+
+  .member-row {
+    gap: 10px;
+  }
+
+  .member-row .member-icon {
+    font-size: 1.2rem;
+  }
+
+  .member-row .member-text {
+    font-size: 1rem;
+  }
+
+  .member-row.email .member-text {
+    font-size: 1rem;
+  }
+
+  /* Schaltet deine absolute Zentrierung aus, die das Layout zerschießt */
+  html body.content-page #householdInfo .header div,
+  body.account-page header.header .header-text {
+    position: static !important;
+    transform: none !important;
+    text-align: left !important;
+  }
 }
+
+/* Basis-Styling für den Header auf der Kontoseite */
+/* body.account-page header.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* Links ausrichten wie auf der Homeseite */
+/* align-items: center;
+    padding: 15px 24px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  } */
+
+/* Holt den Zurück-Button aus der absoluten Positionierung */
+/* body.account-page header.header a#back_btn_container {
+    position: static;
+    margin-right: 20px;
+    /* Abstand zwischen Button und Text */
+/* transform: none;
+    left: auto;
+    top: auto;
+  } */
+
+/* Passt die Größe des Zurück-Buttons an */
+/* body.account-page header.header #back_btn {
+    padding: 10px 16px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+  } */
+
+/* Erzwingt die linksbündige Text-Ausrichtung */
+/* body.account-page header.header .header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    transform: none;
+    position: static;
+  } */
+/* 
+} */

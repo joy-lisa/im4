@@ -20,6 +20,7 @@ try {
                 users.haushalt_ID,
                 haushalt.name AS haushalt_name,
                 haushalt.join_code,
+                haushalt.monster_icon, 
                 buzzer.ID AS buzzer_id
             FROM users
             LEFT JOIN haushalt ON users.haushalt_ID = haushalt.ID

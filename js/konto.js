@@ -1,7 +1,5 @@
 // =========================================================================
-
 // 1. HAUSHALT ERSTELLEN (Einstellungen)
-
 // =========================================================================
 
 document.getElementById("btnCreate").addEventListener("click", async () => {
@@ -13,7 +11,6 @@ document.getElementById("btnCreate").addEventListener("click", async () => {
     }
 
     // 1. Zufälligen 6-stelligen Code generieren (Großbuchstaben & Zahlen)
-
     const generateCode = () => {
         return Math.random().toString(36).substring(2, 8).toUpperCase();
     };
@@ -27,16 +24,13 @@ document.getElementById("btnCreate").addEventListener("click", async () => {
             },
 
             // Wir schicken den Namen und den generierten Code
-
             body: JSON.stringify({
                 name: name,
                 join_code: joinCode
             }),
-
         });
 
         const result = await response.json();
-
         if (result.status === "success") {
             alert(`Haushalt "${name}" wurde erstellt!\nDein Beitritts-Code ist: ${joinCode}`);
 
@@ -50,13 +44,10 @@ document.getElementById("btnCreate").addEventListener("click", async () => {
         console.error("Error:", error);
         alert("Verbindung zum Server fehlgeschlagen.");
     }
-
 });
 
 // =========================================================================
-
 // 2. HAUSHALT BEITRETEN (Einstellungen)
-
 // =========================================================================
 
 document.getElementById("btnJoin").addEventListener("click", async () => {
@@ -88,12 +79,12 @@ document.getElementById("btnJoin").addEventListener("click", async () => {
         console.error("Error:", error);
         alert("Verbindung zum Server fehlgeschlagen.");
     }
-
 });
 
 // =========================================================================
 // 3. KONTO-DATEN BEFÜLLEN (ONLOAD)
 // =========================================================================
+
 async function loadAccountData() {
     try {
         const response = await fetch("api/get_user_info.php");
@@ -123,11 +114,17 @@ async function loadAccountData() {
                     listContainer.innerHTML = "";
                     result.members.forEach(member => {
                         const li = document.createElement("li");
-                        li.style.padding = "8px 0";
-                        li.style.borderBottom = "1px solid #ddd";
+                        li.className = "member-card";
                         li.innerHTML = `
-                            <strong>👤 ${member.name}</strong> <br>
-                            <span style="font-size: 0.85em; color: #555;"> 📧 ${member.email}</span>
+                        <div class= "member-row">
+                            <span class="member-icon">👤</span>
+                            <span class="member-text">${member.name}</span>
+                        </div>
+
+                        <div class="member-email">
+                            <span class="member-icon"> 📧 </span>
+                            <span class="member-text">${member.email}</span>
+                        </div>
                         `;
                         listContainer.appendChild(li);
                     });
@@ -146,9 +143,7 @@ async function loadAccountData() {
 document.addEventListener("DOMContentLoaded", loadAccountData);
 
 // =========================================================================
-
 // 4. PROFIL BEARBEITEN
-
 // =========================================================================
 
 // Ansicht wechseln zu: Bearbeiten
@@ -174,7 +169,6 @@ document.getElementById("btnSaveProfile").addEventListener("click", async () => 
     if (!updatedName) {
         alert("Der Benutzername darf nicht leer sein!");
         return;
-
     }
 
     try {
@@ -198,9 +192,7 @@ document.getElementById("btnSaveProfile").addEventListener("click", async () => 
 });
 
 // =========================================================================
-
 // 5. PASSWORT ÄNDERN
-
 // =========================================================================
 
 const btnTogglePasswordForm = document.getElementById("btnTogglePasswordForm");
@@ -275,3 +267,148 @@ if (passwordForm) {
     });
 }
 
+// Globaler Speicher für die geladenen Userdaten, damit wir sie beim Monsterspeichern parat haben
+let currentCachedUser = null;
+
+// =========================================================================
+// 6. DATEN BEIM LADEN ANZEIGEN (PROFIL & MONSTER)
+// =========================================================================
+async function loadUserProfileData() {
+    try {
+        const response = await fetch("api/get_user_info.php");
+        const result = await response.json();
+
+        if (result.status === "success" && result.data) {
+            const user = result.data;
+            currentCachedUser = user; // Im Cache merken
+
+            // Profil-Texte füllen
+            document.getElementById("displayUserName").textContent = user.name || "Kein Name";
+            document.getElementById("displayChildName").textContent = user.childname || "Kein Name";
+            document.getElementById("userEmail").textContent = user.email || "Keine E-Mail";
+
+            // Profil-Inputs vorbefüllen
+            document.getElementById("editUserName").value = user.name || "";
+            document.getElementById("editChildName").value = user.childname || "";
+
+            // --- MONSTER-ANZEIGE ---
+            const aktuellesMonster = user.monster_icon || "monster_wasabi_02";
+
+            // Einzel-Bild im Lese-Modus setzen
+            const previewImg = document.getElementById("currentMonsterImg");
+            if (previewImg) {
+                previewImg.src = `resources/img/${aktuellesMonster}.svg`;
+                previewImg.alt = aktuellesMonster;
+            }
+
+            // Radio-Button in der Galerie vor-auswählen
+            const passenderRadio = document.querySelector(`input[name="monster_choice"][value="${aktuellesMonster}"]`);
+            if (passenderRadio) {
+                passenderRadio.checked = true;
+            }
+        }
+    } catch (error) {
+        console.error("Fehler beim Laden der Profildaten:", error);
+    }
+}
+
+// =========================================================================
+// 7. MODUS-UMSCHALTER (PROFIL-KACHEL & MONSTER-KACHEL SEPARAT)
+// =========================================================================
+
+// Profil-Kachel Umschalter
+const btnEditProfile = document.getElementById("btnEditProfile");
+const btnCancelEdit = document.getElementById("btnCancelEdit");
+const profileViewMode = document.getElementById("profileViewMode");
+const profileEditMode = document.getElementById("profileEditMode");
+
+if (btnEditProfile && btnCancelEdit) {
+    btnEditProfile.addEventListener("click", () => {
+        profileViewMode.style.display = "none";
+        profileEditMode.style.display = "block";
+    });
+    btnCancelEdit.addEventListener("click", () => {
+        profileEditMode.style.display = "none";
+        profileViewMode.style.display = "block";
+    });
+}
+
+// Monster-Kachel Umschalter (NEU & SEPARAT)
+const btnEditMonster = document.getElementById("btnEditMonster");
+const btnCancelMonsterEdit = document.getElementById("btnCancelMonsterEdit");
+const monsterViewMode = document.getElementById("monsterViewMode");
+const monsterEditMode = document.getElementById("monsterEditMode");
+
+if (btnEditMonster && btnCancelMonsterEdit) {
+    btnEditMonster.addEventListener("click", () => {
+        monsterViewMode.style.display = "none";
+        monsterEditMode.style.display = "block"; // Galerie klappt auf
+    });
+    btnCancelMonsterEdit.addEventListener("click", () => {
+        monsterEditMode.style.display = "none";
+        monsterViewMode.style.display = "block"; // Galerie schließt sich wieder
+    });
+}
+
+// =========================================================================
+// 8. SPEICHER-FUNKTIONEN (BEIDE NUTZEN DIE Kombi-API UPDATE_PROFILE.PHP)
+// =========================================================================
+
+// Hilfsfunktion zum Senden der Daten an die API
+async function sendUpdate(name, childname, monsterIcon) {
+    try {
+        const response = await fetch("api/update_profile.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                name: name,
+                childname: childname,
+                monster_icon: monsterIcon
+            })
+        });
+        const result = await response.json();
+        if (result.status === "success") {
+            alert("Erfolgreich aktualisiert!");
+            window.location.reload();
+        } else {
+            alert("Fehler: " + result.message);
+        }
+    } catch (error) {
+        console.error("Fehler beim Speichern:", error);
+        alert("Verbindung zum Server fehlgeschlagen.");
+    }
+}
+
+// A: Speichern aus der Profil-Kachel
+const btnSaveProfile = document.getElementById("btnSaveProfile");
+if (btnSaveProfile) {
+    btnSaveProfile.addEventListener("click", () => {
+        const updatedName = document.getElementById("editUserName").value.trim();
+        const updatedChildName = document.getElementById("editChildName").value.trim();
+
+        // Wir nehmen das aktuell gespeicherte Monster aus dem Cache mit
+        const aktuellesMonster = currentCachedUser ? currentCachedUser.monster_icon : "monster_wasabi_02";
+
+        if (!updatedName) { alert("Der Name darf nicht leer sein!"); return; }
+        sendUpdate(updatedName, updatedChildName, aktuellesMonster);
+    });
+}
+
+// B: Speichern aus der Monster-Kachel (NEU)
+const btnSaveMonster = document.getElementById("btnSaveMonster");
+if (btnSaveMonster) {
+    btnSaveMonster.addEventListener("click", () => {
+        // Welches Monster-Bild wurde in der Galerie ausgewählt?
+        const ausgewählterRadio = document.querySelector('input[name="monster_choice"]:checked');
+        const gewähltesIcon = ausgewählterRadio ? ausgewählterRadio.value : "monster_wasabi_02";
+
+        // Wir nehmen die aktuellen Profilnamen aus dem Cache mit, damit sie nicht überschrieben werden
+        const aktuellerName = currentCachedUser ? currentCachedUser.name : "User";
+        const aktuellerChildName = currentCachedUser ? currentCachedUser.childname : "";
+
+        sendUpdate(aktuellerName, aktuellerChildName, gewähltesIcon);
+    });
+}
+
+// Skript starten, wenn das HTML geladen ist
+document.addEventListener("DOMContentLoaded", loadUserProfileData);

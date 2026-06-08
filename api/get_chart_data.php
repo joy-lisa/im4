@@ -48,7 +48,7 @@ try {
     }
 
     // =========================================================================
-    // ERGÄNZUNG: TREND FÜR DIE AKTULLE BUZZER_ID BERECHNEN
+    // TREND FÜR DIE AKTULLE BUZZER_ID BERECHNEN
     // =========================================================================
     
     // 1. Auslösungen dieser Woche zählen für diese buzzer_id (letzte 7 Tage)
