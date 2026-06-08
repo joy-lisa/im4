@@ -338,10 +338,13 @@ Unser ERM bildet das logische Fundament für den „Monster Scanner“. Es zeigt
 
 ### 🔌Known bugs
 
-* Was funktioniert noch nicht einwandfrei?  
+* Was funktioniert noch nicht einwandfrei?
+
+Zum Zeitpunkt der Abgabe (aktuell) sind uns keine Bugs bekannt. 
+  
 * Was ist uns aufgefallen bei der Entwicklung?
 
-Die Entwicklung einer solchen App ist sehr zeitaufwändig und bedingt eine gute Kommunikation innerhalb des Teams. 
+Die Entwicklung einer solchen App ist sehr zeitaufwändig und bedingt eine gute Kommunikation innerhalb des Teams. Es ist wichtig, dass man die App von Anfang an logisch und simpel aufbaut und dann später immernoch ins Detail gehen kann. 
     
 * Was könnte noch verbessert werden?
 
