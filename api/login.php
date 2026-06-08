@@ -1,5 +1,16 @@
 <?php
-// login.php
+
+/* =========================================================================
+   BESCHREIBUNG: Authentifizierungs-Schnittstelle (API) für den Benutzer-Login.
+   FUNKTION: 
+   - Setzt Sicherheits-Parameter für das Session-Cookie ('httponly').
+   - Verarbeitet Login-Anfragen via HTTP-POST und decodiert die JSON-Eingaben.
+   - Gleicht die E-Mail-Adresse mit der Tabelle 'users' ab.
+   - Überprüft das Passwort sicher via 'password_verify'.
+   - Regeneriert bei Erfolg die Session-ID zur Erhöhung der Sicherheit (Schutz vor Session-Fixation).
+   - Initialisiert die serverseitigen $_SESSION-Variablen ('user_id', 'email', 'haushalt_id').
+   ========================================================================= */
+
 ini_set('session.cookie_httponly', 1);
 // ini_set('session.cookie_secure', 1); // if using HTTPS
 session_start();

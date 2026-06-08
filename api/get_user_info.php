@@ -1,5 +1,16 @@
 <?php
-// api/get_user_info.php
+
+/* =========================================================================
+   BESCHREIBUNG: Schnittstelle (API) zum Laden aller profilspezifischen Daten.
+   FUNKTION: 
+   - Prüft den aktiven Login-Status des Benutzers via PHP-Session.
+   - Holt mittels 'LEFT JOIN' verknüpfte Informationen aus den Tabellen 'users', 
+     'haushalt' und 'buzzer' für den aktuellen User.
+   - Fragt bei bestehender Haushaltsverknüpfung zusätzlich alle registrierten 
+     Mitglieder (z. B. andere Familienmitglieder) dieser Gruppe ab.
+   - Gibt das kombinierte Ergebnis strukturiert als JSON an das Frontend weiter.
+   ========================================================================= */
+
 session_start();
 header('Content-Type: application/json');
 require_once '../system/config.php';

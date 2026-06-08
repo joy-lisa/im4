@@ -1,5 +1,15 @@
 <?php
-// index.php (API that returns JSON about the logged-in user)
+
+/* =========================================================================
+   BESCHREIBUNG: Serverseitige Schutzbarriere (API) zur Überprüfung des Login-Status.
+   FUNKTION: 
+   - Überprüft, ob eine gültige 'user_id' in der aktuellen PHP-Session existiert.
+   - Falls nicht eingeloggt: Setzt den HTTP-Statuscode auf '401 Unauthorized' 
+     und sendet eine entsprechende Fehlermeldung im JSON-Format zurück.
+   - Falls eingeloggt: Bestätigt den Erfolg und liefert die ID sowie die E-Mail-Adresse 
+     des angemeldeten Users als JSON an das Frontend (protected.js) zurück.
+   ========================================================================= */
+
 session_start();
 
 if (!isset($_SESSION['user_id'])) {

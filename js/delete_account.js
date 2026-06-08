@@ -1,3 +1,13 @@
+/* =========================================================================
+   BESCHREIBUNG: Frontend-Logik für den Sicherheitsdialog zur Kontolöschung.
+   FUNKTION: 
+   - Wartet auf das Laden des DOM-Trees und bindet Event-Listener an die UI-Elemente.
+   - Steuert das Öffnen und Schliessen des modalen Bestätigungs-Popups ('#deleteAccountPopup').
+   - Sendet bei finaler Bestätigung einen asynchronen HTTP-POST-Request an 'delete_account.php'.
+   - Verarbeitet die Server-Antwort: Zeigt eine Erfolgsmeldung an und leitet den 
+     gelöschten User anschliessend automatisch zurück auf die 'index.html'.
+   ========================================================================= */
+
 document.addEventListener("DOMContentLoaded", () => {
     const deleteBtnLink = document.getElementById("deleteAccountBtn");
     const deletePopupOverlay = document.getElementById("deleteAccountPopup");

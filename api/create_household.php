@@ -1,5 +1,15 @@
 <?php
-// create_household.php
+
+/* =========================================================================
+   BESCHREIBUNG: Schnittstelle (API) zur Erstellung einer neuen Haushaltsgruppe.
+   FUNKTION: 
+   - Überprüft den Login-Status des Users via Session.
+   - Generiert einen eindeutigen, 6-stelligen Zufallscode (Join-Code).
+   - Trägt den neuen Haushalt in die Tabelle 'haushalt' ein.
+   - Verknüpft den erstellenden User via Fremdschlüssel ('haushalt_ID') mit dieser Gruppe.
+   - Nutzt eine Datenbank-Transaktion, um Datenkonsistenz zu garantieren.
+   ========================================================================= */
+
 session_start();
 header('Content-Type: application/json');
 require_once '../system/config.php';

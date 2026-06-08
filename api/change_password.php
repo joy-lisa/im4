@@ -1,5 +1,14 @@
 <?php
 
+/* =========================================================================
+   BESCHREIBUNG: Schnittstelle (API) zur Passwortänderung.
+   FUNKTION: 
+   - Überprüft die aktive User-Session.
+   - Empfängt das alte und neue Passwort als JSON via HTTP-POST.
+   - Validiert das alte Passwort mit der Datenbank via 'password_verify'.
+   - Hasht das neue Passwort sicher und aktualisiert den Eintrag in der DB.
+   ========================================================================= */
+
 session_start();
 header('Content-Type: application/json');
 require_once '../system/config.php';

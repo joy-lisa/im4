@@ -1,5 +1,15 @@
 <?php
-// register.php
+
+/* =========================================================================
+   BESCHREIBUNG: Registrierungs-Schnittstelle (API) zur Erstellung neuer Benutzerkonten.
+   FUNKTION: 
+   - Verarbeitet Registrierungsdaten via HTTP-POST und decodiert den JSON-Inhalt.
+   - Bereinigt die Eingaben (E-Mail, Passwort, Name der Eltern und Name des Kindes).
+   - Prüft in der Tabelle 'users', ob die angegebene E-Mail-Adresse bereits existiert.
+   - Hasht das gewählte Passwort mittels 'password_hash' (PASSWORD_DEFAULT) nach aktuellen Sicherheitsstandards.
+   - Speichert den neuen Benutzerdatensatz sicher via PDO-Prepared-Statement in der MySQL-Datenbank ab.
+   ========================================================================= */
+
 session_start();
 header('Content-Type: application/json');
 

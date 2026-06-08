@@ -1,3 +1,13 @@
+/* =========================================================================
+   BESCHREIBUNG: Frontend-Logik zur Generierung und Steuerung des Statistik-Diagramms.
+   FUNKTION: 
+   - Ruft via Fetch-API die Trend- und Diagrammdaten von 'get_chart_data.php' ab.
+   - Färbt die visuelle Trend-Anzeige dynamisch ein (Rot bei Anstieg, Grün bei Rückgang).
+   - Generiert eine rollende 30-Tage-X-Achse basierend auf dem aktuellen Datum.
+   - Gleicht die DB-Einträge mit dem Kalender ab und füllt Tage ohne Events automatisch mit einer '0' auf.
+   - Initialisiert und rendert ein responsives Liniendiagramm (Chart.js) im Canvas-Element '#monsterChart'.
+   ========================================================================= */
+
 async function loadChart(buzzerId = 1) {
     const response = await fetch(`api/get_chart_data.php?buzzer_ID=${buzzerId}`);
     const dbData = await response.json();

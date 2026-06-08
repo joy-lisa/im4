@@ -1,5 +1,16 @@
 <?php
 
+/* =========================================================================
+   BESCHREIBUNG: Schnittstelle (API) zur Aufbereitung der Statistik- und Trenddaten.
+   FUNKTION: 
+   - Startet die Session und bindet die zentrale Datenbankkonfiguration ein.
+   - Empfängt eine 'buzzer_ID' via HTTP-GET-Parameter.
+   - Aggregiert Sensor-Ereignisse pro Tag (Anzahl und kommagetrennte Uhrzeiten via 'GROUP_CONCAT').
+   - Berechnet einen prozentualen Wochenvergleich (Trend) der Alarme (aktuelle 7 Tage vs. Vorwoche).
+   - Formatiert die Ergebnisse als X/Y-Koordinaten für die JavaScript-Diagramme (chart.js).
+   - Gibt die Daten strukturiert als JSON-Objekt aus.
+   ========================================================================= */
+
 session_start(); // Session starten, um auf $_SESSION zugreifen zu können
 
 ini_set('display_errors', 1);

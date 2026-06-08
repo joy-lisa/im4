@@ -1,5 +1,15 @@
 <?php
-// join_household.php
+
+/* =========================================================================
+   BESCHREIBUNG: Schnittstelle (API) zum Beitritt in eine bestehende Haushaltsgruppe.
+   FUNKTION: 
+   - Überprüft den Login-Status des Users via Session.
+   - Empfängt den eingegebenen 'join_code' als JSON-Daten über das Frontend.
+   - Sucht in der Tabelle 'haushalt' nach einem passenden und gültigen Code.
+   - Verknüpft bei Erfolg den User über das Attribut 'haushalt_ID' mit der gefundenen Gruppe.
+   - Sendet eine entsprechende Erfolgs- oder Fehlermeldung (z. B. bei ungültigem Code) zurück.
+   ========================================================================= */
+
 session_start();
 header('Content-Type: application/json');
 require_once '../system/config.php';

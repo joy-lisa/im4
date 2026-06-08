@@ -1,4 +1,14 @@
 <?php
+
+/* =========================================================================
+   BESCHREIBUNG: Schnittstelle (API) zur vollständigen Löschung eines Benutzerkontos.
+   FUNKTION: 
+   - Überprüft, ob der anfragende User eingeloggt ist (Session-Validierung).
+   - Löscht den entsprechenden Datensatz sicher via PDO aus der Tabelle 'users'.
+   - Bereinigt und zerstört die aktive PHP-Session sowie das zugehörige Browser-Cookie.
+   - Sendet eine Statusrückmeldung (Success/Error) im JSON-Format an das Frontend.
+   ========================================================================= */
+
 session_start();
 header('Content-Type: application/json');
 

@@ -1,4 +1,14 @@
-// login.js
+/* =========================================================================
+   BESCHREIBUNG: Frontend-Steuerung für das Anmeldeformular (login.html).
+   FUNKTION: 
+   - Überwacht das 'submit'-Ereignis des Login-Formulars und verhindert das standardmässige Neuladen der Seite.
+   - Liest die eingegebenen Daten (E-Mail, Passwort) aus den Input-Feldern aus und bereinigt sie via 'trim'.
+   - Übermittelt die Login-Daten als JSON-String via HTTP-POST an die serverseitige Schnittstelle 'login.php'.
+   - Verarbeitet die Server-Antwort: Leitet den User bei Erfolg auf das Dashboard ('home.html') weiter 
+     oder gibt im Fehlerfall die entsprechende Fehlermeldung via Alert aus.
+   ========================================================================= */
+
+
 document.getElementById("loginForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 

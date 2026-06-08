@@ -1,6 +1,19 @@
-// =========================================================================
+
 // 1. HAUSHALT ERSTELLEN (POPUP)
-// =========================================================================
+
+/* =========================================================================
+   BESCHREIBUNG: Zentrale Frontend-Steuerung für das Haupt-Dashboard (home.html).
+   FUNKTION: 
+   - Verwaltet die Erstellung eines neuen Haushalts (inkl. automatischer Code-Generierung) 
+     sowie den Beitritt via Einladungscode.
+   - Lädt die Profildaten ('get_user_info.php') und blendet das Interface je nach 
+     Haushalts- und Gerätestatus dynamisch ein oder aus.
+   - Steuert den Datumsfilter für die Alarmliste und rendert die historischen Ereignisse.
+   - Initiiert einen asynchronen Echtzeit-Ticker (Intervall: 5 Sekunden), der neu eingehende 
+     Alarme innerhalb eines 5-Minuten-Fensters visuell als Pop-up-Warnung einblendet.
+   - Bietet eine temporäre Ignore-Funktion für manuell geschlossene Warnmeldungen.
+   ========================================================================= */
+
 
 document.getElementById("btnCreate").addEventListener("click", async () => {
 

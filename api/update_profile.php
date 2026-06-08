@@ -1,5 +1,16 @@
 <?php
-// api/update_profile.php
+
+/* =========================================================================
+   BESCHREIBUNG: Schnittstelle (API) zur Aktualisierung von Profil- und Haushaltsdaten.
+   FUNKTION: 
+   - Überprüft den Login-Status des Users über die PHP-Session.
+   - Empfängt geänderte Profildaten (Name, Kindname, Monster-Icon) als JSON via HTTP-POST.
+   - Fall 1: Aktualisiert den Namen des Elternteils und des Kindes in der Tabelle 'users'.
+   - Fall 2: Ermittelt die 'haushalt_ID' des Users und aktualisiert das 'monster_icon' 
+     in der Tabelle 'haushalt'.
+   - Gibt eine entsprechende Erfolgs- oder Fehlermeldung im JSON-Format zurück.
+   ========================================================================= */
+
 session_start();
 header('Content-Type: application/json');
 require_once '../system/config.php';

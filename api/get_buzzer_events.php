@@ -1,4 +1,15 @@
 <?php
+
+/* =========================================================================
+   BESCHREIBUNG: Schnittstelle (API) zum Abrufen der aufgezeichneten Alarme (Knopfdrücke).
+   FUNKTION: 
+   - Überprüft den Login-Status des Users via Session.
+   - Nimmt die 'buzzer_ID' und optional ein spezifisches 'datum' via HTTP-GET entgegen.
+   - Formatiert den Zeitstempel der Events direkt in der SQL-Abfrage zu lesbaren Uhrzeiten ('%H:%i Uhr').
+   - Sortiert die Ereignisse so, dass die neuesten Alarme immer zuerst erscheinen (DESC).
+   - Liefert die Event-Liste als JSON-Array an das Dashboard (home.js) zurück.
+   ========================================================================= */
+
 // api/get_buzzer_events.php
 session_start();
 header('Content-Type: application/json');

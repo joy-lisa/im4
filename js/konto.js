@@ -1,6 +1,16 @@
-// =========================================================================
-// 1. HAUSHALT ERSTELLEN (Einstellungen)
-// =========================================================================
+/* =========================================================================
+   BESCHREIBUNG: Frontend-Steuerung für die Kontoverwaltung und Profileinstellungen (konto.html).
+   FUNKTION: 
+   - Verwaltet das Erstellen und Beitreten einer Haushaltsgruppe via API-Anbindung.
+   - Lädt Benutzer- und Haushaltsdaten ('get_user_info.php') und rendert dynamisch 
+     die Liste der registrierten Haushaltsmitglieder mit Namen und E-Mail-Adressen.
+   - Steuert den getrennten Bearbeitungsmodus (Lese-/Schreibansicht) für persönliche 
+     Profildaten (Elternname, Kindname) und die visuelle Auswahl des Monster-Icons.
+   - Validiert Passwortänderungen im Frontend (Mindestlänge, Übereinstimmung) und 
+     sendet die Daten verschlüsselt via HTTP-POST an 'change_password.php'.
+   - Nutzt einen clientseitigen Datencache ('currentCachedUser'), um bei Teilaktualisierungen 
+     Datenverluste zwischen den Profil- und Monster-Kacheln zu verhindern.
+   ========================================================================= */
 
 document.getElementById("btnCreate").addEventListener("click", async () => {
 
