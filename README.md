@@ -21,7 +21,7 @@ Viele Kinder haben Angst vor Monstern unter dem Bett, dies ist nicht nur eine gr
 
 #### Wie funktioniert das Ganze?
 
-Falls das Kind denkt, etwas könnte unter dem Bett sein, drückt es einen Button im Bett. Mittels Sensor, der unter dem Bett angebracht ist, wird überprüft, ob ein Monster da ist. Nach einigen Sekunden bekommt das Kind ene visuelle Bestätigung mittels grünem Licht. Falls wirklich eine Bewegung festgestellt wurde, erhalten die Eltern eine Push-Nachricht auf dem Handy mit der Aufforderung das Kinderzimmer aufzusuchen. 
+Falls das Kind denkt, etwas könnte unter dem Bett sein, drückt es einen Button im Bett. Mittels Sensor, der unter dem Bett angebracht ist, wird überprüft, ob ein Monster da ist. Nach einigen Sekunden bekommt das Kind ene visuelle Bestätigung mittels grünem Licht. Falls wirklich eine Bewegung festgestellt wurde, erhalten die Eltern eine Push-Nachricht auf dem Handy mit der Aufforderung, das Kinderzimmer aufzusuchen. 
 Somit müssen Eltern erst dann aktiv werden, wenn es wirklich nötig ist.
 
 <img height="200" alt="Bild_Knopf" src="https://github.com/user-attachments/assets/c47b1175-4c6b-4c99-93a2-d4d82284f05a" />
@@ -47,13 +47,11 @@ Anhand des AB-Testings haben wir herausgefunden, dass die App bei Eltern mit kle
 
 #### Features
 
-**Schichtplan + Switcher**
+**Schichtplan, Switcher und Punktesystem**
 
 Zu Beginn waren wir sehr motiviert, tolle Features einzubauen, wie beispielsweise einen Schichtplan, bei dem sich die Eltern eintragen können, wann sie an der Reihe sind aufzustehen, wenn der Alarm los geht. Eine weitere Funktion wäre ein Switch-Button gewesen, welcher zum Zug käme, wenn man mehr als 1 Kind hat. Somit könnte man zwischen zwei Homebildschirmen wechseln (je einer pro Kind). 
 
 Diese zwei Features haben wir aber schliesslich  nicht umgesetzt, da wir nur einen Buzzer haben und unser Konzept auf ein Kind beschränkt ist. Beim Schichtplan hätte es sehr viele Eventualitäten geben können, wenn noch andere Personen (Babysitter:innen) "Nachtschicht" hätten oder mehr als zwei Personen zuständig sind. Das war in der Umsetzung dann etwas sehr kompliziert, warum wir uns von diesen Ideen trennen mussten. 
-
-**Punkte-System**
 
 Eine weitere Idee wäre gewesen, eine Art Punkte-System einzubauen, bei welchem das Kind Sterne sammeln kann. Beispielsweise, wenn das Kind eine Nacht durchschläft, ohne den Buzzer zu betätigen, werden +5 Punkte auf das Sternen-Konto gezählt. Jede weitere Nacht in Folge ohne Buzzer-Betätigung bringt +3 Punkte. Aber wenn dann der Buzzer in einer Nacht wieder gedrückt wird, erfolgen -5 Punkte. Die Eltern könnten dann Ziele/Belohnungen festlegen, wie beispielsweise einen Ausflug in den Zoo bei 50 Punkten. 
 
@@ -68,6 +66,12 @@ Da am Ende doch noch ein klein wenig Zeit blieb, haben wir uns entschieden ein F
 **Unsere WebApp**
 
 Der Monster-Scanner kann unter dem folgenden Link aufgerufen werden: [Link zur Webapp](https://im4.lisa-joy.ch)
+
+**ACHTUNG!** Um die volle Einsicht in alle Funktionen der App zu erhalten, bitte wie folgt einlogen: (Login, welches mit unserem Prototypen verbunden ist)
+
+E-Mail-Adresse: martina.hauser@gmail.com
+
+Passwort: janosch123
 
 Die Video-Erklärung kann unter dem folgenden Link aufgerufen werden: [Link zum Video auf Youtube](http://link.zum.video) 
 
@@ -110,7 +114,6 @@ Die Video-Erklärung kann unter dem folgenden Link aufgerufen werden: [Link zum 
 
 * Öffne deinen Browser (Google Chrome).
 * Gib deine registrierte Domain oder Subdomain ein.
-* Die WebApp ist nun voll einsatzbereit!
 
 *6. Wie nehme ich das physische Artefakt in Betrieb?*
 
@@ -204,10 +207,10 @@ Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
   Das zentrale Dashboard für die Eltern, auf dem die Sensor-Aktivitäten und Auswertungen angezeigt werden.
   
 * **konto.html**
-  Benutzerprofil-Seite zur Verwaltung des Kontos (Haushalt erstellen/beitreten, Passwort ändern).
+  Benutzerprofil-Seite zur Verwaltung des Kontos (Haushalt erstellen/beitreten, Passwort ändern, Monster auswählen).
   
 * **protected.html**
-  Eine vorgeschaltete Sicherheitsseite, die prüft, ob eine gültige Session aktiv ist, bevor die Inhalte geladen werden.
+  Sicherheitsseite, die prüft, ob eine gültige Session aktiv ist, bevor die Inhalte geladen werden.
   
 * **sender.html**
   Test-Oberfläche zur manuellen Simulation von Sensor-Daten (hilfreich für Entwicklung und Debugging).
@@ -270,7 +273,7 @@ Hier folgt eine kurze Beschreibung vom Aufbau und Inhalt der Code-Struktur:
   Lädt die Live-Daten des Monster-Scanners dynamisch ins Dashboard und steuert die Benutzeroberfläche.
 
 * **chart.js**
-  Initialisiert und rendert die visuellen Diagramme (Statistiken) auf der Home-Seite.
+  Initialisiert und rendert das visuelle Diagramm auf der Home-Seite.
 
 * **konto.js**
   Verarbeitet die Interaktionen auf der Profilseite (Passwortänderung, Haushalts-Verwaltung).
@@ -335,10 +338,13 @@ Unser ERM bildet das logische Fundament für den „Monster Scanner“. Es zeigt
 
 ### 🔌Known bugs
 
-* Was funktioniert noch nicht einwandfrei?  
+* Was funktioniert noch nicht einwandfrei?
+
+Zum Zeitpunkt der Abgabe (aktuell) sind uns keine Bugs bekannt. 
+  
 * Was ist uns aufgefallen bei der Entwicklung?
 
-Die Entwicklung einer solchen App ist sehr zeitaufwändig und bedingt eine gute Kommunikation innerhalb des Teams. 
+Die Entwicklung einer solchen App ist sehr zeitaufwändig und bedingt eine gute Kommunikation innerhalb des Teams. Es ist wichtig, dass man die App von Anfang an logisch und simpel aufbaut und dann später immernoch ins Detail gehen kann. 
     
 * Was könnte noch verbessert werden?
 
@@ -349,28 +355,25 @@ Das Design der App könnte an manchen Stellen sicherlich noch überarbeitet/verf
 * **Reflexion / Erfahrung / Lernfortschritt:** 
 Beim Umsetzungsprozess haben wir sehr viel über das Zusammenspiel von Physical Computing, Datenbank und WebApp gelernt. Besonders spannend war für uns, dass unser physisches Artefakt nicht nur lokal funktioniert, sondern Daten über WLAN an eine Datenbank senden kann. Dadurch haben wir besser verstanden, wie IoT-Systeme aufgebaut sind und wie verschiedene Komponenten miteinander kommunizieren. Wir haben gelernt, wie ein ESP32-C6 mit Sensoren, einem Buzzer und einem LED-Ring verbunden und programmiert wird. Zusätzlich haben wir verstanden, wie Messwerte verarbeitet, als JSON formatiert und über HTTP-POST-Requests an eine PHP-Schnittstelle gesendet werden. Für die Datenbankanbindung haben wir mit PDO gearbeitet, damit die Daten sicher in einer MySQL-Datenbank gespeichert werden können.
 
-Im Bereich WebApp konnten wir unser Know-How im Zusammenspiel mit HTML, JS und PHP vertiefen und uns erneut mit einem coolen Styling per CSS ausleben. Besonders lehrreich war hierbei die Optimierung für verschiedene Bildschirmgrössen mittels CSS Media Queries. Uns wurde rasch bewusst, wie aufwändig es sein kann, wenn der "normale" CSS-Code etwas unübersichtlich und verschachtelt geschrieben ist. Das hat uns viel Zeit und Nerven gekostet. 
+ Im Bereich WebApp konnten wir unser Know-How im Zusammenspiel mit HTML, JS und PHP vertiefen und uns erneut mit einem coolen Styling per CSS        ausleben. Besonders lehrreich war hierbei die Optimierung für verschiedene Bildschirmgrössen mittels CSS Media Queries. Uns wurde rasch bewusst,    wie aufwändig es sein kann, wenn der "normale" CSS-Code etwas unübersichtlich und verschachtelt geschrieben ist. Das hat uns viel Zeit und Nerven   gekostet. 
 
 * **Herausforderungen & Lösungen:** 
 Eine grosse Herausforderung war die Verbindung zwischen dem ESP32 und der Datenbank. Am Anfang war nicht klar, wie die Daten korrekt vom Mikrocontroller an das Backend geschickt werden müssen. Dieses Problem konnten wir lösen, indem wir die Messwerte als JSON strukturiert und an die Datei load.php gesendet haben. Dort werden die Daten verarbeitet und anschliessend mit PDO in der Datenbank gespeichert. Auch die Bewegungserkennung war nicht einfach, da wir definieren mussten, wann wirklich eine Bewegung erkannt wird. Dafür vergleichen wir zwei Messungen des Ultraschallsensors direkt auf dem ESP32. Sobald die Differenz grösser als 3 cm ist, wird monster_da = 1 gesetzt.
 
 Eine weitere Herausforderung war das visuelle Feedback mit dem LED-Ring. Dieser sollte dem Kind klar zeigen, was gerade passiert. Deshalb haben wir verschiedene Zustände programmiert: Ein rotierendes grünes Licht zeigt den laufenden Scan, ein komplett grüner Ring bedeutet, dass die Daten erfolgreich gespeichert wurden, und ein roter Ring zeigt einen Fehler an. Ursprünglich hatten wir noch zusätzliche Features geplant, zum Beispiel einen Schichtplan für Eltern oder eine Funktion für mehrere Kinder. Diese Ideen hätten das System jedoch deutlich komplizierter gemacht. Deshalb haben wir uns bewusst auf einen realistisch umsetzbaren Funktionsumfang konzentriert.
 
-Das Team WebApp hatte erst einige Probleme mit dem Login-Prozess für die App. Der Aufbau der App war zeitintensiv und wir mussten oft sehr lange nach Fehlern im Code suchen. Als das Grundgerüst stand, war die Motivation dann auch wieder höher, nun die Daten des Sensors einzubinden und mittels PHP und JS in die App zu übertragen. Eine der grössten Herausforderungen war das ganze Styling der App. Im Nachhinein würden wir das anders angehen und versuchen alle Seiten einheitlicher zu gestalten. Da wir die Formularelemente anfangs sehr spezifisch für den Login-Prozess gestylt hatten, kam es später bei dem Profil- und Bearbeitungsmodus zu unvorhergesehenen Layout-Konflikten. Felder flogen im Desktop-Modus auseinander, Buttons überlagerten sich und Abstände brachen weg. Durch diese intensive Fehlersuche haben wir gelernt, wie wichtig ein strukturiertes CSS-Konzept und eine saubere Trennung von Layout-Logiken sind. Erst durch die präzise Feinabstimmung von Media Queries konnten wir die App schlussendlich auf ein konsistentes, responsives Desktop- und Mobile-Niveau bringen.
+Das Team WebApp hatte erst einige Probleme mit dem Login-Prozess für die App. Der Aufbau der App war zeitintensiv und wir mussten oft sehr lange nach Fehlern im Code suchen. Als das Grundgerüst stand, war die Motivation dann auch wieder höher, nun die Daten des Sensors einzubinden und mittels PHP und JS in die App zu übertragen. Eine der grössten Herausforderungen war das ganze Styling der App. Im Nachhinein würden wir das anders angehen und versuchen, alle Seiten einheitlicher zu gestalten. Da wir die Formularelemente anfangs sehr spezifisch für den Login-Prozess gestylt hatten, kam es später bei dem Profil- und Bearbeitungsmodus zu unvorhergesehenen Layout-Konflikten. Felder flogen im Desktop-Modus auseinander, Buttons überlagerten sich und Abstände brachen weg. Durch diese intensive Fehlersuche haben wir gelernt, wie wichtig ein strukturiertes CSS-Konzept und eine saubere Trennung von Layout-Logiken sind. Erst durch die präzise Feinabstimmung von Media Queries konnten wir die App schlussendlich auf ein konsistentes, responsives Desktop- und Mobile-Niveau bringen.
 
 
 * **KI-Einsatz:** 
-KI-Tools haben wir unterstützend eingesetzt, vor allem um technische Abläufe besser zu verstehen, Probleme beim Coding zu lösen und die README zu strukturieren. Besonders hilfreich war KI bei Fragen zur Datenbankanbindung mit PHP und PDO, bei HTTP-POST-Requests sowie beim Debugging einzelner Probleme. Chatgpt hat uns ebenfalls geholfen Codes mit Arduino zu schreiben und Zusammenhänge zu verstehen.
+KI-Tools haben wir unterstützend eingesetzt, vor allem um technische Abläufe besser zu verstehen, Probleme beim Coding zu lösen und die README zu strukturieren. Besonders hilfreich war KI bei Fragen zur Datenbankanbindung mit PHP und PDO, bei HTTP-POST-Requests sowie beim Debugging einzelner Probleme. Chatgpt hat uns ebenfalls geholfen, Codes mit Arduino zu schreiben und Zusammenhänge zu verstehen.
 
-Im Bereich von WebApp haben wir viel mit KI (Gemini) gearbeitet, um uns die weiteren Schritte des Aufbaus der App erklären zu lassen. Uns war wichtig, nie die reinen Code-Zeilen von KI zu übernehmen, sondern stets zu kontrollieren, was wir bereits hatten und was wir noch in unserem Code ergänzen mussten. Dadurch haben wir uns immer jede Code-Zeile durchgelesen und sie versucht, bestmöglichst zu verstehen. Das ist uns teils mehr, teils weniger gelungen. Dabei ist uns einmal mehr aufgefallen, wie wichtig es ist, in der Zusammenarbeit mit KI immer die Kontrolle und den Überblick zu behalten.
+Im Bereich von WebApp haben wir viel mit Gemini gearbeitet, um uns die weiteren Schritte des Aufbaus der App erklären zu lassen. Uns war wichtig, nie die reinen Code-Zeilen von KI zu übernehmen, sondern stets zu kontrollieren, was wir bereits hatten und was wir noch in unserem Code ergänzen mussten. Dadurch haben wir uns immer jede Code-Zeile durchgelesen und sie versucht, bestmöglichst zu verstehen. Das ist uns teils mehr, teils weniger gelungen. Dabei ist uns einmal mehr aufgefallen, wie wichtig es ist, in der Zusammenarbeit mit KI immer die Kontrolle und den Überblick zu behalten.
 
 * **Fazit:**
 Insgesamt sind wir zufrieden mit unserem Projekt. Der Monster-Scanner verbindet ein alltägliches Problem mit einer kreativen technischen Lösung und zeigt, wie Physical Computing und WebApp sinnvoll zusammenspielen können. Besonders schön finden wir, dass das Projekt nicht nur technisch funktioniert, sondern auch emotional einen Nutzen hat. Kinder erhalten durch den Scanner und den LED-Ring ein Gefühl von Sicherheit, während die Eltern entlastet werden können.
 Es war ein cooles Gefühl zu sehen, wie aus einer ersten Idee Schritt für Schritt ein funktionierendes System entstanden ist. Das Projekt hat uns nicht nur technisch weitergebracht, sondern auch gezeigt, wie wichtig Teamarbeit, Kommunikation und kreatives Problemlösen bei interaktiven Projekten sind.
 
 
-- Beinhaltet die Konfigurationsdatei für die Datenbankverbindung.
-- Beinhaltet die Datei `database.sql`, die die `users` Tabelle erstellt.
-- Beinhaltet die Datei `config.php`, die die Konfiguration des Backends enthält.
 
 
