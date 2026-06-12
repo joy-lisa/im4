@@ -3,8 +3,8 @@
 #include <Adafruit_NeoPixel.h>
 
 // WLAN
-const char* ssid = "lisa joy <3";
-const char* pass = "123456789";
+const char* ssid = "tinkergarden";
+const char* pass = "strenggeheim";
 
 // PHP-Datei
 String serverURL = "https://im4.lisa-joy.ch/api/load.php";
