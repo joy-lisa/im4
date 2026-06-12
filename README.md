@@ -73,7 +73,7 @@ E-Mail-Adresse: martina.hauser@gmail.com
 
 Passwort: janosch123
 
-Die Video-Erklärung kann unter dem folgenden Link aufgerufen werden: [Link zum Video auf Youtube](http://link.zum.video) 
+Die Video-Erklärung kann unter dem folgenden Link aufgerufen werden: [Link zum Video auf Youtube](https://www.youtube.com/watch?v=Ask-1k3tal4) 
 
 ### 📲Installationsanleitung WebApp
 
