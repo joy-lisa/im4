@@ -23,7 +23,6 @@ $scan2 = $input["scan2"];
 $monster_da = $input["bewegung"];
 $buzzer_ID = $input ["buzzer_ID"];
 
-// Hol den Wert an der Stelle "wert" aus dem JS-Objekt (ehemals JSON-String)
 # insert new user into db
 $sql = "INSERT INTO buzzer_event (scan_1, scan_2, monster_da, buzzer_ID)
 VALUES (?, ?, ?, ?)";
