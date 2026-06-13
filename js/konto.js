@@ -20,7 +20,7 @@ document.getElementById("btnCreate").addEventListener("click", async () => {
         return;
     }
 
-    // 1. Zufälligen 6-stelligen Code generieren (Großbuchstaben & Zahlen)
+    // Zufälligen 6-stelligen Code generieren (Großbuchstaben & Zahlen)
     const generateCode = () => {
         return Math.random().toString(36).substring(2, 8).toUpperCase();
     };
@@ -57,7 +57,7 @@ document.getElementById("btnCreate").addEventListener("click", async () => {
 });
 
 // =========================================================================
-// 2. HAUSHALT BEITRETEN (Einstellungen)
+// HAUSHALT BEITRETEN (Einstellungen)
 // =========================================================================
 
 document.getElementById("btnJoin").addEventListener("click", async () => {
@@ -92,7 +92,7 @@ document.getElementById("btnJoin").addEventListener("click", async () => {
 });
 
 // =========================================================================
-// 3. KONTO-DATEN BEFÜLLEN (ONLOAD)
+// KONTO-DATEN BEFÜLLEN (ONLOAD)
 // =========================================================================
 
 async function loadAccountData() {
@@ -153,7 +153,7 @@ async function loadAccountData() {
 document.addEventListener("DOMContentLoaded", loadAccountData);
 
 // =========================================================================
-// 4. PROFIL BEARBEITEN
+// PROFIL BEARBEITEN
 // =========================================================================
 
 // Ansicht wechseln zu: Bearbeiten
@@ -202,7 +202,7 @@ document.getElementById("btnSaveProfile").addEventListener("click", async () => 
 });
 
 // =========================================================================
-// 5. PASSWORT ÄNDERN
+// PASSWORT ÄNDERN
 // =========================================================================
 
 const btnTogglePasswordForm = document.getElementById("btnTogglePasswordForm");
@@ -281,7 +281,7 @@ if (passwordForm) {
 let currentCachedUser = null;
 
 // =========================================================================
-// 6. DATEN BEIM LADEN ANZEIGEN (PROFIL & MONSTER)
+// DATEN BEIM LADEN ANZEIGEN (PROFIL & MONSTER)
 // =========================================================================
 async function loadUserProfileData() {
     try {
@@ -323,7 +323,7 @@ async function loadUserProfileData() {
 }
 
 // =========================================================================
-// 7. MODUS-UMSCHALTER (PROFIL-KACHEL & MONSTER-KACHEL SEPARAT)
+// MODUS-UMSCHALTER (PROFIL-KACHEL & MONSTER-KACHEL SEPARAT)
 // =========================================================================
 
 // Profil-Kachel Umschalter
@@ -361,7 +361,7 @@ if (btnEditMonster && btnCancelMonsterEdit) {
 }
 
 // =========================================================================
-// 8. SPEICHER-FUNKTIONEN (BEIDE NUTZEN DIE Kombi-API UPDATE_PROFILE.PHP)
+// SPEICHER-FUNKTIONEN (BEIDE NUTZEN DIE Kombi-API UPDATE_PROFILE.PHP)
 // =========================================================================
 
 // Hilfsfunktion zum Senden der Daten an die API
@@ -404,7 +404,7 @@ if (btnSaveProfile) {
     });
 }
 
-// B: Speichern aus der Monster-Kachel (NEU)
+// B: Speichern aus der Monster-Kachel
 const btnSaveMonster = document.getElementById("btnSaveMonster");
 if (btnSaveMonster) {
     btnSaveMonster.addEventListener("click", () => {

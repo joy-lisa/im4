@@ -17,11 +17,12 @@ document
     const childname = document.getElementById("childname").value.trim();
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
-    // 1. Das Bestätigungsfeld auslesen (ID muss mit deinem HTML übereinstimmen)
+
+    // Das Bestätigungsfeld auslesen (ID muss mit deinem HTML übereinstimmen)
     const passwordConfirm = document.getElementById("passwordConfirm").value.trim();
     // const emoji = document.getElementById("emoji").value.trim();
 
-    // 2. Überprüfung: Stimmen die Passwörter überein?
+    // Überprüfung: Stimmen die Passwörter überein?
     if (password !== passwordConfirm) {
       alert("Die Passwörter stimmen nicht überein!");
       return; // Bricht die Funktion hier ab, fetch wird nicht ausgeführt
@@ -33,12 +34,12 @@ document
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password, name, childname /*, emoji */ }),
+        body: JSON.stringify({ email, password, name, childname }),
       });
       const result = await response.json();
 
       if (result.status === "success") {
-        alert("Registration successful! You can now log in.");
+        // alert("Registration successful! You can now log in.");
         window.location.href = "home.html";
       } else {
         alert(result.message || "Registration failed.");

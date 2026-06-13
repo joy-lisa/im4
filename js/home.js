@@ -1,5 +1,5 @@
 
-// 1. HAUSHALT ERSTELLEN (POPUP)
+// HAUSHALT ERSTELLEN (POPUP)
 
 /* =========================================================================
    BESCHREIBUNG: Zentrale Frontend-Steuerung für das Haupt-Dashboard (home.html).
@@ -23,7 +23,7 @@ document.getElementById("btnCreate").addEventListener("click", async () => {
         return;
     }
 
-    // 1. Zufälligen 6-stelligen Code generieren (Großbuchstaben & Zahlen)
+    // Zufälligen 6-stelligen Code generieren (Großbuchstaben & Zahlen)
 
     const generateCode = () => {
         return Math.random().toString(36).substring(2, 8).toUpperCase();
@@ -59,8 +59,9 @@ document.getElementById("btnCreate").addEventListener("click", async () => {
     }
 
 });
+
 // =========================================================================
-// 2. HAUSHALT BEITRETEN
+// HAUSHALT BEITRETEN
 // =========================================================================
 
 document.getElementById("btnJoin").addEventListener("click", async () => {
@@ -95,7 +96,7 @@ document.getElementById("btnJoin").addEventListener("click", async () => {
 });
 
 // =========================================================================
-// 3. BENUTZERDATEN LADEN FÜR STARTSEITE (FINALE LOGIK)
+// BENUTZERDATEN LADEN FÜR STARTSEITE
 // =========================================================================
 
 async function loadUserData() {
@@ -189,7 +190,7 @@ document.addEventListener("DOMContentLoaded", loadUserData);
 let vonUserWeggeklickteAlertId = null;
 
 // =========================================================================
-// 4. LIVE-MONSTER-ALARM CHECKER (MIT COOLEM AUTO-TIMEOUT & SCHLIESS-KREUZ)
+// LIVE-MONSTER-ALARM CHECKER
 // =========================================================================
 
 async function checkLiveMonsterAlert(buzzerId) {
@@ -257,7 +258,7 @@ async function checkLiveMonsterAlert(buzzerId) {
 }
 
 // =========================================================================
-// 5. BUZZER-Events LADEN
+// BUZZER-Events LADEN
 // =========================================================================
 
 async function loadBuzzerEvents(buzzerId) {

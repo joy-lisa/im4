@@ -25,7 +25,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     const result = await response.json();
 
     if (result.status === "success") {
-      alert("Login successful!");  // später löschen, nur zum debuggen
+      // alert("Login successful!");  // später löschen, nur zum debuggen
       window.location.href = "home.html";
     } else {
       alert(result.message || "Login failed.");

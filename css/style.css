@@ -23,6 +23,7 @@ body {
   min-height: 100vh;
 }
 
+/* Back-Buttons*/
 
 #back_btn_container {
   position: absolute;
@@ -36,7 +37,6 @@ body {
   padding: 16px 24px;
   font-size: 1.8rem;
   font-weight: bold;
-  /* background-color: rgba(255, 255, 255, 0.2); */
   color: var(--cassis);
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 14px;
@@ -129,8 +129,6 @@ body {
   margin-top: 20px;
 }
 
-/* Buttons alle gleich */
-
 .card {
   background-color: white;
   border-radius: 16px;
@@ -148,7 +146,6 @@ form {
 #passwordForm button[type="submit"] {
   margin-top: 16px;
 }
-
 
 #passwordForm .btn-sub {
   margin-top: 8px;
@@ -177,8 +174,6 @@ form {
   font-family: inherit;
   border: none;
   border-radius: 30px;
-  /* background-color: var(--wasabi); */
-  /* color: var(--cassis); */
   cursor: pointer;
   transition: transform 0.2s ease, opacity 0.2s ease;
   text-align: center;
@@ -211,7 +206,6 @@ form {
   text-decoration: none;
 }
 
-
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],
@@ -234,7 +228,9 @@ form input:focus,
   border-color: var(--wasabi);
 }
 
-/* Konto- und Home-Seite */
+/* ====================
+Konto- und Home-Seite
+======================= */
 
 main {
   width: 100%;
@@ -256,12 +252,12 @@ main {
   padding: 24px 50px 40px 50px;
 }
 
+/* Header */
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* width: 100%; */
-  /* gap: 16px; */
   padding: 15px;
   background-color: white;
   position: sticky;
@@ -288,7 +284,6 @@ main {
   display: flex;
   align-items: center;
   gap: 15px;
-  /* Hier stellst du ein, wie nah Logo und Text beieinander sein sollen! */
 }
 
 .header-zurück {
@@ -300,8 +295,6 @@ main {
 .header img {
   width: 56px;
   height: 56px;
-  /* background-color: var(--wasabi); */
-  /* border-radius: 50%; */
   padding: 6px;
 }
 
@@ -330,22 +323,6 @@ main {
 .header-subtitle-konto {
   font-size: 1.5rem;
 }
-
-/* main:not(.main_konto) .header div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.main_konto .header div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: left;
-} */
 
 main h1 {
   font-size: 1rem;
@@ -411,43 +388,32 @@ main .header small {
   margin: 0 0 20px 0;
 }
 
-/* 2. DIE SCROLLBOX: Begrenzt die Höhe der Liste und aktiviert das Scrollen */
+/* DIE SCROLLBOX: Begrenzt die Höhe der Liste und aktiviert das Scrollen */
 .event-list {
   list-style: none;
   padding: 0;
   margin: 0;
 
   max-height: 280px;
-  /* Maximale Höhe, ab hier wird gescrollt */
   overflow-y: auto;
-  /* Aktiviert den vertikalen Scrollbalken, wenn nötig */
-
-  /* Schickere Scrollbar für moderne Browser (optional) */
   scrollbar-width: thin;
   scrollbar-color: var(--cassis) #f0f0f0;
 }
 
-/* 3. Ein einzelner Listeneintrag (Alarm-Zeile) */
 .event-list li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* Drückt Text nach links, Uhrzeit nach rechts */
-
   background-color: #F2EBF0;
-  /* Das zarte Lila aus dem Screenshot */
   border-radius: 16px;
   padding: 12px 16px;
   margin-bottom: 12px;
-  /* Abstand zwischen den einzelnen Alarmen */
 }
 
-/* Verhindert den Abstand beim letzten Element in der Scrollbox */
 .event-list li:last-child {
   margin-bottom: 0;
 }
 
-/* Äußerer Kasten: Verhindert, dass das Diagramm die Kachel sprengt */
 .chart-overflow-container {
   width: 100%;
   overflow-x: auto;
@@ -457,15 +423,11 @@ main .header small {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Innerer Kasten: Zwingt das Diagramm auf eine angenehm gestreckte Breite */
 .chart-scroll-wrapper {
   width: 1000px;
-  /* Feste Höhe für die Kachel-Optik */
   padding-bottom: 10px;
-  /* Platz für den Scrollbalken, damit er das Datum nicht verdeckt */
 }
 
-/* Optional: Verschönert den Scrollbalken für Webkit-Browser (Chrome, Safari, Edge) */
 .chart-overflow-container::-webkit-scrollbar {
   height: 6px;
 }
@@ -491,23 +453,18 @@ main .header small {
   gap: 12px;
 }
 
-/* Das runde, lila Alarm-Icon */
 .alarm-icon-bg {
   width: 40px;
   height: 40px;
   background-color: #ebd9ff;
-  /* Etwas dunkleres Lila für den Kreis */
   color: #9c27b0;
-  /* Farbe der Glocke */
   border-radius: 50%;
-  /* Macht es kreisrund */
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 18px;
 }
 
-/* Text-Block (Name + Datum) */
 .alarm-info {
   display: flex;
   flex-direction: column;
@@ -525,19 +482,15 @@ main .header small {
   margin-top: 2px;
 }
 
-/* Die Uhrzeit ganz rechts */
 .alarm-time {
   font-weight: 700;
   font-size: 14px;
   color: #9c27b0;
-  /* Knalliges Lila für die Zeit */
 }
 
-/* Verhindert, dass das Canvas auf kleinen Bildschirmen flach gedrückt wird */
 #monsterChart {
   width: 100% !important;
   height: 220px !important;
-  /* Hier erzwingst du eine angenehme Mindesthöhe für das Smartphone */
   margin-top: 15px;
 }
 
@@ -605,7 +558,6 @@ a {
 
 #monsterViewMode {
   display: flex;
-  /* justify-content: space-between; */
   gap: 30px;
 }
 
@@ -618,7 +570,6 @@ a {
   width: fit-content;
 }
 
-/* 1. Die Standard-Radio-Punkte komplett unsichtbar machen */
 .monster-gallery .monster-item input[type="radio"] {
   position: absolute;
   opacity: 0;
@@ -626,7 +577,6 @@ a {
   height: 0;
 }
 
-/* 2. Grund-Styling für die Monster-Bilder (Vorbereitung für den Klick) */
 .monster-gallery .monster-item {
   cursor: pointer;
   display: inline-block;
@@ -636,24 +586,17 @@ a {
 .monster-gallery .monster-img {
   border-radius: 50%;
   border: 4px solid transparent;
-  /* Unsichtbarer Rand, damit beim Klick nichts wackelt */
   transition: all 0.2s ease;
   padding: 4px;
 }
 
-/* 3. EFFEKT WENN AUSGEWÄHLT (Hier wird das Zauberwort :checked genutzt) */
 
-/* Option A: Ein fetter, farbiger Rahmen um das ausgewählte Monster */
 .monster-gallery .monster-item input[type="radio"]:checked+.monster-img {
   border-color: var(--orange);
-  /* Nutzt dein definiertes Orange */
   transform: scale(1.1);
-  /* Lässt das ausgewählte Monster leicht ploppen */
   background-color: rgba(255, 92, 52, 0.1);
-  /* Zarter orangefarbener Hintergrund */
 }
 
-/* Optional: Kleiner Hover-Effekt, damit man merkt, dass es klickbar ist */
 .monster-gallery .monster-item:hover .monster-img {
   transform: scale(1.05);
 }
@@ -748,9 +691,7 @@ strong {
 
 .alert-card {
   background-color: #FFEBEB !important;
-  /* Zartes Rot */
   border: 2px solid var(--orange);
-  /* Orangener Alarm-Rand */
   box-shadow: 0 10px 20px rgba(255, 92, 52, 0.2);
 }
 
@@ -794,7 +735,6 @@ h3 {
 
 #memberList {
   font-size: 2rem;
-
 }
 
 .family-member {
@@ -808,27 +748,20 @@ h3 {
 .member-card {
   background-color: white;
   border: 2px solid #e1e7dd;
-  /* Passt zu deinen Input-Hintergründen */
   border-radius: 16px;
   padding: 24px;
   margin-bottom: 16px;
   list-style-type: none;
-  /* Entfernt den Listenpunkt */
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
-  /* Sehr feiner Schatten */
-
   display: flex;
   flex-direction: column;
   gap: 16px;
-  /* Der Abstand zwischen Name und E-Mail innerhalb der Kachel */
 }
 
-/* Flexbox-Zeilen für Name und E-Mail */
 .member-row {
   display: flex;
   align-items: center;
   gap: 20px;
-  /* Lücke zwischen Emoji und Text */
   color: var(--cassis);
 }
 
@@ -836,29 +769,24 @@ h3 {
   display: flex;
   align-items: center;
   gap: 20px;
-  /* Lücke zwischen Emoji und Text */
   color: var(--cassis);
 }
 
 .member-row .member-icon {
   font-size: 2rem;
-  /* Große Emojis für Mobile */
 }
 
 .member-row .member-text {
   font-size: 2rem;
-  /* Passt sich an deine Standard-Input-Schriftgröße an */
   font-weight: 500;
 }
 
-/* E-Mail Zeile etwas dezenter */
 .member-row.email {
   opacity: 0.8;
 }
 
 .member-row.email .member-text {
   font-size: 1.5rem;
-  /* Etwas kleiner als der Name */
 }
 
 #userEmail {
@@ -888,7 +816,6 @@ h3 {
 
 .btn-sub {
   background-color: rgba(53, 30, 40, 0.1) !important;
-  /* Nutzt cassis mit Deckkraft */
   color: var(--cassis) !important;
   margin-top: 8px;
 }
@@ -930,21 +857,16 @@ h3 {
   margin: 16px;
 }
 
-
-/*Spezifisches Design für das Haushalts-Popup */
-
-
+/*Haushalts-Popup */
 .popup-content.haushalt-popup {
   max-width: 400px;
   padding: 24px;
 }
 
-
 .haushalt-popup form {
   text-align: left;
   gap: 8px;
 }
-
 
 .haushalt-popup h2 {
   color: var(--cassis);
@@ -978,14 +900,11 @@ h3 {
   height: 10px;
 }
 
-
-/*Spezifisches Design für das Konto-Löschen-Popup */
-
+/* Konto-Löschen-Popup */
 .popup-content.delete-popup {
   max-width: 700px;
   padding: 35px 30px;
 }
-
 
 .delete-popup h2 {
   font-size: 2rem;
@@ -1011,8 +930,6 @@ h3 {
 .delete-popup #btnConfirmDelete {
   margin-bottom: 12px;
 }
-
-
 
 /* =========================================================================
    RESONSIVE FÜR DESKTOP
@@ -1077,7 +994,7 @@ h3 {
   }
 
   .alert-card {
-    display: flex !important;
+    display: flex;
     align-items: center;
     justify-content: flex-start;
     position: relative;
@@ -1140,7 +1057,6 @@ h3 {
     justify-content: center;
   }
 
-
   body.content-page {
     display: flex;
     flex-direction: column;
@@ -1161,60 +1077,6 @@ h3 {
     padding-top: 24px;
   }
 
-  /* html body.content-page #householdInfo .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto 40px auto;
-    padding: 20px 24px;
-    box-sizing: border-box;
-    position: relative;
-  }
-
-  html body.content-page #householdInfo .header div {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-  }
-
-  html body.content-page #householdInfo .grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-    max-width: 750px;
-    margin: 0 auto;
-  }
-
-  html body.content-page #householdInfo .grid .card {
-    width: 100%;
-    max-width: 750px;
-    box-sizing: border-box;
-  }
-
-  html body.content-page #householdInfo .header div h1 {
-    font-size: 2.3rem;
-    margin-bottom: 4px;
-    margin-top: 20px;
-    font-weight: 800;
-  }
-
-
-  html body.content-page #householdInfo .header div p {
-    font-size: 1.2rem;
-    margin: 0;
-  }
-
-
-  html body.content-page #householdInfo .header div small {
-    font-size: 1rem;
-    color: #4a4a4a;
-  } */
-
   /* KONTOSEITE FÜR DESKTOP */
 
   body.account-page main.main_konto {
@@ -1223,10 +1085,8 @@ h3 {
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    /* padding-top: 0px; */
     margin-top: 0px;
   }
-
 
   body.account-page .main_konto .header {
     display: flex;
@@ -1268,7 +1128,6 @@ h3 {
     line-height: 1.4;
   }
 
-
   body.account-page .main_konto .grid .card div label {
     font-size: 1rem;
     font-weight: 600;
@@ -1288,7 +1147,6 @@ h3 {
     max-width: 750px;
     margin: 0 auto;
   }
-
 
   body.account-page .main_konto .grid .card {
     width: 100%;
@@ -1478,7 +1336,6 @@ h3 {
     font-size: 1rem;
   }
 
-  /* Schaltet deine absolute Zentrierung aus, die das Layout zerschießt */
   html body.content-page #householdInfo .header div,
   body.account-page header.header .header-text {
     position: static !important;
@@ -1486,49 +1343,3 @@ h3 {
     text-align: left !important;
   }
 }
-
-/* Basis-Styling für den Header auf der Kontoseite */
-/* body.account-page header.header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    /* Links ausrichten wie auf der Homeseite */
-/* align-items: center;
-    padding: 15px 24px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  } */
-
-/* Holt den Zurück-Button aus der absoluten Positionierung */
-/* body.account-page header.header a#back_btn_container {
-    position: static;
-    margin-right: 20px;
-    /* Abstand zwischen Button und Text */
-/* transform: none;
-    left: auto;
-    top: auto;
-  } */
-
-/* Passt die Größe des Zurück-Buttons an */
-/* body.account-page header.header #back_btn {
-    padding: 10px 16px;
-    font-size: 1.2rem;
-    border-radius: 12px;
-  } */
-
-/* Erzwingt die linksbündige Text-Ausrichtung */
-/* body.account-page header.header .header-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    transform: none;
-    position: static;
-  } */
-/* 
-} */
